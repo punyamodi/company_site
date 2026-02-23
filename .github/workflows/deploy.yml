@@ -27,36 +27,36 @@ jobs:
           node-version: '20'
           cache: 'npm'
           cache-dependency-path: |
-            company-site/main-hub/package-lock.json
-            company-site/InferGate-site/package-lock.json
-            company-site/Converse-site/package-lock.json
-            company-site/HaloDesk-site/package-lock.json
-            company-site/onyx-site/package-lock.json
+            main-hub/package-lock.json
+            InferGate-site/package-lock.json
+            Converse-site/package-lock.json
+            HaloDesk-site/package-lock.json
+            onyx-site/package-lock.json
 
       # ── Install all dependencies ──────────────────────────────
       - name: Install Main Hub deps
-        working-directory: company-site/main-hub
+        working-directory: main-hub
         run: npm ci
 
       - name: Install InferGate deps
-        working-directory: company-site/InferGate-site
+        working-directory: InferGate-site
         run: npm ci
 
       - name: Install Converse deps
-        working-directory: company-site/Converse-site
+        working-directory: Converse-site
         run: npm ci
 
       - name: Install HaloDesk deps
-        working-directory: company-site/HaloDesk-site
+        working-directory: HaloDesk-site
         run: npm ci
 
       - name: Install Onyx deps
-        working-directory: company-site/onyx-site
+        working-directory: onyx-site
         run: npm ci
 
       # ── Build Main Hub ────────────────────────────────────────
       - name: Build Main Hub
-        working-directory: company-site/main-hub
+        working-directory: main-hub
         env:
           NEXT_PUBLIC_BASE_PATH: /company_site
           NEXT_PUBLIC_PLATFORM_URL: https://punyamodi.github.io/company_site/
@@ -64,7 +64,7 @@ jobs:
 
       # ── Build InferGate ───────────────────────────────────────
       - name: Build InferGate
-        working-directory: company-site/InferGate-site
+        working-directory: InferGate-site
         env:
           NEXT_PUBLIC_BASE_PATH: /company_site/infergate
           NEXT_PUBLIC_PLATFORM_URL: https://punyamodi.github.io/company_site/
@@ -72,7 +72,7 @@ jobs:
 
       # ── Build Converse ────────────────────────────────────────
       - name: Build Converse
-        working-directory: company-site/Converse-site
+        working-directory: Converse-site
         env:
           NEXT_PUBLIC_BASE_PATH: /company_site/converse
           NEXT_PUBLIC_PLATFORM_URL: https://punyamodi.github.io/company_site/
@@ -80,7 +80,7 @@ jobs:
 
       # ── Build HaloDesk ────────────────────────────────────────
       - name: Build HaloDesk
-        working-directory: company-site/HaloDesk-site
+        working-directory: HaloDesk-site
         env:
           NEXT_PUBLIC_BASE_PATH: /company_site/halodesk
           NEXT_PUBLIC_PLATFORM_URL: https://punyamodi.github.io/company_site/
@@ -88,7 +88,7 @@ jobs:
 
       # ── Build Onyx ────────────────────────────────────────────
       - name: Build Onyx
-        working-directory: company-site/onyx-site
+        working-directory: onyx-site
         env:
           NEXT_PUBLIC_BASE_PATH: /company_site/onyx
           NEXT_PUBLIC_PLATFORM_URL: https://punyamodi.github.io/company_site/
@@ -99,13 +99,13 @@ jobs:
         run: |
           mkdir -p dist
           # Main Hub at root
-          cp -r company-site/main-hub/out/. dist/
+          cp -r main-hub/out/. dist/
           # Product subsites
           mkdir -p dist/infergate dist/converse dist/halodesk dist/onyx
-          cp -r company-site/InferGate-site/out/. dist/infergate/
-          cp -r company-site/Converse-site/out/. dist/converse/
-          cp -r company-site/HaloDesk-site/out/. dist/halodesk/
-          cp -r company-site/onyx-site/out/. dist/onyx/
+          cp -r InferGate-site/out/. dist/infergate/
+          cp -r Converse-site/out/. dist/converse/
+          cp -r HaloDesk-site/out/. dist/halodesk/
+          cp -r onyx-site/out/. dist/onyx/
           # GitHub Pages requires a .nojekyll file to serve _ prefixed dirs
           touch dist/.nojekyll
 
