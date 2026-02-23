@@ -27,7 +27,6 @@ jobs:
           node-version: '20'
           cache: 'npm'
           cache-dependency-path: |
-            main-hub/package-lock.json
             InferGate-site/package-lock.json
             Converse-site/package-lock.json
             HaloDesk-site/package-lock.json
@@ -36,7 +35,7 @@ jobs:
       # ── Install all dependencies ──────────────────────────────
       - name: Install Main Hub deps
         working-directory: main-hub
-        run: npm ci
+        run: npm install --legacy-peer-deps
 
       - name: Install InferGate deps
         working-directory: InferGate-site
