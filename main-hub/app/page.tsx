@@ -1,6 +1,6 @@
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { ArrowRight, Zap, Mic, MessageSquare, Search, Shield, Server, Lock, BarChart3, Network, CheckCircle, ChevronRight } from "lucide-react";
+import { ArrowRight, Zap, Mic, MessageSquare, Search, Shield, Server, Lock, BarChart3, Network, CheckCircle, ChevronRight, Layers } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
