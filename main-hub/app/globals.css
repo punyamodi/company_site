@@ -200,3 +200,43 @@ a { color: inherit; }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
 }
+
+/* ── RESPONSIVE LAYOUT UTILITIES ──────────────────────── */
+/* Named grid helpers used by page.tsx and footer.tsx */
+.hub-product-grid  { display:grid; grid-template-columns:repeat(2,1fr);   gap:24px; }
+.hub-metrics-grid  { display:grid; grid-template-columns:repeat(4,1fr);   gap:8px; }
+.hub-caps-grid     { display:grid; grid-template-columns:1fr 1fr;          gap:6px; }
+.hub-arch-grid     { display:grid; grid-template-columns:1fr 1fr;          gap:80px; align-items:center; }
+.hub-platform-grid { display:grid; grid-template-columns:repeat(3,1fr);   gap:20px; }
+.hub-footer-cta    { display:grid; grid-template-columns:1fr auto;         gap:24px; align-items:center; max-width:1264px; margin:0 auto; }
+.hub-footer-main   { display:grid; grid-template-columns:280px 1fr;        gap:64px; margin-bottom:48px; }
+.hub-footer-links  { display:grid; grid-template-columns:repeat(4,1fr);   gap:32px; }
+
+/* Tablet (≤1024px) */
+@media(max-width:1024px){
+  .hub-platform-grid { grid-template-columns:repeat(2,1fr); }
+  .hub-arch-grid     { gap:40px; }
+  .hub-footer-main   { grid-template-columns:240px 1fr; gap:40px; }
+}
+
+/* Mobile (≤768px) */
+@media(max-width:768px){
+  .hub-product-grid  { grid-template-columns:1fr; }
+  .hub-arch-grid     { grid-template-columns:1fr; gap:32px; }
+  .hub-platform-grid { grid-template-columns:repeat(2,1fr); }
+  .hub-footer-cta    { grid-template-columns:1fr; }
+  .hub-footer-main   { grid-template-columns:1fr; gap:32px; }
+  .hub-footer-links  { grid-template-columns:repeat(2,1fr); gap:24px; }
+  /* Nav dropdown overflow guard */
+  .nb-nav-dropdown   { min-width:min(480px,90vw)!important; }
+}
+
+/* Small phone (≤480px) */
+@media(max-width:480px){
+  .section           { padding:48px 16px; }
+  .hub-platform-grid { grid-template-columns:1fr; }
+  .hub-metrics-grid  { grid-template-columns:repeat(2,1fr); }
+  .hub-caps-grid     { grid-template-columns:1fr; }
+  .hub-footer-links  { grid-template-columns:repeat(2,1fr); gap:16px; }
+  .btn-primary,.btn-secondary,.btn-invert { padding:11px 18px; font-size:14px; }
+}

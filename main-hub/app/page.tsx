@@ -266,7 +266,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
+          <div className="hub-product-grid">
             {PRODUCTS.map((product, i) => {
               const Icon = product.icon;
               return (
@@ -299,7 +299,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Metrics */}
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 8 }}>
+                  <div className="hub-metrics-grid">
                     {product.metrics.map((m) => (
                       <div key={m.label} style={{ padding: "10px 12px", background: "var(--nb-surface)", border: "1.5px solid var(--nb-border-faint)", borderRadius: "var(--radius)", textAlign: "center" }}>
                         <div style={{ fontFamily: "var(--font-jetbrains,monospace)", fontSize: 16, fontWeight: 700, color: "var(--nb-ink)", letterSpacing: "-0.02em" }}>{m.value}</div>
@@ -309,7 +309,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Capabilities */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6 }}>
+                  <div className="hub-caps-grid">
                     {product.capabilities.map((cap) => (
                       <div key={cap} style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, color: "var(--nb-ink-muted)", fontWeight: 500 }}>
                         <CheckCircle size={12} color={product.color} style={{ flexShrink: 0 }} />
@@ -326,17 +326,12 @@ export default function HomePage() {
             })}
           </div>
         </div>
-        <style>{`
-          @media(max-width:768px){
-            .product-grid{grid-template-columns:1fr!important;}
-          }
-        `}</style>
       </section>
 
       {/* ── HOW THE SUITE WORKS ──────────────────────────────── */}
       <section className="section">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+          <div className="hub-arch-grid">
             <div>
               <div className="section-label">Platform Architecture</div>
               <h2 style={{ fontSize: "clamp(30px,3.5vw,48px)", letterSpacing: "-0.04em", marginBottom: 20, lineHeight: 1 }}>
@@ -418,7 +413,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <style>{`@media(max-width:900px){.arch-grid{grid-template-columns:1fr!important;}}`}</style>
       </section>
 
       {/* ── PLATFORM CAPABILITIES ───────────────────────────── */}
@@ -434,7 +428,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+          <div className="hub-platform-grid">
             {PLATFORM_CAPABILITIES.map((cap, i) => {
               const Icon = cap.icon;
               return (

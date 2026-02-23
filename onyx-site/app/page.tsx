@@ -163,7 +163,7 @@ export default function HomePage() {
         {/* Teal circle */}
         <div style={{ position: "absolute", bottom: 80, left: "5%", width: 130, height: 130, borderRadius: "50%", border: "2px solid var(--nb-teal)", pointerEvents: "none", animation: "floatSlow 8s ease-in-out infinite", opacity: 0.6 }} />
 
-        <div style={{ maxWidth: 1264, margin: "0 auto", width: "100%", position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+        <div className="ox-hero-grid" style={{ maxWidth: 1264, margin: "0 auto", width: "100%", position: "relative", display: "grid", gap: 64, alignItems: "center" }}>
 
           <div>
             {/* Eyebrow */}
@@ -339,7 +339,7 @@ export default function HomePage() {
       {/* ── CONNECTORS GRID ───────────────────────────────── */}
       <section className="section section--surface">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+          <div className="ox-split-2col" style={{ display: "grid", gap: 64, alignItems: "center" }}>
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55 }}>
               <div className="eyebrow">40+ Connectors</div>
               <h2 style={{ fontSize: "clamp(28px,3.5vw,48px)", fontWeight: 800, letterSpacing: "-0.04em", lineHeight: 1.05, marginBottom: 16 }}>
@@ -371,7 +371,7 @@ export default function HomePage() {
       {/* ── ENTERPRISE SECURITY ───────────────────────────── */}
       <section className="section">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+          <div className="ox-split-2col" style={{ display: "grid", gap: 64, alignItems: "center" }}>
             <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.1 }}>
               {/* Security SVG */}
               <div style={{ border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal-xl)", borderRadius: "var(--radius)", background: "var(--nb-invert)", padding: 32, position: "relative", overflow: "hidden" }}>

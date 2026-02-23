@@ -65,7 +65,7 @@ export function Footer() {
         padding: "48px 24px",
         background: "var(--nb-teal)",
       }}>
-        <div style={{ maxWidth: 1264, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr auto", gap: 24, alignItems: "center" }}>
+        <div className="hd-footer-cta">
           <div>
             <p style={{
               fontFamily: "var(--font-bricolage, sans-serif)",
@@ -122,7 +122,7 @@ export function Footer() {
 
       {/* Main footer */}
       <div style={{ padding: "56px 24px 40px", borderBottom: "2px solid rgba(255,255,255,0.08)" }}>
-        <div style={{ maxWidth: 1264, margin: "0 auto", display: "grid", gridTemplateColumns: "260px repeat(4, 1fr)", gap: 40 }}>
+        <div className="hd-footer-main" style={{ maxWidth: 1264, margin: "0 auto" }}>
           {/* Brand */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
@@ -169,6 +169,7 @@ export function Footer() {
           </div>
 
           {/* Link columns */}
+          <div className="hd-footer-links">
           {FOOTER_COLS.map((col) => (
             <div key={col.title}>
               <p style={{
@@ -195,6 +196,7 @@ export function Footer() {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </div>
 

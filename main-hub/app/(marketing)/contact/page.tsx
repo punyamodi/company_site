@@ -34,7 +34,7 @@ export default function ContactPage() {
       </section>
 
       <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container--narrow" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
+        <div className="container--narrow hub-arch-grid" style={{ gap: 64, alignItems: "start" }}>
           {/* Contact form */}
           <ContactForm />
 

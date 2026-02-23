@@ -61,7 +61,7 @@ export function Footer() {
     <footer style={{ background: "var(--nb-invert)", borderTop: "2px solid var(--nb-border)", color: "var(--nb-bg)", fontFamily: "var(--font-bricolage, sans-serif)" }}>
       {/* CTA strip */}
       <div style={{ borderBottom: "2px solid rgba(255,255,255,0.12)", padding: "40px 24px", background: "var(--nb-violet)" }}>
-        <div style={{ maxWidth: 1264, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr auto", gap: 24, alignItems: "center" }}>
+        <div className="cv-footer-cta" style={{ maxWidth: 1264, margin: "0 auto" }}>
           <div>
             <p style={{ fontFamily: "var(--font-bricolage, sans-serif)", fontSize: "clamp(24px,3vw,36px)", fontWeight: 800, color: "#fff", letterSpacing: "-0.04em", lineHeight: 1.1 }}>
               Ready to build voice AI that feels human?
@@ -90,7 +90,7 @@ export function Footer() {
 
       {/* Main footer */}
       <div style={{ maxWidth: 1264, margin: "0 auto", padding: "56px 24px 32px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: 64, marginBottom: 48 }}>
+        <div className="cv-footer-main" style={{ display: "grid", marginBottom: 48 }}>
           {/* Brand */}
           <div>
             <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginBottom: 20 }}>
@@ -134,7 +134,7 @@ export function Footer() {
           </div>
 
           {/* Links */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 32 }}>
+          <div className="cv-footer-links" style={{ display: "grid" }}>
             {FOOTER_COLS.map((col) => (
               <div key={col.title}>
                 <p style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(250,248,243,0.4)", marginBottom: 16, fontFamily: "var(--font-bricolage, sans-serif)", borderBottom: "1px solid rgba(255,255,255,0.10)", paddingBottom: 10 }}>{col.title}</p>

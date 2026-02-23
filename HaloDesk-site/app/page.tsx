@@ -897,6 +897,7 @@ export default function HomePage() {
 
         <div className="container">
           <div
+            className="hd-hero-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
@@ -1164,9 +1165,9 @@ export default function HomePage() {
         />
         <div className="container">
           <div
+            className="hd-split-2col"
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 1fr",
               gap: "60px",
               alignItems: "center",
             }}
@@ -1265,9 +1266,9 @@ export default function HomePage() {
       <section className="section section--surface">
         <div className="container">
           <div
+            className="hd-split-2col"
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 1fr",
               gap: "64px",
               alignItems: "center",
             }}

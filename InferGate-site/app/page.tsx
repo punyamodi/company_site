@@ -1137,7 +1137,7 @@ export default function HomePage() {
                 compliance environments — from FCA-regulated financial services to HIPAA healthcare
                 to air-gapped government infrastructure.
               </p>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+              <div className="ig-split-2col" style={{ gap: 10 }}>
                 {SECURITY_POINTS.map((point, i) => (
                   <motion.div key={i}
                     initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }}

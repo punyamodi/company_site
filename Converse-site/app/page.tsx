@@ -362,7 +362,7 @@ export default function HomePage() {
       {/* ── CODE SAMPLE ── */}
       <section className="section section--invert" style={{ padding: "96px 24px" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+          <div className="cv-split-2col" style={{ display: "grid", gap: 64, alignItems: "center" }}>
             <div>
               <p className="section-label" style={{ color: "rgba(250,248,243,0.5)" }}>Developer Experience</p>
               <h2 style={{ fontSize: "clamp(28px,3.5vw,48px)", color: "#FAF8F3", marginBottom: 20 }}>

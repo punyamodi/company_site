@@ -50,7 +50,7 @@ export function Footer() {
     <footer style={{ background: "var(--nb-invert)", borderTop: "2px solid var(--nb-border)", color: "var(--nb-bg)", fontFamily: "var(--font-bricolage,sans-serif)" }}>
       {/* CTA strip */}
       <div style={{ borderBottom: "2px solid rgba(255,255,255,0.08)", padding: "56px 24px", background: "var(--nb-yellow)" }}>
-        <div style={{ maxWidth: 1264, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr auto", gap: 24, alignItems: "center" }}>
+        <div className="hub-footer-cta" style={{ padding: "0 24px" }}>
           <div>
             <p style={{ fontFamily: "var(--font-bricolage,sans-serif)", fontSize: "clamp(22px,2.8vw,36px)", fontWeight: 800, color: "var(--nb-ink)", letterSpacing: "-0.04em", lineHeight: 1.1 }}>
               The complete AI infrastructure suite for the enterprise.
@@ -72,7 +72,7 @@ export function Footer() {
 
       {/* Main */}
       <div style={{ maxWidth: 1264, margin: "0 auto", padding: "56px 24px 32px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: 64, marginBottom: 48 }}>
+        <div className="hub-footer-main">
           {/* Brand */}
           <div>
             <a href={`${BASE}/`} style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginBottom: 20 }}>
@@ -118,7 +118,7 @@ export function Footer() {
           </div>
 
           {/* Links */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 32 }}>
+          <div className="hub-footer-links">
             {COLS.map((col) => (
               <div key={col.title}>
                 <p style={{ fontSize: 11, fontWeight: 800, letterSpacing: ".14em", textTransform: "uppercase", color: "rgba(250,248,243,0.4)", marginBottom: 16, borderBottom: "1px solid rgba(255,255,255,0.10)", paddingBottom: 10 }}>

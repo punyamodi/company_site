@@ -202,7 +202,7 @@ export function Nav() {
                       background: "var(--nb-bg)", border: "2px solid var(--nb-border)",
                       boxShadow: "var(--shadow-brutal-lg)", borderRadius: "var(--radius)",
                       padding: 24,
-                      minWidth: item.cols ? (item.cols.length >= 3 ? 720 : 480) : 220,
+                      minWidth: item.cols ? (item.cols.length >= 3 ? "min(720px,90vw)" : "min(480px,90vw)") : 220,
                       zIndex: 100,
                       display: "grid",
                       gridTemplateColumns: item.cols ? `repeat(${item.cols.length},1fr)` : "1fr",

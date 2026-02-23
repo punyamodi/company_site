@@ -90,7 +90,7 @@ export default function EnterprisePage() {
       {/* Security & Compliance */}
       <section className="section section--surface">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+          <div className="hub-arch-grid" style={{ gap: 64 }}>
             <div>
               <div className="section-label">Security & Compliance</div>
               <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", letterSpacing: "-0.04em", marginBottom: 16, lineHeight: 1.05 }}>
@@ -152,7 +152,7 @@ export default function EnterprisePage() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20, marginBottom: 48 }}>
+          <div className="hub-platform-grid" style={{ marginBottom: 48 }}>
             {TIERS.map((tier) => (
               <div key={tier.name} className="nb-card" style={{ padding: 32, position: "relative", borderTop: tier.featured ? "4px solid var(--nb-yellow)" : "2px solid var(--nb-border)" }}>
                 {tier.featured && (

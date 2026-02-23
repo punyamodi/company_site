@@ -66,7 +66,7 @@ export function Footer() {
     <footer style={{ background: "var(--nb-invert)", borderTop: "2px solid var(--nb-border)", color: "var(--nb-bg)", fontFamily: "var(--font-bricolage,sans-serif)" }}>
       {/* CTA strip */}
       <div style={{ borderBottom: "2px solid rgba(255,255,255,0.12)", padding: "48px 24px", background: "var(--nb-yellow)" }}>
-        <div style={{ maxWidth: 1264, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr auto", gap: 24, alignItems: "center" }}>
+        <div className="ig-footer-cta">
           <div>
             <p style={{ fontFamily: "var(--font-bricolage,sans-serif)", fontSize: "clamp(22px,2.8vw,34px)", fontWeight: 800, color: "var(--nb-ink)", letterSpacing: "-0.04em", lineHeight: 1.1 }}>
               The fastest AI gateway your enterprise will ever run.
@@ -88,7 +88,7 @@ export function Footer() {
 
       {/* Main */}
       <div style={{ maxWidth: 1264, margin: "0 auto", padding: "56px 24px 32px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "260px 1fr", gap: 64, marginBottom: 48 }}>
+        <div className="ig-footer-main">
           {/* Brand */}
           <div>
             <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginBottom: 20 }}>
@@ -126,7 +126,7 @@ export function Footer() {
           </div>
 
           {/* Links */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 32 }}>
+          <div className="ig-footer-links">
             {COLS.map((col) => (
               <div key={col.title}>
                 <p style={{ fontSize: 11, fontWeight: 800, letterSpacing: ".14em", textTransform: "uppercase", color: "rgba(250,248,243,0.4)", marginBottom: 16, borderBottom: "1px solid rgba(255,255,255,0.10)", paddingBottom: 10 }}>
