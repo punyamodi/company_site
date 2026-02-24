@@ -39,8 +39,8 @@ const COLS = [
     links: [
       { label: "About AI Platform",            href: `${BASE}/enterprise/` },
       { label: "Enterprise Pricing",           href: `${BASE}/contact/` },
-      { label: "Privacy Policy",               href: `${BASE}/enterprise/` },
-      { label: "Terms of Service",             href: `${BASE}/enterprise/` },
+      { label: "Privacy Policy",               href: `${BASE}/contact/` },
+      { label: "Terms of Service",             href: `${BASE}/contact/` },
     ],
   },
 ];
@@ -104,8 +104,8 @@ export function Footer() {
             </div>
             <div style={{ display: "flex", gap: 10 }}>
               {[
-                { Icon: Twitter,  href: "#" },
-                { Icon: Linkedin, href: "#" },
+                { Icon: Twitter,  href: "https://twitter.com/y21ai" },
+                { Icon: Linkedin, href: "https://linkedin.com/company/y21ai" },
               ].map(({ Icon, href }) => (
                 <a key={href} href={href} target="_blank" rel="noopener noreferrer"
                   style={{ width: 36, height: 36, border: "1.5px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(250,248,243,0.6)", textDecoration: "none", transition: "border-color .15s,color .15s", borderRadius: "2px" }}
@@ -149,8 +149,8 @@ export function Footer() {
           </p>
           <div style={{ display: "flex", gap: 20 }}>
             {[
-              { label: "Privacy",   href: `${BASE}/enterprise/` },
-              { label: "Terms",     href: `${BASE}/enterprise/` },
+              { label: "Privacy",   href: `${BASE}/contact/` },
+              { label: "Terms",     href: `${BASE}/contact/` },
               { label: "Security",  href: `${BASE}/enterprise/` },
               { label: "Contact",   href: `${BASE}/contact/` },
             ].map((link) => (

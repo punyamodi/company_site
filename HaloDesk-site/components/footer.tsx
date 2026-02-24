@@ -146,7 +146,9 @@ export function Footer() {
               {[Twitter, Linkedin].map((Icon, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={i === 0 ? "https://twitter.com/halodesk" : "https://linkedin.com/company/halodesk"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     width: 34, height: 34, background: "rgba(255,255,255,0.08)",
                     border: "1.5px solid rgba(255,255,255,0.15)", borderRadius: "var(--radius)",
@@ -210,7 +212,7 @@ export function Footer() {
             {["Privacy Policy", "Terms of Service", "Security"].map((t) => (
               <Link
                 key={t}
-                href="/contact"
+                href={t === "Security" ? "/enterprise/security" : t === "Privacy Policy" ? "/enterprise/security" : "/contact"}
                 style={{ fontSize: 12.5, color: "rgba(255,255,255,0.35)", textDecoration: "none", transition: "color 0.12s" }}
                 onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.7)"}
                 onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.35)"}

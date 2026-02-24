@@ -44,7 +44,7 @@ const FOOTER_COLS = [
       { label: "Changelog",        href: "/changelog" },
       { label: "Contact Sales",    href: "/contact" },
       { label: "Enterprise Pricing",href: "/enterprise/pricing" },
-      { label: "Privacy Policy",   href: "/contact" },
+      { label: "Privacy Policy",   href: "/enterprise/security" },
       { label: "Terms of Service", href: "/contact" },
     ],
   },
@@ -118,9 +118,9 @@ export function Footer() {
             </div>
             <div style={{ display: "flex", gap: 10 }}>
               {[
-                { Icon: Twitter, href: "#" },
-                { Icon: Linkedin, href: "#" },
-                { Icon: MessageSquare, href: "#" },
+                { Icon: Twitter, href: "https://twitter.com/converseai" },
+                { Icon: Linkedin, href: "https://linkedin.com/company/converseai" },
+                { Icon: MessageSquare, href: "/contact" },
               ].map(({ Icon, href }, i) => (
                 <a key={i} href={href} target="_blank" rel="noopener noreferrer"
                   style={{ width: 36, height: 36, border: "1.5px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(250,248,243,0.6)", textDecoration: "none", transition: "border-color 0.15s, color 0.15s, background 0.15s", borderRadius: "2px" }}
@@ -162,7 +162,7 @@ export function Footer() {
             © {new Date().getFullYear()} Converse. All rights reserved.
           </p>
           <div style={{ display: "flex", gap: 20 }}>
-            {[{ label: "Privacy", href: "/contact" }, { label: "Terms", href: "/contact" }, { label: "Security", href: "/enterprise/security" }].map((link) => (
+            {[{ label: "Privacy", href: "/enterprise/security" }, { label: "Terms", href: "/contact" }, { label: "Security", href: "/enterprise/security" }].map((link) => (
               <Link key={link.href + link.label} href={link.href}
                 style={{ fontSize: 12.5, color: "rgba(250,248,243,0.4)", textDecoration: "none", fontWeight: 500, fontFamily: "var(--font-bricolage, sans-serif)", transition: "color 0.15s" }}
                 onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = "#a78bfa"}

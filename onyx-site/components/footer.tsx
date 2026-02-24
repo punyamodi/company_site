@@ -127,7 +127,7 @@ export function Footer() {
             <div style={{ display: "flex", gap: 10 }}>
               {[
                 { Icon: Twitter, href: "https://twitter.com/onyxai" },
-                { Icon: Linkedin, href: "https://linkedin.com" },
+                { Icon: Linkedin, href: "https://linkedin.com/company/onyxai" },
               ].map(({ Icon, href }) => (
                 <a key={href} href={href} target="_blank" rel="noopener noreferrer"
                   style={{ width: 36, height: 36, border: "1.5px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(250,249,246,0.6)", textDecoration: "none", transition: "border-color 0.15s, color 0.15s, background 0.15s", borderRadius: "2px" }}

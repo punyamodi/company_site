@@ -587,7 +587,7 @@ export default function HomePage() {
                 <Link href="/contact" className="btn-primary">
                   Contact Sales <ArrowRight size={16} />
                 </Link>
-                <Link href="/benchmarks" className="btn-secondary">
+                <Link href="/features" className="btn-secondary">
                   See Performance Benchmarks
                 </Link>
               </motion.div>
