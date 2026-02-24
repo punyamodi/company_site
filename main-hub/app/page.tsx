@@ -1,6 +1,6 @@
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { ArrowRight, Zap, Mic, MessageSquare, Search, Shield, Server, Lock, BarChart3, Network, CheckCircle, ChevronRight, Layers } from "lucide-react";
+import { ArrowRight, Zap, Mic, MessageSquare, Search, Shield, Server, Lock, BarChart3, Network, CheckCircle, ChevronRight, Layers, Wrench } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -104,6 +104,31 @@ const PRODUCTS = [
       "Role-based access & audit trails",
     ],
     audience: "For Engineering, Legal, HR & Sales Teams",
+  },
+  {
+    name: "Forge",
+    color: "#E11D48",
+    textColor: "#fff",
+    bgColor: "rgba(225,29,72,0.06)",
+    href: `${BASE}/forge/`,
+    icon: Wrench,
+    tagline: "Custom Enterprise AI",
+    desc: "Bespoke AI solutions engineered to your exact specification. From custom integrations to full-stack AI transformation — built for the way your business works.",
+    metrics: [
+      { value: "500+", label: "solutions built" },
+      { value: "60+", label: "enterprise clients" },
+      { value: "12+", label: "industries" },
+      { value: "100%", label: "bespoke" },
+    ],
+    capabilities: [
+      "Custom AI integration & middleware",
+      "Intelligent workflow automation",
+      "Data & AI platform engineering",
+      "Custom AI agents & fine-tuning",
+      "AI consulting & strategy",
+      "Full-stack delivery & support",
+    ],
+    audience: "For Any Enterprise Team with Custom AI Needs",
   },
 ];
 
@@ -223,7 +248,7 @@ export default function HomePage() {
             className="anim-fade-up delay-200"
             style={{ fontSize: "clamp(17px,2vw,21px)", color: "var(--nb-ink-muted)", maxWidth: 680, margin: "0 auto 40px", lineHeight: 1.65, fontWeight: 400 }}
           >
-            Four production-grade products — AI Gateway, Voice AI, Customer Support Intelligence, and Enterprise Knowledge — engineered to work individually or as an integrated suite.
+            Five production-grade products — AI Gateway, Voice AI, Customer Support Intelligence, Enterprise Knowledge, and Custom Solutions — engineered to work individually or as an integrated suite.
           </p>
 
           <div className="anim-fade-up delay-300" style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
@@ -238,7 +263,7 @@ export default function HomePage() {
           {/* Stats strip */}
           <div className="anim-fade-up delay-400" style={{ display: "flex", justifyContent: "center", gap: 0, marginTop: 64, flexWrap: "wrap" }}>
             {[
-              { value: "4", label: "enterprise products" },
+              { value: "5", label: "enterprise products" },
               { value: "99.99%", label: "SLA uptime" },
               { value: "SOC 2", label: "Type II" },
               { value: "VPC", label: "deployment ready" },

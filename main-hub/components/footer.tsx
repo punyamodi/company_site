@@ -12,6 +12,7 @@ const COLS = [
       { label: "Converse — Voice AI",          href: `${BASE}/converse/` },
       { label: "HaloDesk — Support AI",        href: `${BASE}/halodesk/` },
       { label: "Onyx — Knowledge AI",          href: `${BASE}/onyx/` },
+      { label: "Forge — Custom AI",            href: `${BASE}/forge/` },
     ],
   },
   {

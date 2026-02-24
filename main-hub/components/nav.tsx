@@ -6,7 +6,7 @@ import {
   X, Menu, ChevronDown, Zap, Shield, Globe, Activity,
   BarChart3, Layers, Database, Server, Brain, Mic, MessageSquare,
   Search, Network, Building2, ArrowRight, Cpu, HeartPulse, Landmark,
-  Bot, Lock,
+  Bot, Lock, Wrench,
 } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -43,14 +43,14 @@ const PRODUCTS = [
     features: ["Omnichannel Inbox", "Captain AI Agent", "Workflow Automation", "Advanced Analytics"],
   },
   {
-    name: "Onyx",
-    color: "#F59E0B",
-    textColor: "#0A0A0A",
-    href: `${BASE}/onyx/`,
-    icon: Search,
-    tagline: "Enterprise Knowledge AI",
-    desc: "Custom AI agents, RAG search, and deep research across your entire knowledge base.",
-    features: ["Custom AI Agents", "RAG & Enterprise Search", "Deep Research", "40+ Connectors"],
+    name: "Forge",
+    color: "#E11D48",
+    textColor: "#fff",
+    href: `${BASE}/forge/`,
+    icon: Wrench,
+    tagline: "Custom Enterprise AI",
+    desc: "Bespoke AI solutions engineered to your exact specification — from integration to full-stack transformation.",
+    features: ["Custom AI Integration", "Workflow Automation", "Data & AI Platforms", "Custom AI Agents"],
   },
 ];
 
@@ -65,6 +65,7 @@ const NAV = [
           { label: "Converse — Voice AI",         href: `${BASE}/converse/`,           icon: Mic },
           { label: "HaloDesk — Support AI",       href: `${BASE}/halodesk/`,           icon: MessageSquare },
           { label: "Onyx — Knowledge AI",         href: `${BASE}/onyx/`,               icon: Search },
+          { label: "Forge — Custom AI",           href: `${BASE}/forge/`,              icon: Wrench },
         ],
       },
       {
