@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const FOOTER_COLS = [
   {
@@ -142,32 +142,6 @@ export function Footer() {
             <p style={{ fontSize: 13.5, color: "rgba(255,255,255,0.55)", lineHeight: 1.75, marginBottom: 24 }}>
               The enterprise customer support platform that unifies every conversation, automates intelligently, and keeps your customers for life.
             </p>
-            <div style={{ display: "flex", gap: 10 }}>
-              {[Twitter, Linkedin].map((Icon, i) => (
-                <a
-                  key={i}
-                  href={i === 0 ? "https://twitter.com/halodesk" : "https://linkedin.com/company/halodesk"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    width: 34, height: 34, background: "rgba(255,255,255,0.08)",
-                    border: "1.5px solid rgba(255,255,255,0.15)", borderRadius: "var(--radius)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    color: "rgba(255,255,255,0.6)", transition: "background 0.12s, color 0.12s",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.15)";
-                    (e.currentTarget as HTMLElement).style.color = "#fff";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.08)";
-                    (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.6)";
-                  }}
-                >
-                  <Icon size={15} />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Link columns */}

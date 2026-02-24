@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Twitter, Linkedin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const COLS = [
   {
@@ -108,19 +108,6 @@ export function Footer() {
                   <span style={{ fontFamily: "var(--font-jetbrains,monospace)", fontSize: 15, fontWeight: 700, color: "var(--nb-yellow)" }}>{s.value}</span>
                   <span style={{ fontSize: 12, color: "rgba(250,248,243,0.5)", fontWeight: 600, letterSpacing: ".06em", textTransform: "uppercase" }}>{s.label}</span>
                 </div>
-              ))}
-            </div>
-            <div style={{ display: "flex", gap: 10 }}>
-              {[
-                { Icon: Twitter,  href: "https://twitter.com/infergate" },
-                { Icon: Linkedin, href: "https://linkedin.com/company/infergate" },
-              ].map(({ Icon, href }) => (
-                <a key={href} href={href} target="_blank" rel="noopener noreferrer"
-                  style={{ width: 36, height: 36, border: "1.5px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(250,248,243,0.6)", textDecoration: "none", transition: "border-color .15s,color .15s,background .15s", borderRadius: "2px" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "var(--nb-yellow)"; (e.currentTarget as HTMLElement).style.color = "var(--nb-yellow)"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.2)"; (e.currentTarget as HTMLElement).style.color = "rgba(250,248,243,0.6)"; }}>
-                  <Icon size={15} />
-                </a>
               ))}
             </div>
           </div>
