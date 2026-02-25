@@ -40,7 +40,7 @@ const CASE_STUDIES = [
     icon: Building2,
     tag: "Data & AI Platform",
     challenge: "A civilian federal agency needed to build an AI-powered knowledge management system for 12,000 employees. Documents across 20+ siloed systems were inaccessible, resulting in duplicated work, compliance gaps, and institutional knowledge loss.",
-    solution: "We architected and built a custom enterprise knowledge platform on top of our Onyx AI infrastructure. The system ingests from all 20 source systems, applies classification and access controls at the document level, and provides semantic search and AI-powered Q&A — all deployed on-premises with FedRAMP-aligned security.",
+    solution: "We architected and built a custom enterprise knowledge platform on top of our Genie AI infrastructure. The system ingests from all 20 source systems, applies classification and access controls at the document level, and provides semantic search and AI-powered Q&A — all deployed on-premises with FedRAMP-aligned security.",
     tech: ["Custom RAG architecture", "20-system ingestion pipeline", "Role-based access control", "On-premises deployment", "FedRAMP security controls"],
     outcomes: [
       { metric: "12,000", label: "Active users in year one" },

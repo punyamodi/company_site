@@ -75,7 +75,7 @@ export default function DataAIPlatformPage() {
               <div style={{ padding: "20px 24px", background: "var(--nb-rose-subtle)", border: "2px solid var(--nb-rose)", borderRadius: "var(--radius)", marginBottom: 32 }}>
                 <p style={{ fontSize: 14, fontWeight: 700, color: "var(--nb-rose)", marginBottom: 6 }}>Built on proven stack</p>
                 <p style={{ fontSize: 14, color: "var(--nb-ink-muted)", lineHeight: 1.6 }}>
-                  We leverage our InferGate and Onyx platform components where appropriate, or integrate with your existing data infrastructure.
+                  We leverage our InferGate and Genie platform components where appropriate, or integrate with your existing data infrastructure.
                 </p>
               </div>
               <Link href={`${BASE}/contact`} className="btn-primary" style={{ textDecoration: "none" }}>

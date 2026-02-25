@@ -64,7 +64,7 @@ const WHY = [
   },
   {
     title: "AI Platform Integration",
-    desc: "Built-in integrations with InferGate, Converse, HaloDesk, and Onyx — our enterprise AI platform suite, or your existing stack.",
+    desc: "Built-in integrations with InferGate, Converse, HaloDesk, and Genie — our enterprise AI platform suite, or your existing stack.",
     icon: Server,
   },
 ];

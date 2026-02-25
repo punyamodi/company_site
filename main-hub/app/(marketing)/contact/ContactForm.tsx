@@ -57,7 +57,7 @@ export default function ContactForm() {
             <option value="infergate">InferGate — AI Gateway</option>
             <option value="converse">Converse — Voice AI</option>
             <option value="halodesk">HaloDesk — Support Intelligence</option>
-            <option value="onyx">Onyx — Enterprise Knowledge AI</option>
+            <option value="genie">Genie — Enterprise Knowledge AI</option>
           </select>
         </div>
         <div>

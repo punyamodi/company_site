@@ -64,7 +64,7 @@ const NAV = [
           { label: "InferGate — AI Gateway",     href: `${BASE}/infergate/`,          icon: Zap },
           { label: "Converse — Voice AI",         href: `${BASE}/converse/`,           icon: Mic },
           { label: "HaloDesk — Support AI",       href: `${BASE}/halodesk/`,           icon: MessageSquare },
-          { label: "Onyx — Knowledge AI",         href: `${BASE}/onyx/`,               icon: Search },
+          { label: "Genie — Knowledge AI",         href: `${BASE}/genie/`,               icon: Search },
           { label: "Forge — Custom AI",           href: `${BASE}/forge/`,              icon: Wrench },
         ],
       },
@@ -74,7 +74,7 @@ const NAV = [
           { label: "AI Gateway & Routing",        href: `${BASE}/infergate/features`,  icon: Network },
           { label: "Voice Pipelines",             href: `${BASE}/converse/platform`,   icon: Activity },
           { label: "Intelligent Automation",      href: `${BASE}/halodesk/features`,   icon: Brain },
-          { label: "Enterprise Search & RAG",     href: `${BASE}/onyx/platform`,       icon: Database },
+          { label: "Enterprise Search & RAG",     href: `${BASE}/genie/platform`,       icon: Database },
         ],
       },
       {

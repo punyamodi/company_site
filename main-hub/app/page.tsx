@@ -81,11 +81,11 @@ const PRODUCTS = [
     audience: "For Customer Success & Support Operations",
   },
   {
-    name: "Onyx",
+    name: "Genie",
     color: "#F59E0B",
     textColor: "#0A0A0A",
     bgColor: "var(--nb-amber-subtle)",
-    href: `${BASE}/onyx/`,
+    href: `${BASE}/genie/`,
     icon: Search,
     tagline: "Enterprise Knowledge AI",
     desc: "Custom AI agents, retrieval-augmented generation, and deep research capabilities that connect to every system your enterprise runs on.",
@@ -187,7 +187,7 @@ const HOW_IT_WORKS = [
   {
     step: "04",
     title: "Connect Organizational Knowledge",
-    desc: "Onyx indexes every data source and surfaces accurate, cited answers — making your enterprise knowledge instantly accessible.",
+    desc: "Genie indexes every data source and surfaces accurate, cited answers — making your enterprise knowledge instantly accessible.",
     color: "#F59E0B",
   },
 ];
@@ -364,7 +364,7 @@ export default function HomePage() {
                 <span style={{ fontFamily: "var(--font-fraunces,serif)", fontStyle: "italic", fontWeight: 700, color: "var(--nb-ink-muted)" }}>together.</span>
               </h2>
               <p style={{ fontSize: 16, color: "var(--nb-ink-muted)", lineHeight: 1.7, marginBottom: 40 }}>
-                The AI Platform suite is designed with integration-first architecture. InferGate governs all AI traffic. Converse, HaloDesk, and Onyx each route through InferGate — giving you unified observability, cost control, and compliance across every AI interaction.
+                The AI Platform suite is designed with integration-first architecture. InferGate governs all AI traffic. Converse, HaloDesk, and Genie each route through InferGate — giving you unified observability, cost control, and compliance across every AI interaction.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                 {HOW_IT_WORKS.map((step) => (
@@ -409,7 +409,7 @@ export default function HomePage() {
                   {[
                     { name: "Converse", color: "#7C3AED", Icon: Mic, label: "Voice AI" },
                     { name: "HaloDesk", color: "#0D9488", Icon: MessageSquare, label: "Support AI" },
-                    { name: "Onyx", color: "#F59E0B", Icon: Search, label: "Knowledge AI" },
+                    { name: "Genie", color: "#F59E0B", Icon: Search, label: "Knowledge AI" },
                   ].map((p) => (
                     <div key={p.name} style={{ padding: "16px 12px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "var(--radius)", textAlign: "center" }}>
                       <div style={{ width: 32, height: 32, background: p.color, border: "1.5px solid rgba(255,255,255,0.2)", borderRadius: "2px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 8px" }}>
