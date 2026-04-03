@@ -24,26 +24,26 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "AI Platform — The Complete Enterprise AI Infrastructure Suite",
+    default: "AI Platform — Full-Service Digital Agency",
     template: "%s | AI Platform",
   },
   description:
-    "AI Platform is the complete enterprise AI infrastructure suite. AI Gateway, Voice AI, Customer Support Intelligence, and Enterprise Knowledge — designed for regulated enterprises at scale.",
+    "AI Platform is a full-service digital agency. We design and build websites, web apps, mobile apps, AI agents, customer chatbots, and everything in between — from first pixel to production.",
   keywords: [
-    "enterprise AI","AI infrastructure","AI platform","AI gateway","voice AI",
-    "customer support AI","enterprise knowledge","AI suite","B2B AI",
-    "AI governance","AI security","AI compliance",
+    "digital agency","web development","app development","AI agents","customer chatbot",
+    "frontend development","backend development","mobile app development",
+    "full-stack development","AI integration","e-commerce development","UI UX design",
   ],
   openGraph: {
-    title: "AI Platform — Enterprise AI Infrastructure Suite",
-    description: "Four production-grade AI products. One unified enterprise suite.",
+    title: "AI Platform — Full-Service Digital Agency",
+    description: "We design & build exceptional digital products. Frontend, backend, mobile, AI agents, chatbots, and more.",
     type: "website",
     siteName: "AI Platform",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Platform — Enterprise AI Infrastructure Suite",
-    description: "Four production-grade AI products. One unified enterprise suite.",
+    title: "AI Platform — Full-Service Digital Agency",
+    description: "We design & build exceptional digital products. Frontend, backend, mobile, AI agents, chatbots, and more.",
   },
 };
 

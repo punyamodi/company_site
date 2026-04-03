@@ -180,13 +180,13 @@ export function Footer() {
       <div style={{ padding: "20px 24px" }}>
         <div style={{ maxWidth: 1264, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
           <p style={{ fontSize: 12.5, color: "rgba(255,255,255,0.35)", letterSpacing: "-0.01em" }}>
-            © {new Date().getFullYear()} HaloDesk. All rights reserved.
+            © {new Date().getFullYear()} HaloDesk · Built by <a href="https://aiplatform.io" style={{ color: "var(--nb-yellow)", textDecoration: "none" }}>AI Platform Agency</a>. All rights reserved.
           </p>
           <div style={{ display: "flex", gap: 24 }}>
             {["Privacy Policy", "Terms of Service", "Security"].map((t) => (
               <Link
                 key={t}
-                href={t === "Security" ? "/enterprise/security" : t === "Privacy Policy" ? "/enterprise/security" : "/contact"}
+                href={t === "Security" ? "/enterprise/security" : t === "Privacy Policy" ? "/enterprise/security" : "/enterprise"}
                 style={{ fontSize: 12.5, color: "rgba(255,255,255,0.35)", textDecoration: "none", transition: "color 0.12s" }}
                 onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.7)"}
                 onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.35)"}

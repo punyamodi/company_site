@@ -44,7 +44,7 @@ const FOOTER_COLS = [
     title: "Company",
     links: [
       { label: "About Genie", href: "/about" },
-      { label: "Documentation", href: "/docs" },
+      { label: "Platform Overview", href: "/platform" },
       { label: "Privacy Policy", href: "/legal/privacy" },
       { label: "Terms of Service", href: "/legal/terms" },
       { label: "AI Platform", href: process.env.NEXT_PUBLIC_PLATFORM_URL || "/", external: true },
@@ -155,7 +155,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.10)", paddingTop: 24, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
           <p style={{ fontSize: 12.5, color: "rgba(250,249,246,0.4)", fontWeight: 500 }}>
-            © {new Date().getFullYear()} Genie AI. All rights reserved.
+            © {new Date().getFullYear()} Genie AI · Built by <a href="https://aiplatform.io" style={{ color: "var(--nb-yellow)", textDecoration: "none" }}>AI Platform Agency</a>. All rights reserved.
           </p>
           <div style={{ display: "flex", gap: 20 }}>
             {[

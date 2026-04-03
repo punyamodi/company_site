@@ -1,63 +1,95 @@
 import type { Metadata } from "next";
-import { ArrowRight, Shield, Server, Lock, BarChart3, Layers, Users, CheckCircle, Globe } from "lucide-react";
+import { ArrowRight, Shield, Server, Lock, BarChart3, Layers, Users, CheckCircle, Globe, Code2, Smartphone, Bot } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
   title: "Enterprise",
-  description: "AI Platform enterprise capabilities — VPC deployment, SOC 2 compliance, SLA, and dedicated support for regulated industries.",
+  description: "AI Platform Agency enterprise services — dedicated teams, NDAs, compliance, white-label, and custom SLAs for large organisations.",
 };
 
-const TIERS = [
+const ENTERPRISE_SERVICES = [
   {
-    name: "Professional",
-    desc: "For scaling engineering teams deploying one or two AI Platform products.",
-    features: [
-      "Up to 3 products in the suite",
-      "Standard SLA (99.9% uptime)",
-      "Cloud deployment (AWS, GCP, Azure)",
-      "Email & Slack support",
-      "Standard onboarding",
-      "Monthly billing",
-    ],
-    cta: "Contact Sales",
+    icon: Users,
+    title: "Dedicated Engineering Team",
+    desc: "A fully managed team of senior engineers embedded in your organisation — full-time, fully accountable.",
   },
   {
-    name: "Enterprise",
-    desc: "Full suite with dedicated support, advanced compliance, and custom deployment.",
-    featured: true,
-    features: [
-      "All four suite products",
-      "Enterprise SLA (99.99% uptime)",
-      "VPC / on-premise deployment",
-      "Dedicated Customer Success Manager",
-      "Priority incident response (1hr SLA)",
-      "Custom onboarding & training",
-      "Annual billing with multi-year pricing",
-      "Custom contract & DPA",
-    ],
-    cta: "Request Enterprise Demo",
+    icon: Code2,
+    title: "Multi-Product Development",
+    desc: "Running multiple parallel projects simultaneously? We staff and manage multiple dedicated squads for you.",
   },
   {
-    name: "Government & Regulated",
-    desc: "FedRAMP-aligned deployment for government, defense, and highly regulated industries.",
-    features: [
-      "All enterprise features",
-      "Air-gapped deployment options",
-      "FedRAMP-aligned controls",
-      "ITAR / HIPAA compliance support",
-      "Dedicated security review",
-      "Custom SLA & data residency",
-    ],
-    cta: "Contact Sales",
+    icon: Smartphone,
+    title: "Full Digital Transformation",
+    desc: "End-to-end modernisation of legacy systems — new frontend, backend migration, mobile apps, and AI integration.",
+  },
+  {
+    icon: Bot,
+    title: "AI Centre of Excellence",
+    desc: "Establish an internal AI capability with our support — tooling, processes, training, and ongoing advisory.",
+  },
+  {
+    icon: Shield,
+    title: "White-Label Development",
+    desc: "We build and you brand it. Full white-label delivery for agencies and consultancies that need engineering capacity.",
+  },
+  {
+    icon: Lock,
+    title: "NDA & IP Protection",
+    desc: "Enterprise-grade NDAs, full IP assignment, and legal frameworks designed for sensitive enterprise engagements.",
   },
 ];
 
-const CERTIFICATIONS = [
-  { name: "SOC 2 Type II", desc: "Audited security, availability, and confidentiality controls." },
-  { name: "HIPAA Ready", desc: "BAA available for healthcare customers." },
-  { name: "GDPR Compliant", desc: "EU data processing agreements and data residency." },
-  { name: "ISO 27001", desc: "Information security management system certified." },
+const COMPLIANCE = [
+  { name: "NDA on Day One",      desc: "Mutual NDA signed before any scoping discussion begins. Your ideas stay yours." },
+  { name: "Full IP Assignment",  desc: "All code, designs, and deliverables are assigned to you. No IP held by us." },
+  { name: "GDPR Compliant",      desc: "Data processing agreements available for EU-based clients and data." },
+  { name: "SOC 2 Ready Builds",  desc: "We architect solutions that meet SOC 2 requirements from the start." },
+];
+
+const TIERS = [
+  {
+    name: "Project",
+    desc: "Fixed-scope delivery for enterprises with well-defined requirements and clear timelines.",
+    features: [
+      "Fixed price & timeline",
+      "Dedicated project manager",
+      "Weekly demo cadence",
+      "Full IP ownership",
+      "3-month post-launch support",
+      "Standard NDA",
+    ],
+    cta: "Discuss a Project",
+  },
+  {
+    name: "Dedicated Team",
+    desc: "A full embedded engineering team — senior engineers, designer, and PM — working exclusively on your product.",
+    featured: true,
+    features: [
+      "3–10 engineer dedicated squad",
+      "Embedded with your team",
+      "Custom SLA & response times",
+      "Quarterly strategy reviews",
+      "Full IP assignment",
+      "Custom NDA & DPA",
+      "Minimum 6-month engagement",
+    ],
+    cta: "Request Dedicated Team",
+  },
+  {
+    name: "Enterprise Partnership",
+    desc: "A long-term strategic partnership for enterprises running multiple digital and AI initiatives simultaneously.",
+    features: [
+      "Multiple parallel workstreams",
+      "Executive sponsor relationship",
+      "AI strategy & consulting",
+      "Priority resource allocation",
+      "Custom contracts & billing",
+      "On-site visits available",
+    ],
+    cta: "Speak to Our Team",
+  },
 ];
 
 export default function EnterprisePage() {
@@ -69,43 +101,43 @@ export default function EnterprisePage() {
         <div className="container" style={{ position: "relative" }}>
           <div className="eyebrow" style={{ display: "inline-flex" }}>Enterprise</div>
           <h1 style={{ fontSize: "clamp(40px,5.5vw,72px)", letterSpacing: "-0.045em", marginBottom: 20, lineHeight: 1, maxWidth: 800 }}>
-            Infrastructure built for the{" "}
-            <span style={{ fontFamily: "var(--font-fraunces,serif)", fontStyle: "italic", color: "var(--nb-ink-muted)" }}>most demanding</span>{" "}
-            environments.
+            Built for organisations that{" "}
+            <span style={{ fontFamily: "var(--font-fraunces,serif)", fontStyle: "italic", color: "var(--nb-ink-muted)" }}>can{"'"}t afford to get it wrong.</span>
           </h1>
           <p style={{ fontSize: 18, color: "var(--nb-ink-muted)", lineHeight: 1.65, maxWidth: 640, marginBottom: 40 }}>
-            Every AI Platform product is designed for enterprise from the ground up — not retrofitted with enterprise features. Security, compliance, and scale are core, not add-ons.
+            Large organisations have different requirements — longer timelines, compliance needs, IP sensitivity, and the need for genuine accountability. We{"'"}ve built our enterprise service around that reality.
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <a href={`${BASE}/contact/`} className="btn-primary">
-              Request Enterprise Demo <ArrowRight size={15} />
+              Talk to Our Team <ArrowRight size={15} />
             </a>
-            <a href={`${BASE}/contact/`} className="btn-secondary">
-              Talk to an Engineer
+            <a href={`${BASE}/services/`} className="btn-secondary">
+              All Services
             </a>
           </div>
         </div>
       </section>
 
-      {/* Security & Compliance */}
+      {/* Enterprise services */}
       <section className="section section--surface">
         <div className="container">
           <div className="hub-arch-grid" style={{ gap: 64 }}>
             <div>
-              <div className="section-label">Security & Compliance</div>
+              <div className="section-label">Enterprise Services</div>
               <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", letterSpacing: "-0.04em", marginBottom: 16, lineHeight: 1.05 }}>
-                Compliance certifications your legal team will approve.
+                More than a vendor.{" "}
+                <span style={{ fontFamily: "var(--font-fraunces,serif)", fontStyle: "italic", color: "var(--nb-ink-muted)" }}>A partner.</span>
               </h2>
               <p style={{ fontSize: 16, color: "var(--nb-ink-muted)", lineHeight: 1.7, marginBottom: 32 }}>
-                AI Platform maintains the industry{"'"}s highest security standards. Every product undergoes independent audits, and we provide the documentation your procurement team needs.
+                Enterprise clients don{"'"}t just need code — they need accountability, consistency, and a team that understands their business. That{"'"}s what we deliver.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                {CERTIFICATIONS.map((cert) => (
-                  <div key={cert.name} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                {COMPLIANCE.map((item) => (
+                  <div key={item.name} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
                     <CheckCircle size={18} color="var(--nb-green)" style={{ flexShrink: 0, marginTop: 2 }} />
                     <div>
-                      <h4 style={{ fontSize: 15, fontWeight: 800, letterSpacing: "-0.02em" }}>{cert.name}</h4>
-                      <p style={{ fontSize: 13.5, color: "var(--nb-ink-muted)", marginTop: 2 }}>{cert.desc}</p>
+                      <h4 style={{ fontSize: 15, fontWeight: 800, letterSpacing: "-0.02em" }}>{item.name}</h4>
+                      <p style={{ fontSize: 13.5, color: "var(--nb-ink-muted)", marginTop: 2 }}>{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -113,14 +145,7 @@ export default function EnterprisePage() {
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              {[
-                { icon: Server, title: "VPC & On-Premise", desc: "Deploy every product within your cloud tenant or on-premise. No data leaves your perimeter." },
-                { icon: Lock, title: "End-to-End Encryption", desc: "All data encrypted at rest (AES-256) and in transit (TLS 1.3) with customer-managed keys." },
-                { icon: Shield, title: "RBAC & Identity Federation", desc: "SAML 2.0, OIDC, Active Directory. Fine-grained role-based access across the entire suite." },
-                { icon: BarChart3, title: "Comprehensive Audit Trails", desc: "Immutable audit logs for every AI call, user action, and configuration change." },
-                { icon: Globe, title: "Data Residency", desc: "Choose your data region. EU, US, APAC, or air-gapped for government deployments." },
-                { icon: Users, title: "Zero-Trust Architecture", desc: "Every service-to-service call is authenticated. No implicit trust within the platform." },
-              ].map((item) => {
+              {ENTERPRISE_SERVICES.map((item) => {
                 const Icon = item.icon;
                 return (
                   <div key={item.title} className="nb-card" style={{ padding: "16px 20px", display: "flex", gap: 14, alignItems: "flex-start" }}>
@@ -139,16 +164,16 @@ export default function EnterprisePage() {
         </div>
       </section>
 
-      {/* Pricing tiers */}
+      {/* Engagement tiers */}
       <section className="section">
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <div className="section-label">Enterprise Pricing</div>
+            <div className="section-label">Engagement Models</div>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,48px)", letterSpacing: "-0.04em", marginBottom: 16 }}>
-              Designed for organizations at every scale.
+              Designed for organisations at every scale.
             </h2>
             <p style={{ fontSize: 17, color: "var(--nb-ink-muted)", maxWidth: 520, margin: "0 auto" }}>
-              All pricing is custom and confidential. Contact our sales team to receive a proposal tailored to your organization.
+              All enterprise engagements are priced on a custom basis. Contact our team to receive a proposal tailored to your requirements.
             </p>
           </div>
 
@@ -181,25 +206,25 @@ export default function EnterprisePage() {
 
           <div style={{ textAlign: "center", padding: "28px 32px", background: "var(--nb-surface)", border: "2px solid var(--nb-border)", borderRadius: "var(--radius)" }}>
             <p style={{ fontSize: 15, fontWeight: 600, color: "var(--nb-ink-muted)" }}>
-              All tiers include access to our enterprise documentation portal, standard integrations, and the AI Platform core APIs.
-              <strong style={{ color: "var(--nb-ink)" }}> No public pricing. No self-serve sign-up.</strong> Enterprise-only, by design.
+              All enterprise engagements include a dedicated project manager, weekly reporting, and full IP assignment.{" "}
+              <strong style={{ color: "var(--nb-ink)" }}>No template projects. No outsourced teams. Senior engineers only.</strong>
             </p>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section section--invert">
+      <section className="section section--invert" style={{ position: "relative" }}>
         <div className="container--tight" style={{ textAlign: "center", position: "relative" }}>
           <h2 style={{ fontSize: "clamp(28px,4vw,52px)", letterSpacing: "-0.045em", color: "var(--nb-bg)", marginBottom: 16, lineHeight: 1 }}>
-            Ready to evaluate AI Platform?
+            Ready to discuss your requirements?
           </h2>
           <p style={{ fontSize: 17, color: "rgba(250,248,243,0.7)", marginBottom: 36, lineHeight: 1.65 }}>
-            Our team will guide you through a tailored technical evaluation — aligned to your architecture and compliance requirements.
+            Our team will take you through a tailored discovery session — aligned to your technical requirements, timeline, and budget.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <a href={`${BASE}/contact/`} className="btn-primary">
-              Schedule a Technical Review <ArrowRight size={15} />
+              Schedule a Call <ArrowRight size={15} />
             </a>
           </div>
         </div>
@@ -207,3 +232,5 @@ export default function EnterprisePage() {
     </>
   );
 }
+
+

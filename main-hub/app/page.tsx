@@ -1,194 +1,146 @@
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { ArrowRight, Zap, Mic, MessageSquare, Search, Shield, Server, Lock, BarChart3, Network, CheckCircle, ChevronRight, Layers, Wrench } from "lucide-react";
+import {
+  ArrowRight, Monitor, Server, Smartphone, Bot, MessageSquare,
+  ShoppingCart, Palette, CheckCircle, ChevronRight, Brain,
+  Globe, Layers, Zap, Code2,
+} from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-const PRODUCTS = [
+const SERVICES = [
   {
-    name: "InferGate",
+    icon: Monitor,
+    title: "Frontend Development",
+    desc: "Pixel-perfect interfaces built with React, Next.js, and TypeScript. Fast, accessible, and engineered to scale.",
     color: "#F5C518",
     textColor: "#0A0A0A",
-    bgColor: "var(--nb-yellow-subtle)",
-    href: `${BASE}/infergate/`,
-    icon: Zap,
-    tagline: "Enterprise AI Gateway",
-    desc: "The high-performance infrastructure layer that routes, caches, and governs every AI call across your organization — from a single unified API.",
-    metrics: [
-      { value: "10,400+", label: "req/s" },
-      { value: "0.3ms", label: "P50 latency" },
-      { value: "25+", label: "LLM providers" },
-      { value: "65%", label: "cost reduction" },
-    ],
-    capabilities: [
-      "Intelligent multi-provider routing",
-      "Semantic caching & deduplication",
-      "Real-time observability & tracing",
-      "Rate limiting & budget enforcement",
-      "MCP gateway & virtual keys",
-      "Audit logs & compliance reports",
-    ],
-    audience: "For Platform & ML Engineering Teams",
-  },
-  {
-    name: "Converse",
-    color: "#7C3AED",
-    textColor: "#fff",
-    bgColor: "var(--nb-violet-subtle)",
-    href: `${BASE}/converse/`,
-    icon: Mic,
-    tagline: "Voice AI Platform",
-    desc: "Production-grade voice AI infrastructure with real-time speech processing, multimodal pipelines, and enterprise-scale WebRTC transport.",
-    metrics: [
-      { value: "<100ms", label: "voice latency" },
-      { value: "50+", label: "languages" },
-      { value: "99.9%", label: "uptime SLA" },
-      { value: "10M+", label: "minutes/month" },
-    ],
-    capabilities: [
-      "Real-time STT/TTS pipeline engine",
-      "Multimodal audio/video processing",
-      "WebRTC & telephony transport",
-      "AI service integrations (LLMs, TTS)",
-      "Customer service AI & companions",
-      "Full observability & compliance",
-    ],
-    audience: "For Product & Customer Experience Teams",
-  },
-  {
-    name: "HaloDesk",
-    color: "#0D9488",
-    textColor: "#fff",
-    bgColor: "var(--nb-teal-subtle)",
-    href: `${BASE}/halodesk/`,
-    icon: MessageSquare,
-    tagline: "Customer Support Intelligence",
-    desc: "The AI-native support platform that unifies every channel, automates resolution, and gives your team superhuman insight into every customer relationship.",
-    metrics: [
-      { value: "60%", label: "auto-resolution" },
-      { value: "12+", label: "channels unified" },
-      { value: "3×", label: "agent productivity" },
-      { value: "<1hr", label: "mean time to resolve" },
-    ],
-    capabilities: [
-      "Omnichannel inbox (email, chat, SMS, voice)",
-      "Captain AI Agent for autonomous resolution",
-      "Workflow automation & SLA enforcement",
-      "Advanced analytics & health scores",
-      "Knowledge base & AI-assisted responses",
-      "Campaigns & proactive outreach",
-    ],
-    audience: "For Customer Success & Support Operations",
-  },
-  {
-    name: "Genie",
-    color: "#F59E0B",
-    textColor: "#0A0A0A",
-    bgColor: "var(--nb-amber-subtle)",
-    href: `${BASE}/genie/`,
-    icon: Search,
-    tagline: "Enterprise Knowledge AI",
-    desc: "Custom AI agents, retrieval-augmented generation, and deep research capabilities that connect to every system your enterprise runs on.",
-    metrics: [
-      { value: "40+", label: "connectors" },
-      { value: "<2s", label: "avg. query time" },
-      { value: "VPC", label: "deployment" },
-      { value: "SOC 2", label: "certified" },
-    ],
-    capabilities: [
-      "Custom AI agents with tool use",
-      "RAG & enterprise semantic search",
-      "Deep research with citation chains",
-      "Knowledge graph construction",
-      "MCP & 40+ native connectors",
-      "Role-based access & audit trails",
-    ],
-    audience: "For Engineering, Legal, HR & Sales Teams",
-  },
-  {
-    name: "Forge",
-    color: "#E11D48",
-    textColor: "#fff",
-    bgColor: "rgba(225,29,72,0.06)",
-    href: `${BASE}/forge/`,
-    icon: Wrench,
-    tagline: "Custom Enterprise AI",
-    desc: "Bespoke AI solutions engineered to your exact specification. From custom integrations to full-stack AI transformation — built for the way your business works.",
-    metrics: [
-      { value: "500+", label: "solutions built" },
-      { value: "60+", label: "enterprise clients" },
-      { value: "12+", label: "industries" },
-      { value: "100%", label: "bespoke" },
-    ],
-    capabilities: [
-      "Custom AI integration & middleware",
-      "Intelligent workflow automation",
-      "Data & AI platform engineering",
-      "Custom AI agents & fine-tuning",
-      "AI consulting & strategy",
-      "Full-stack delivery & support",
-    ],
-    audience: "For Any Enterprise Team with Custom AI Needs",
-  },
-];
-
-const PLATFORM_CAPABILITIES = [
-  {
-    icon: Shield,
-    title: "Security & Compliance",
-    desc: "SOC 2 Type II, HIPAA, and GDPR-ready. Fine-grained RBAC, end-to-end encryption, and comprehensive audit trails.",
   },
   {
     icon: Server,
-    title: "VPC & On-Premise Deployment",
-    desc: "Deploy within your own cloud infrastructure or on-premise. No data ever leaves your perimeter.",
+    title: "Backend Development",
+    desc: "Robust APIs, microservices, and data infrastructure built with Node.js, Python, and Go — engineered for reliability.",
+    color: "#7C3AED",
+    textColor: "#fff",
   },
   {
-    icon: Network,
-    title: "Unified Integration Layer",
-    desc: "All four products share a single integration model — connect once, available everywhere across the suite.",
+    icon: Smartphone,
+    title: "Mobile App Development",
+    desc: "Cross-platform mobile apps with React Native and Flutter. iOS and Android from a single, maintainable codebase.",
+    color: "#0D9488",
+    textColor: "#fff",
   },
   {
-    icon: BarChart3,
-    title: "Cross-Platform Observability",
-    desc: "Unified dashboards, OpenTelemetry-based tracing, and cost attribution across the entire AI stack.",
+    icon: Bot,
+    title: "AI Agents",
+    desc: "Custom autonomous agents that work for your business — from single-purpose tools to complex multi-agent systems.",
+    color: "#F59E0B",
+    textColor: "#0A0A0A",
   },
   {
-    icon: Lock,
-    title: "Enterprise SSO & Identity",
-    desc: "SAML 2.0, OIDC, and Active Directory integration with centralized identity governance.",
+    icon: MessageSquare,
+    title: "Customer Chatbots",
+    desc: "AI-powered chatbots that handle support, sales, and lead generation 24/7 — deployed across every channel.",
+    color: "#E11D48",
+    textColor: "#fff",
   },
   {
-    icon: Layers,
-    title: "99.99% SLA & Dedicated Support",
-    desc: "Guaranteed uptime, priority incident response, and a dedicated customer success engineer.",
+    icon: ShoppingCart,
+    title: "E-commerce Solutions",
+    desc: "Custom storefronts, checkout flows, and product experiences that convert visitors into customers at scale.",
+    color: "#2D6A4F",
+    textColor: "#fff",
   },
 ];
 
-const HOW_IT_WORKS = [
+const PROCESS = [
   {
     step: "01",
-    title: "Unify Your AI Traffic",
-    desc: "InferGate becomes your single control plane for all AI consumption — routing, caching, and governing every call to every provider.",
+    title: "Discover",
+    desc: "We map your goals, users, and technical requirements. No assumptions — we understand your business deeply before writing a single line of code.",
     color: "#F5C518",
   },
   {
     step: "02",
-    title: "Activate Voice Interfaces",
-    desc: "Converse layers real-time voice capabilities onto your AI stack — customer calls, internal assistants, and interactive experiences.",
+    title: "Design",
+    desc: "We design the exact product for your needs. Wireframes, prototypes, and architecture — everything documented before build begins.",
     color: "#7C3AED",
   },
   {
     step: "03",
-    title: "Automate Support at Scale",
-    desc: "HaloDesk orchestrates every customer interaction — from first contact to resolution — with AI embedded at every step.",
+    title: "Build",
+    desc: "Senior engineers build your product. Weekly demos, full transparency, and iterative delivery so you see progress every week.",
     color: "#0D9488",
   },
   {
     step: "04",
-    title: "Connect Organizational Knowledge",
-    desc: "Genie indexes every data source and surfaces accurate, cited answers — making your enterprise knowledge instantly accessible.",
+    title: "Launch & Support",
+    desc: "We handle production deployment, monitoring, and ongoing support. Your product stays healthy, performant, and evolving.",
     color: "#F59E0B",
+  },
+];
+
+const WORK_SAMPLES = [
+  {
+    name: "InferGate",
+    category: "AI Infrastructure",
+    desc: "Enterprise AI gateway routing 10,400+ req/s across 25+ LLM providers with semantic caching and real-time observability.",
+    href: `${BASE}/infergate/`,
+    color: "#F5C518",
+    tags: ["AI", "Infrastructure", "API"],
+  },
+  {
+    name: "Converse",
+    category: "Voice AI Platform",
+    desc: "Production voice AI infrastructure with real-time speech processing, multimodal pipelines, and WebRTC transport.",
+    href: `${BASE}/converse/`,
+    color: "#7C3AED",
+    tags: ["Voice AI", "Real-time", "WebRTC"],
+  },
+  {
+    name: "HaloDesk",
+    category: "Customer Support AI",
+    desc: "AI-native support platform unifying 12+ channels with autonomous resolution, analytics, and omnichannel inbox.",
+    href: `${BASE}/halodesk/`,
+    color: "#0D9488",
+    tags: ["Chatbot", "Support", "Omnichannel"],
+  },
+  {
+    name: "Genie",
+    category: "Enterprise Knowledge AI",
+    desc: "Custom AI agents with RAG, enterprise semantic search, and research capabilities connecting to 40+ enterprise systems.",
+    href: `${BASE}/genie/`,
+    color: "#F59E0B",
+    tags: ["AI Agents", "RAG", "Search"],
+  },
+];
+
+const TECH = [
+  "React", "Next.js", "TypeScript", "Node.js", "Python", "Go",
+  "React Native", "Flutter", "OpenAI", "Anthropic", "AWS", "GCP",
+  "PostgreSQL", "Redis", "Docker", "Kubernetes", "GraphQL", "Tailwind CSS",
+];
+
+const WHY = [
+  {
+    title: "Full-Stack by Default",
+    desc: "Frontend, backend, mobile, AI — we do it all in-house. No handoffs, no gaps, no finger-pointing.",
+    icon: Layers,
+  },
+  {
+    title: "AI-Native Thinking",
+    desc: "AI isn't a feature we bolt on. It's how we think about every product from the very start.",
+    icon: Brain,
+  },
+  {
+    title: "Owned Delivery",
+    desc: "Senior engineers own your project end-to-end. No outsourcing, no juniors running the show.",
+    icon: Code2,
+  },
+  {
+    title: "Ongoing Partnership",
+    desc: "We don't disappear after launch. We support, iterate, and optimize as your product grows.",
+    icon: Zap,
   },
 ];
 
@@ -197,314 +149,337 @@ export default function HomePage() {
     <>
       <Nav />
       <main>
-      {/* ── HERO ──────────────────────────────────────────────── */}
-      <section className="section" style={{ paddingTop: 80, paddingBottom: 80, position: "relative", overflow: "hidden" }}>
-        <div className="grid-bg" />
 
-        {/* Animated SVG background — interconnected nodes */}
-        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden" }}>
-          <svg width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" style={{ opacity: 0.06 }}>
-            {/* Grid lines */}
-            {Array.from({ length: 12 }).map((_, i) => (
-              <line key={`h${i}`} x1="0" y1={i * 56} x2="1200" y2={i * 56} stroke="#0A0A0A" strokeWidth="0.5" />
-            ))}
-            {Array.from({ length: 22 }).map((_, i) => (
-              <line key={`v${i}`} x1={i * 56} y1="0" x2={i * 56} y2="600" stroke="#0A0A0A" strokeWidth="0.5" />
-            ))}
-            {/* Animated data flow paths */}
-            <path d="M200,300 Q400,200 600,300 Q800,400 1000,300" stroke="#F5C518" strokeWidth="2" fill="none" strokeDasharray="8,4"
-              style={{ animation: "dataFlow 3s linear infinite" }} />
-            <path d="M200,200 Q400,300 600,200 Q800,100 1000,200" stroke="#7C3AED" strokeWidth="2" fill="none" strokeDasharray="8,4"
-              style={{ animation: "dataFlow 4s linear infinite", animationDelay: "1s" }} />
-            {/* Nodes */}
-            {[
-              { cx: 200, cy: 300, r: 8, fill: "#F5C518" },
-              { cx: 600, cy: 300, r: 8, fill: "#7C3AED" },
-              { cx: 600, cy: 200, r: 8, fill: "#0D9488" },
-              { cx: 1000, cy: 300, r: 8, fill: "#F59E0B" },
-            ].map((n, i) => (
-              <circle key={i} cx={n.cx} cy={n.cy} r={n.r} fill={n.fill}
-                style={{ animation: "nodePulse 2s ease-in-out infinite", animationDelay: `${i * 0.5}s` }} />
-            ))}
-          </svg>
-        </div>
-
-        <div className="container" style={{ textAlign: "center", position: "relative" }}>
-          <div className="eyebrow anim-fade-up" style={{ display: "inline-flex" }}>
-            Enterprise AI Infrastructure Suite
+        {/* ── HERO ──────────────────────────────────────────────── */}
+        <section className="section" style={{ paddingTop: 80, paddingBottom: 80, position: "relative", overflow: "hidden" }}>
+          <div className="grid-bg" />
+          <div style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden" }}>
+            <svg width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" style={{ opacity: 0.05 }}>
+              {Array.from({ length: 12 }).map((_, i) => (
+                <line key={`h${i}`} x1="0" y1={i * 56} x2="1200" y2={i * 56} stroke="#0A0A0A" strokeWidth="0.5" />
+              ))}
+              {Array.from({ length: 22 }).map((_, i) => (
+                <line key={`v${i}`} x1={i * 56} y1="0" x2={i * 56} y2="600" stroke="#0A0A0A" strokeWidth="0.5" />
+              ))}
+            </svg>
           </div>
 
-          <h1
-            className="anim-fade-up delay-100"
-            style={{ fontSize: "clamp(44px,6.5vw,88px)", lineHeight: 0.95, letterSpacing: "-0.045em", marginBottom: 28, maxWidth: 900, margin: "0 auto 28px" }}
-          >
-            The complete AI stack{" "}
-            <span style={{ fontFamily: "var(--font-fraunces,serif)", fontStyle: "italic", fontWeight: 700, color: "var(--nb-ink-muted)" }}>
-              for the modern enterprise.
-            </span>
-          </h1>
-
-          <p
-            className="anim-fade-up delay-200"
-            style={{ fontSize: "clamp(17px,2vw,21px)", color: "var(--nb-ink-muted)", maxWidth: 680, margin: "0 auto 40px", lineHeight: 1.65, fontWeight: 400 }}
-          >
-            Five production-grade products — AI Gateway, Voice AI, Customer Support Intelligence, Enterprise Knowledge, and Custom Solutions — engineered to work individually or as an integrated suite.
-          </p>
-
-          <div className="anim-fade-up delay-300" style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={`${BASE}/contact/`} className="btn-primary" style={{ fontSize: 16, padding: "16px 32px" }}>
-              Request a Demo <ArrowRight size={16} />
-            </a>
-            <a href={`${BASE}/enterprise/`} className="btn-secondary" style={{ fontSize: 16, padding: "16px 32px" }}>
-              Enterprise Overview
-            </a>
-          </div>
-
-          {/* Stats strip */}
-          <div className="anim-fade-up delay-400" style={{ display: "flex", justifyContent: "center", gap: 0, marginTop: 64, flexWrap: "wrap" }}>
-            {[
-              { value: "5", label: "enterprise products" },
-              { value: "99.99%", label: "SLA uptime" },
-              { value: "SOC 2", label: "Type II" },
-              { value: "VPC", label: "deployment ready" },
-              { value: "25+", label: "LLM providers" },
-            ].map((stat, i) => (
-              <div key={i} style={{ padding: "20px 36px", borderLeft: i > 0 ? "2px solid var(--nb-border-faint)" : "none", textAlign: "center" }}>
-                <div style={{ fontFamily: "var(--font-jetbrains,monospace)", fontSize: "clamp(22px,2.5vw,30px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--nb-ink)" }}>{stat.value}</div>
-                <div style={{ fontSize: 12, color: "var(--nb-ink-dim)", fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", marginTop: 4 }}>{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── PRODUCT SUITE ──────────────────────────────────────── */}
-      <section className="section section--surface" id="products">
-        <div className="container">
-          <div style={{ textAlign: "center", marginBottom: 64 }}>
-            <div className="section-label">The Suite</div>
-            <h2 style={{ fontSize: "clamp(32px,4vw,52px)", letterSpacing: "-0.04em", marginBottom: 16 }}>
-              Four products. One unified platform.
-            </h2>
-            <p style={{ fontSize: 18, color: "var(--nb-ink-muted)", maxWidth: 560, margin: "0 auto", lineHeight: 1.6 }}>
-              Each product is production-ready as a standalone investment. Together, they form the most comprehensive enterprise AI infrastructure available.
-            </p>
-          </div>
-
-          <div className="hub-product-grid">
-            {PRODUCTS.map((product, i) => {
-              const Icon = product.icon;
-              return (
-                <a
-                  key={product.name}
-                  href={product.href}
-                  className={`nb-card anim-fade-up delay-${(i + 1) * 100}`}
-                  style={{
-                    padding: 32, textDecoration: "none", color: "var(--nb-ink)",
-                    display: "flex", flexDirection: "column", gap: 24,
-                    borderLeft: `4px solid ${product.color}`,
-                  }}
+          <div className="container" style={{ position: "relative" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="hero-grid">
+              <div>
+                <div className="eyebrow anim-fade-up" style={{ display: "inline-flex" }}>
+                  Full-Service Digital Agency
+                </div>
+                <h1
+                  className="anim-fade-up delay-100"
+                  style={{ fontSize: "clamp(40px,6vw,80px)", lineHeight: 0.95, letterSpacing: "-0.045em", marginBottom: 24 }}
                 >
-                  <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 16 }}>
-                    <div>
-                      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
-                        <div style={{ width: 40, height: 40, background: product.color, border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal-sm)", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "var(--radius)" }}>
-                          <Icon size={18} color={product.textColor} />
-                        </div>
-                        <div>
-                          <h3 style={{ fontSize: 22, fontWeight: 800, letterSpacing: "-0.04em", lineHeight: 1 }}>{product.name}</h3>
-                          <p style={{ fontSize: 12, fontWeight: 700, color: "var(--nb-ink-muted)", letterSpacing: ".06em", textTransform: "uppercase", marginTop: 2 }}>{product.tagline}</p>
-                        </div>
-                      </div>
-                      <p style={{ fontSize: 14, color: "var(--nb-ink-muted)", lineHeight: 1.65, maxWidth: 380 }}>{product.desc}</p>
-                    </div>
-                    <div style={{ flexShrink: 0, display: "flex", alignItems: "center", gap: 4, fontSize: 13, fontWeight: 700, color: "var(--nb-ink-muted)", whiteSpace: "nowrap" }}>
-                      Explore <ChevronRight size={14} />
-                    </div>
-                  </div>
+                  We design &amp; build{" "}
+                  <span style={{ fontFamily: "var(--font-fraunces,serif)", fontStyle: "italic", fontWeight: 700, color: "var(--nb-ink-muted)" }}>
+                    exceptional
+                  </span>{" "}
+                  digital products.
+                </h1>
+                <p
+                  className="anim-fade-up delay-200"
+                  style={{ fontSize: "clamp(16px,2vw,20px)", color: "var(--nb-ink-muted)", lineHeight: 1.65, marginBottom: 36, maxWidth: 480 }}
+                >
+                  AI Platform is a full-service digital agency. We build websites, web apps, mobile apps, AI agents, customer chatbots, and everything in between — from first pixel to production.
+                </p>
+                <div className="anim-fade-up delay-300" style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+                  <a href={`${BASE}/contact/`} className="btn-primary" style={{ fontSize: 16, padding: "16px 32px" }}>
+                    Start a Project <ArrowRight size={16} />
+                  </a>
+                  <a href={`${BASE}/work/`} className="btn-secondary" style={{ fontSize: 16, padding: "16px 32px" }}>
+                    View Our Work
+                  </a>
+                </div>
+              </div>
 
-                  {/* Metrics */}
-                  <div className="hub-metrics-grid">
-                    {product.metrics.map((m) => (
-                      <div key={m.label} style={{ padding: "10px 12px", background: "var(--nb-surface)", border: "1.5px solid var(--nb-border-faint)", borderRadius: "var(--radius)", textAlign: "center" }}>
-                        <div style={{ fontFamily: "var(--font-jetbrains,monospace)", fontSize: 16, fontWeight: 700, color: "var(--nb-ink)", letterSpacing: "-0.02em" }}>{m.value}</div>
-                        <div style={{ fontSize: 10, color: "var(--nb-ink-dim)", fontWeight: 600, letterSpacing: ".06em", textTransform: "uppercase", marginTop: 2 }}>{m.label}</div>
-                      </div>
+              {/* Hero visual */}
+              <div className="anim-fade-up delay-200 hero-visual" style={{ position: "relative" }}>
+                <div style={{
+                  border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal-xl)",
+                  background: "#0A0A0A", borderRadius: "var(--radius)", overflow: "hidden", padding: 32,
+                }}>
+                  <div style={{ display: "flex", gap: 6, marginBottom: 20 }}>
+                    <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ff5f57" }} />
+                    <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#febc2e" }} />
+                    <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#28c840" }} />
+                  </div>
+                  <svg viewBox="0 0 400 260" width="100%" style={{ display: "block" }}>
+                    {[40, 80, 120, 160, 200, 240, 280, 320, 360].map(x => (
+                      <line key={`vx${x}`} x1={x} y1="0" x2={x} y2="260" stroke="rgba(245,197,24,0.06)" strokeWidth="1" />
                     ))}
-                  </div>
-
-                  {/* Capabilities */}
-                  <div className="hub-caps-grid">
-                    {product.capabilities.map((cap) => (
-                      <div key={cap} style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, color: "var(--nb-ink-muted)", fontWeight: 500 }}>
-                        <CheckCircle size={12} color={product.color} style={{ flexShrink: 0 }} />
-                        {cap}
-                      </div>
+                    {[40, 80, 120, 160, 200, 240].map(y => (
+                      <line key={`hy${y}`} x1="0" y1={y} x2="400" y2={y} stroke="rgba(245,197,24,0.06)" strokeWidth="1" />
                     ))}
-                  </div>
-
-                  <div style={{ marginTop: "auto", paddingTop: 4 }}>
-                    <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--nb-ink-dim)" }}>{product.audience}</span>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ── HOW THE SUITE WORKS ──────────────────────────────── */}
-      <section className="section">
-        <div className="container">
-          <div className="hub-arch-grid">
-            <div>
-              <div className="section-label">Platform Architecture</div>
-              <h2 style={{ fontSize: "clamp(30px,3.5vw,48px)", letterSpacing: "-0.04em", marginBottom: 20, lineHeight: 1 }}>
-                Every product is stronger{" "}
-                <span style={{ fontFamily: "var(--font-fraunces,serif)", fontStyle: "italic", fontWeight: 700, color: "var(--nb-ink-muted)" }}>together.</span>
-              </h2>
-              <p style={{ fontSize: 16, color: "var(--nb-ink-muted)", lineHeight: 1.7, marginBottom: 40 }}>
-                The AI Platform suite is designed with integration-first architecture. InferGate governs all AI traffic. Converse, HaloDesk, and Genie each route through InferGate — giving you unified observability, cost control, and compliance across every AI interaction.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                {HOW_IT_WORKS.map((step) => (
-                  <div key={step.step} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                    <div style={{ width: 36, height: 36, background: step.color, border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal-sm)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, borderRadius: "var(--radius)", fontFamily: "var(--font-jetbrains,monospace)", fontSize: 11, fontWeight: 700 }}>
-                      {step.step}
-                    </div>
-                    <div>
-                      <h4 style={{ fontSize: 15, fontWeight: 800, marginBottom: 4, letterSpacing: "-0.02em" }}>{step.title}</h4>
-                      <p style={{ fontSize: 13.5, color: "var(--nb-ink-muted)", lineHeight: 1.6 }}>{step.desc}</p>
-                    </div>
-                  </div>
-                ))}
+                    {[
+                      { cx: 80,  cy: 70,  color: "#F5C518" },
+                      { cx: 200, cy: 50,  color: "#7C3AED" },
+                      { cx: 320, cy: 70,  color: "#0D9488" },
+                      { cx: 130, cy: 150, color: "#F59E0B" },
+                      { cx: 270, cy: 150, color: "#E11D48" },
+                      { cx: 200, cy: 220, color: "#F5C518" },
+                    ].map((n, i) => (
+                      <g key={i}>
+                        <circle cx={n.cx} cy={n.cy} r="14" fill={`${n.color}22`} stroke={n.color} strokeWidth="1.5" />
+                        <circle cx={n.cx} cy={n.cy} r="4" fill={n.color} />
+                      </g>
+                    ))}
+                    {[
+                      [80,70,200,50], [200,50,320,70],
+                      [80,70,130,150], [200,50,130,150], [200,50,270,150],
+                      [320,70,270,150], [130,150,200,220], [270,150,200,220],
+                    ].map(([x1,y1,x2,y2], i) => (
+                      <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(245,197,24,0.25)" strokeWidth="1.5" strokeDasharray="4 3" />
+                    ))}
+                    {[
+                      { cx: 80,  cy: 70,  label: "Frontend" },
+                      { cx: 200, cy: 50,  label: "AI Core" },
+                      { cx: 320, cy: 70,  label: "API Layer" },
+                      { cx: 130, cy: 150, label: "Mobile" },
+                      { cx: 270, cy: 150, label: "Chatbot" },
+                      { cx: 200, cy: 220, label: "Deploy" },
+                    ].map((n, i) => (
+                      <text key={i} x={n.cx} y={n.cy + 28} textAnchor="middle" fill="rgba(250,248,243,0.45)" fontSize="9" fontFamily="JetBrains Mono, monospace">{n.label}</text>
+                    ))}
+                  </svg>
+                  <p style={{ fontFamily: "var(--font-jetbrains,monospace)", fontSize: 11, color: "#F5C518", marginTop: 16, opacity: 0.8 }}>
+                    // your_product.built_by_ai_platform
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Architecture diagram */}
-            <div style={{ position: "relative" }}>
-              <div style={{ border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal-xl)", borderRadius: "var(--radius)", background: "var(--nb-invert)", padding: 32, overflow: "hidden" }}>
-                <div style={{ position: "absolute", inset: 0, opacity: 0.05, backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px", pointerEvents: "none" }} />
-
-                {/* InferGate at center */}
-                <div style={{ textAlign: "center", marginBottom: 24 }}>
-                  <div style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "12px 20px", background: "var(--nb-yellow)", border: "2px solid var(--nb-yellow)", boxShadow: "var(--shadow-brutal)", borderRadius: "var(--radius)" }}>
-                    <Zap size={16} color="#0A0A0A" />
-                    <span style={{ fontSize: 14, fontWeight: 800, color: "#0A0A0A", letterSpacing: "-0.02em" }}>InferGate — AI Gateway</span>
-                  </div>
-                  <div style={{ fontSize: 11, color: "rgba(250,248,243,0.5)", marginTop: 6, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase" }}>
-                    Central Control Plane
-                  </div>
+            {/* Stats strip */}
+            <div
+              className="anim-fade-up delay-400"
+              style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", marginTop: 64, border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal)", background: "var(--nb-bg)" }}
+            >
+              {[
+                { value: "50+",  label: "projects delivered" },
+                { value: "8",    label: "service areas" },
+                { value: "100%", label: "in-house team" },
+                { value: "4.9★", label: "client satisfaction" },
+                { value: "3+",   label: "years operating" },
+              ].map((stat, i) => (
+                <div key={i} style={{ padding: "20px 36px", borderLeft: i > 0 ? "2px solid var(--nb-border-faint)" : "none", textAlign: "center" }}>
+                  <div style={{ fontFamily: "var(--font-jetbrains,monospace)", fontSize: "clamp(20px,2.5vw,28px)", fontWeight: 700, letterSpacing: "-0.03em" }}>{stat.value}</div>
+                  <div style={{ fontSize: 11, color: "var(--nb-ink-dim)", fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", marginTop: 4 }}>{stat.label}</div>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-                {/* Connection lines */}
-                <svg width="100%" height="40" style={{ marginBottom: 0 }}>
-                  <line x1="16.6%" y1="0" x2="16.6%" y2="40" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" strokeDasharray="4,3" />
-                  <line x1="50%" y1="0" x2="50%" y2="40" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" strokeDasharray="4,3" />
-                  <line x1="83.3%" y1="0" x2="83.3%" y2="40" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" strokeDasharray="4,3" />
-                </svg>
+        {/* ── SERVICES ─────────────────────────────────────────── */}
+        <section className="section section--surface" id="services">
+          <div className="container">
+            <div style={{ textAlign: "center", marginBottom: 64 }}>
+              <div className="section-label">What We Build</div>
+              <h2 style={{ fontSize: "clamp(30px,4vw,52px)", letterSpacing: "-0.04em", marginBottom: 16 }}>
+                Every service you need.{" "}
+                <span style={{ fontFamily: "var(--font-fraunces,serif)", fontStyle: "italic", color: "var(--nb-ink-muted)" }}>One team.</span>
+              </h2>
+              <p style={{ fontSize: 18, color: "var(--nb-ink-muted)", maxWidth: 560, margin: "0 auto", lineHeight: 1.6 }}>
+                From marketing websites to complex AI systems — we have the expertise to build it, and the track record to get it right.
+              </p>
+            </div>
 
-                {/* Products */}
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 10 }}>
-                  {[
-                    { name: "Converse", color: "#7C3AED", Icon: Mic, label: "Voice AI" },
-                    { name: "HaloDesk", color: "#0D9488", Icon: MessageSquare, label: "Support AI" },
-                    { name: "Genie", color: "#F59E0B", Icon: Search, label: "Knowledge AI" },
-                  ].map((p) => (
-                    <div key={p.name} style={{ padding: "16px 12px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "var(--radius)", textAlign: "center" }}>
-                      <div style={{ width: 32, height: 32, background: p.color, border: "1.5px solid rgba(255,255,255,0.2)", borderRadius: "2px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 8px" }}>
-                        <p.Icon size={14} color="#fff" />
+            <div className="hub-product-grid">
+              {SERVICES.map((service, i) => {
+                const Icon = service.icon;
+                return (
+                  <div
+                    key={service.title}
+                    className={`nb-card anim-fade-up delay-${(i % 4 + 1) * 100}`}
+                    style={{ padding: 32, display: "flex", flexDirection: "column", gap: 16, borderLeft: `4px solid ${service.color}` }}
+                  >
+                    <div style={{ width: 48, height: 48, background: service.color, border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal-sm)", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "var(--radius)" }}>
+                      <Icon size={22} color={service.textColor} />
+                    </div>
+                    <div>
+                      <h3 style={{ fontSize: 20, fontWeight: 800, letterSpacing: "-0.03em", marginBottom: 8 }}>{service.title}</h3>
+                      <p style={{ fontSize: 14, color: "var(--nb-ink-muted)", lineHeight: 1.65 }}>{service.desc}</p>
+                    </div>
+                    <a href={`${BASE}/services/`} style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, fontWeight: 700, color: "var(--nb-ink)", textDecoration: "none", marginTop: "auto" }}>
+                      Learn more <ChevronRight size={12} />
+                    </a>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div style={{ textAlign: "center", marginTop: 48 }}>
+              <a href={`${BASE}/services/`} className="btn-primary" style={{ fontSize: 15 }}>
+                Explore All Services <ArrowRight size={15} />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── HOW WE WORK ──────────────────────────────────────── */}
+        <section className="section">
+          <div className="container">
+            <div className="hub-arch-grid">
+              <div>
+                <div className="section-label">Our Process</div>
+                <h2 style={{ fontSize: "clamp(28px,3.5vw,48px)", letterSpacing: "-0.04em", marginBottom: 20, lineHeight: 1 }}>
+                  How we turn your idea{" "}
+                  <span style={{ fontFamily: "var(--font-fraunces,serif)", fontStyle: "italic", color: "var(--nb-ink-muted)" }}>into a product.</span>
+                </h2>
+                <p style={{ fontSize: 16, color: "var(--nb-ink-muted)", lineHeight: 1.7, marginBottom: 40 }}>
+                  We follow a proven, transparent process that keeps you informed and in control at every step. No surprises, no handoffs — just great products built on time.
+                </p>
+                <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+                  {PROCESS.map((step) => (
+                    <div key={step.step} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+                      <div style={{ width: 40, height: 40, background: step.color, border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal-sm)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, borderRadius: "var(--radius)", fontFamily: "var(--font-jetbrains,monospace)", fontSize: 12, fontWeight: 700 }}>
+                        {step.step}
                       </div>
-                      <div style={{ fontSize: 12, fontWeight: 800, color: "#FAF8F3", letterSpacing: "-0.01em" }}>{p.name}</div>
-                      <div style={{ fontSize: 10, color: "rgba(250,248,243,0.5)", fontWeight: 600, letterSpacing: ".06em", textTransform: "uppercase", marginTop: 2 }}>{p.label}</div>
+                      <div>
+                        <h4 style={{ fontSize: 16, fontWeight: 800, marginBottom: 4, letterSpacing: "-0.02em" }}>{step.title}</h4>
+                        <p style={{ fontSize: 14, color: "var(--nb-ink-muted)", lineHeight: 1.6 }}>{step.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
+              </div>
 
-                {/* LLM providers row */}
-                <svg width="100%" height="32" style={{ margin: "0" }}>
-                  <line x1="50%" y1="0" x2="50%" y2="32" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" strokeDasharray="4,3" />
-                </svg>
-
-                <div style={{ padding: "16px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "var(--radius)" }}>
-                  <div style={{ fontSize: 10, fontWeight: 800, color: "rgba(250,248,243,0.4)", letterSpacing: ".12em", textTransform: "uppercase", marginBottom: 10, textAlign: "center" }}>25+ LLM Providers</div>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
-                    {["OpenAI", "Anthropic", "AWS Bedrock", "Google Vertex", "Azure", "Groq", "+20 more"].map((p) => (
-                      <span key={p} style={{ padding: "3px 8px", background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "2px", fontSize: 11, color: "rgba(250,248,243,0.6)", fontWeight: 600 }}>{p}</span>
-                    ))}
-                  </div>
-                </div>
+              {/* Why us */}
+              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                <div className="section-label" style={{ marginBottom: 0 }}>Why AI Platform</div>
+                {WHY.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.title} className="nb-card" style={{ padding: "20px 24px", display: "flex", gap: 14, alignItems: "flex-start" }}>
+                      <div style={{ width: 36, height: 36, background: "var(--nb-yellow)", border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal-sm)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, borderRadius: "var(--radius)" }}>
+                        <Icon size={16} color="var(--nb-ink)" />
+                      </div>
+                      <div>
+                        <h4 style={{ fontSize: 15, fontWeight: 800, marginBottom: 4, letterSpacing: "-0.02em" }}>{item.title}</h4>
+                        <p style={{ fontSize: 13.5, color: "var(--nb-ink-muted)", lineHeight: 1.6 }}>{item.desc}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+                <a href={`${BASE}/about/`} className="btn-secondary" style={{ textAlign: "center", justifyContent: "center", marginTop: 8 }}>
+                  About Our Team <ArrowRight size={14} />
+                </a>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── PLATFORM CAPABILITIES ───────────────────────────── */}
-      <section className="section section--elevated">
-        <div className="container">
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <div className="section-label">Enterprise-Grade Platform</div>
-            <h2 style={{ fontSize: "clamp(30px,3.5vw,48px)", letterSpacing: "-0.04em", marginBottom: 16 }}>
-              Built for regulated, complex enterprise environments.
-            </h2>
-            <p style={{ fontSize: 17, color: "var(--nb-ink-muted)", maxWidth: 560, margin: "0 auto", lineHeight: 1.6 }}>
-              Every product in the suite ships with enterprise controls, compliance certifications, and the deployment flexibility your security team demands.
-            </p>
-          </div>
-
-          <div className="hub-platform-grid">
-            {PLATFORM_CAPABILITIES.map((cap, i) => {
-              const Icon = cap.icon;
-              return (
-                <div key={i} className="nb-card" style={{ padding: 28 }}>
-                  <div style={{ width: 44, height: 44, background: "var(--nb-yellow)", border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal-sm)", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "var(--radius)", marginBottom: 16 }}>
-                    <Icon size={20} color="var(--nb-ink)" />
-                  </div>
-                  <h3 style={{ fontSize: 17, fontWeight: 800, letterSpacing: "-0.03em", marginBottom: 8 }}>{cap.title}</h3>
-                  <p style={{ fontSize: 14, color: "var(--nb-ink-muted)", lineHeight: 1.65 }}>{cap.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ── ENTERPRISE CTA ───────────────────────────────────── */}
-      <section className="section section--invert">
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(245,197,24,0.06) 1px, transparent 1px)", backgroundSize: "32px 32px", pointerEvents: "none" }} />
-        <div className="container" style={{ textAlign: "center", position: "relative" }}>
-          <div className="eyebrow" style={{ display: "inline-flex", background: "var(--nb-yellow)" }}>
-            Enterprise Pricing
-          </div>
-          <h2 style={{ fontSize: "clamp(32px,4.5vw,60px)", letterSpacing: "-0.045em", marginBottom: 20, color: "var(--nb-bg)", lineHeight: 1 }}>
-            Priced for the scale of your ambition.
-          </h2>
-          <p style={{ fontSize: 18, color: "rgba(250,248,243,0.7)", maxWidth: 560, margin: "0 auto 40px", lineHeight: 1.65 }}>
-            Enterprise pricing is tailored to your organization — products deployed individually or as a full suite. Speak with our team to build the right package.
-          </p>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={`${BASE}/contact/`} className="btn-primary" style={{ fontSize: 16, padding: "16px 32px" }}>
-              Contact Sales <ArrowRight size={16} />
-            </a>
-            <a href={`${BASE}/enterprise/`} className="btn-invert" style={{ fontSize: 16, padding: "16px 32px" }}>
-              Enterprise Overview
-            </a>
-          </div>
-
-          {/* Feature bullets */}
-          <div style={{ display: "flex", justifyContent: "center", gap: 32, marginTop: 48, flexWrap: "wrap" }}>
-            {["Dedicated success manager", "Custom SLA & uptime guarantees", "VPC / on-premise deployment", "Unlimited seats on request", "Priority incident response", "Annual billing with multi-year discounts"].map((f) => (
-              <div key={f} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(250,248,243,0.65)", fontWeight: 500 }}>
-                <CheckCircle size={14} color="var(--nb-yellow)" />
-                {f}
+        {/* ── OUR WORK ─────────────────────────────────────────── */}
+        <section className="section section--elevated" id="work">
+          <div className="container">
+            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 56, flexWrap: "wrap", gap: 16 }}>
+              <div>
+                <div className="section-label">Featured Work</div>
+                <h2 style={{ fontSize: "clamp(28px,3.5vw,48px)", letterSpacing: "-0.04em", lineHeight: 1 }}>
+                  Products we{"'"}ve built.
+                </h2>
               </div>
-            ))}
+              <a href={`${BASE}/work/`} className="btn-secondary">
+                View All Work <ArrowRight size={14} />
+              </a>
+            </div>
+
+            <div className="hub-product-grid">
+              {WORK_SAMPLES.map((item, i) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={`nb-card anim-fade-up delay-${(i % 4 + 1) * 100}`}
+                  style={{ padding: 28, textDecoration: "none", color: "var(--nb-ink)", display: "flex", flexDirection: "column", gap: 16, borderTop: `4px solid ${item.color}` }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <div>
+                      <p style={{ fontSize: 11, fontWeight: 800, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--nb-ink-dim)", marginBottom: 4 }}>{item.category}</p>
+                      <h3 style={{ fontSize: 22, fontWeight: 800, letterSpacing: "-0.04em" }}>{item.name}</h3>
+                    </div>
+                    <ChevronRight size={20} style={{ color: "var(--nb-ink-muted)", flexShrink: 0 }} />
+                  </div>
+                  <p style={{ fontSize: 14, color: "var(--nb-ink-muted)", lineHeight: 1.65 }}>{item.desc}</p>
+                  <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: "auto" }}>
+                    {item.tags.map(tag => (
+                      <span key={tag} style={{ padding: "3px 8px", background: "var(--nb-surface)", border: "1.5px solid var(--nb-border-faint)", fontSize: 11, fontWeight: 700, letterSpacing: ".06em", textTransform: "uppercase" }}>{tag}</span>
+                    ))}
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* ── TECH STACK ───────────────────────────────────────── */}
+        <section className="section">
+          <div className="container">
+            <div style={{ textAlign: "center", marginBottom: 48 }}>
+              <div className="section-label">Technology</div>
+              <h2 style={{ fontSize: "clamp(24px,3vw,40px)", letterSpacing: "-0.04em" }}>Built with the best tools.</h2>
+              <p style={{ fontSize: 16, color: "var(--nb-ink-muted)", marginTop: 12 }}>We pick the right technology for your project — not the trendiest one.</p>
+            </div>
+            <div className="marquee">
+              <div className="marquee-track" style={{ gap: 8 }}>
+                {[...TECH, ...TECH].map((t, i) => (
+                  <span key={i} style={{ padding: "10px 20px", border: "2px solid var(--nb-border)", background: "var(--nb-bg)", boxShadow: "var(--shadow-brutal-sm)", fontSize: 13, fontWeight: 700, letterSpacing: "-.01em", whiteSpace: "nowrap", flexShrink: 0 }}>{t}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── CTA ──────────────────────────────────────────────── */}
+        <section className="section section--invert" style={{ position: "relative" }}>
+          <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(245,197,24,0.06) 1px, transparent 1px)", backgroundSize: "32px 32px", pointerEvents: "none" }} />
+          <div className="container--tight" style={{ textAlign: "center", position: "relative" }}>
+            <div className="eyebrow" style={{ display: "inline-flex", background: "var(--nb-yellow)" }}>
+              Let{"'"}s Work Together
+            </div>
+            <h2 style={{ fontSize: "clamp(32px,4.5vw,60px)", letterSpacing: "-0.045em", marginBottom: 20, color: "var(--nb-bg)", lineHeight: 1 }}>
+              Got a project in mind?
+            </h2>
+            <p style={{ fontSize: 18, color: "rgba(250,248,243,0.7)", maxWidth: 520, margin: "0 auto 40px", lineHeight: 1.65 }}>
+              Tell us what you{"'"}re building. We{"'"}ll get back to you within 24 hours to discuss scope, timeline, and how we can help.
+            </p>
+            <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+              <a href={`${BASE}/contact/`} className="btn-primary" style={{ fontSize: 16, padding: "16px 32px" }}>
+                Start a Project <ArrowRight size={16} />
+              </a>
+              <a href={`${BASE}/services/`} className="btn-invert" style={{ fontSize: 16, padding: "16px 32px" }}>
+                Explore Services
+              </a>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center", gap: 32, marginTop: 48, flexWrap: "wrap" }}>
+              {[
+                "No long-term contracts",
+                "24hr response time",
+                "Fixed-price projects available",
+                "Dedicated project manager",
+                "Full IP ownership",
+                "Post-launch support included",
+              ].map((f) => (
+                <div key={f} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(250,248,243,0.65)", fontWeight: 500 }}>
+                  <CheckCircle size={14} color="var(--nb-yellow)" />
+                  {f}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
       </main>
       <Footer />
+
+      <style>{`
+        @media(max-width:768px){
+          .hero-grid{ grid-template-columns:1fr!important; }
+          .hero-visual{ display:none; }
+        }
+      `}</style>
     </>
   );
-}
+}

@@ -140,7 +140,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.10)", paddingTop: 24, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
           <p style={{ fontSize: 12.5, color: "rgba(250,248,243,0.4)", fontWeight: 500 }}>
-            © {new Date().getFullYear()} InferGate. All rights reserved.
+            © {new Date().getFullYear()} InferGate · Built by <a href="https://aiplatform.io" style={{ color: "var(--nb-yellow)", textDecoration: "none" }}>AI Platform Agency</a>. All rights reserved.
           </p>
           <div style={{ display: "flex", gap: 20 }}>
             {[

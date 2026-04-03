@@ -144,10 +144,10 @@ export function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.10)", paddingTop: 24, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
           <p style={{ fontSize: 12.5, color: "rgba(250,248,243,0.4)", fontWeight: 500 }}>
-            © {new Date().getFullYear()} Converse. All rights reserved.
+            © {new Date().getFullYear()} Converse · Built by <a href="https://aiplatform.io" style={{ color: "var(--nb-yellow)", textDecoration: "none" }}>AI Platform Agency</a>. All rights reserved.
           </p>
           <div style={{ display: "flex", gap: 20 }}>
-            {[{ label: "Privacy", href: "/enterprise/security" }, { label: "Terms", href: "/contact" }, { label: "Security", href: "/enterprise/security" }].map((link) => (
+            {[{ label: "Privacy", href: "/enterprise/security" }, { label: "Terms", href: "/enterprise" }, { label: "Security", href: "/enterprise/security" }].map((link) => (
               <Link key={link.href + link.label} href={link.href}
                 style={{ fontSize: 12.5, color: "rgba(250,248,243,0.4)", textDecoration: "none", fontWeight: 500, fontFamily: "var(--font-bricolage, sans-serif)", transition: "color 0.15s" }}
                 onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = "#a78bfa"}

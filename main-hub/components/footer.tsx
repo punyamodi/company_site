@@ -1,47 +1,47 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const COLS = [
   {
-    title: "Products",
+    title: "Services",
     links: [
-      { label: "InferGate — AI Gateway",      href: `${BASE}/infergate/` },
-      { label: "Converse — Voice AI",          href: `${BASE}/converse/` },
-      { label: "HaloDesk — Support AI",        href: `${BASE}/halodesk/` },
-      { label: "Genie — Knowledge AI",          href: `${BASE}/genie/` },
-      { label: "Forge — Custom AI",            href: `${BASE}/forge/` },
+      { label: "Frontend Development",    href: `${BASE}/services/` },
+      { label: "Backend Development",     href: `${BASE}/services/` },
+      { label: "Mobile App Development",  href: `${BASE}/services/` },
+      { label: "AI Agents",               href: `${BASE}/services/` },
+      { label: "Customer Chatbots",       href: `${BASE}/services/` },
+      { label: "E-commerce Solutions",    href: `${BASE}/services/` },
     ],
   },
   {
-    title: "Platform",
+    title: "Work",
     links: [
-      { label: "AI Gateway & Routing",         href: `${BASE}/infergate/features` },
-      { label: "Voice AI Pipelines",           href: `${BASE}/converse/platform` },
-      { label: "Support Automation",           href: `${BASE}/halodesk/features` },
-      { label: "Enterprise Search & RAG",      href: `${BASE}/genie/platform` },
-      { label: "MCP Integration",              href: `${BASE}/infergate/features` },
-    ],
-  },
-  {
-    title: "Enterprise",
-    links: [
-      { label: "Enterprise Overview",          href: `${BASE}/enterprise/` },
-      { label: "Security & Trust",             href: `${BASE}/enterprise/` },
-      { label: "Deployment Options",           href: `${BASE}/enterprise/` },
-      { label: "SLA Management",               href: `${BASE}/enterprise/` },
-      { label: "Contact Sales",                href: `${BASE}/contact/` },
+      { label: "All Projects",             href: `${BASE}/work/` },
+      { label: "InferGate — AI Gateway",   href: `${BASE}/infergate/` },
+      { label: "Converse — Voice AI",      href: `${BASE}/converse/` },
+      { label: "HaloDesk — Support AI",    href: `${BASE}/halodesk/` },
+      { label: "Genie — Knowledge AI",     href: `${BASE}/genie/` },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About AI Platform",            href: `${BASE}/enterprise/` },
-      { label: "Enterprise Pricing",           href: `${BASE}/contact/` },
-      { label: "Privacy Policy",               href: `${BASE}/contact/` },
-      { label: "Terms of Service",             href: `${BASE}/contact/` },
+      { label: "About Us",         href: `${BASE}/about/` },
+      { label: "Enterprise",       href: `${BASE}/enterprise/` },
+      { label: "Contact Us",       href: `${BASE}/contact/` },
+      { label: "Privacy Policy",   href: `${BASE}/contact/` },
+      { label: "Terms of Service", href: `${BASE}/contact/` },
+    ],
+  },
+  {
+    title: "Get in Touch",
+    links: [
+      { label: "Start a Project",    href: `${BASE}/contact/` },
+      { label: "General Enquiries",  href: `${BASE}/contact/` },
+      { label: "hello@aiplatform.io", href: "mailto:hello@aiplatform.io" },
     ],
   },
 ];
@@ -50,14 +50,14 @@ export function Footer() {
   return (
     <footer style={{ background: "var(--nb-invert)", borderTop: "2px solid var(--nb-border)", color: "var(--nb-bg)", fontFamily: "var(--font-bricolage,sans-serif)" }}>
       {/* CTA strip */}
-      <div style={{ borderBottom: "2px solid rgba(255,255,255,0.08)", padding: "56px 24px", background: "var(--nb-yellow)" }}>
+      <div style={{ background: "var(--nb-yellow)", borderBottom: "2px solid var(--nb-border)", padding: "56px 24px" }}>
         <div className="hub-footer-cta" style={{ padding: "0 24px" }}>
           <div>
             <p style={{ fontFamily: "var(--font-bricolage,sans-serif)", fontSize: "clamp(22px,2.8vw,36px)", fontWeight: 800, color: "var(--nb-ink)", letterSpacing: "-0.04em", lineHeight: 1.1 }}>
-              The complete AI infrastructure suite for the enterprise.
+              Ready to build something great?
             </p>
             <p style={{ fontSize: 15, color: "var(--nb-ink-muted)", marginTop: 8, fontWeight: 500 }}>
-              AI Gateway · Voice AI · Support Intelligence · Enterprise Knowledge — engineered for regulated enterprise.
+              Frontend · Backend · Mobile · AI Agents · Chatbots · E-commerce — all in-house.
             </p>
           </div>
           <a
@@ -66,7 +66,7 @@ export function Footer() {
             onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = "translate(-2px,-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = "6px 6px 0px rgba(0,0,0,0.4)"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = ""; (e.currentTarget as HTMLElement).style.boxShadow = "4px 4px 0px rgba(0,0,0,0.3)"; }}
           >
-            Contact Sales <ArrowRight size={16} />
+            Start a Project <ArrowRight size={16} />
           </a>
         </div>
       </div>
@@ -88,20 +88,17 @@ export function Footer() {
               <span style={{ fontFamily: "var(--font-bricolage,sans-serif)", fontSize: 20, fontWeight: 800, color: "#FAF8F3", letterSpacing: "-0.04em" }}>AI Platform</span>
             </a>
             <p style={{ fontSize: 14, color: "rgba(250,248,243,0.6)", lineHeight: 1.75, marginBottom: 24, maxWidth: 240 }}>
-              Intelligent infrastructure for the AI era. Four enterprise-grade products. One unified platform.
+              A full-service digital agency. We design and build websites, apps, AI agents, and everything in between.
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 28 }}>
-              {[
-                { value: "4", label: "enterprise products" },
-                { value: "99.99%", label: "SLA uptime" },
-                { value: "SOC 2", label: "Type II certified" },
-                { value: "VPC", label: "deployment ready" },
-              ].map((s) => (
-                <div key={s.label} style={{ display: "flex", alignItems: "center", gap: 10, padding: "7px 12px", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "2px", background: "rgba(255,255,255,0.04)" }}>
-                  <span style={{ fontFamily: "var(--font-jetbrains,monospace)", fontSize: 14, fontWeight: 700, color: "var(--nb-yellow)" }}>{s.value}</span>
-                  <span style={{ fontSize: 12, color: "rgba(250,248,243,0.5)", fontWeight: 600, letterSpacing: ".06em", textTransform: "uppercase" }}>{s.label}</span>
-                </div>
-              ))}
+            <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 28 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "rgba(250,248,243,0.55)", fontWeight: 500 }}>
+                <Mail size={13} color="var(--nb-yellow)" />
+                hello@aiplatform.io
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "rgba(250,248,243,0.55)", fontWeight: 500 }}>
+                <MapPin size={13} color="var(--nb-yellow)" />
+                Available Worldwide · Remote-first
+              </div>
             </div>
           </div>
 
@@ -133,14 +130,13 @@ export function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.10)", paddingTop: 24, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
           <p style={{ fontSize: 12.5, color: "rgba(250,248,243,0.4)", fontWeight: 500 }}>
-            © {new Date().getFullYear()} AI Platform. All rights reserved.
+            © {new Date().getFullYear()} AI Platform Agency. All rights reserved.
           </p>
           <div style={{ display: "flex", gap: 20 }}>
             {[
-              { label: "Privacy",   href: `${BASE}/contact/` },
-              { label: "Terms",     href: `${BASE}/contact/` },
-              { label: "Security",  href: `${BASE}/enterprise/` },
-              { label: "Contact",   href: `${BASE}/contact/` },
+              { label: "Privacy",  href: `${BASE}/contact/` },
+              { label: "Terms",    href: `${BASE}/contact/` },
+              { label: "Contact",  href: `${BASE}/contact/` },
             ].map((link) => (
               <a key={link.href + link.label} href={link.href}
                 style={{ fontSize: 12.5, color: "rgba(250,248,243,0.4)", textDecoration: "none", fontWeight: 500, transition: "color .15s" }}
@@ -156,3 +152,4 @@ export function Footer() {
     </footer>
   );
 }
+

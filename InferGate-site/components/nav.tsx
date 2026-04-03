@@ -144,6 +144,11 @@ export function Nav() {
             <span style={{ fontFamily: "var(--font-bricolage,sans-serif)", fontSize: 18, fontWeight: 800, color: "var(--nb-ink)", letterSpacing: "-0.04em" }}>InferGate</span>
           </Link>
 
+          {/* Agency back-link */}
+          <a href="https://aiplatform.io" style={{ display: "flex", alignItems: "center", gap: 5, textDecoration: "none", marginRight: 16, padding: "3px 10px", border: "1.5px solid var(--nb-border)", borderRadius: "var(--radius)", background: "var(--nb-surface)", fontSize: 11, fontWeight: 700, color: "var(--nb-ink-muted)", letterSpacing: ".04em", textTransform: "uppercase", flexShrink: 0, whiteSpace: "nowrap" }}>
+            ← AI Platform
+          </a>
+
           {/* Desktop nav */}
           <nav style={{ display: "flex", alignItems: "center", gap: 2, flex: 1 }} className="desktop-nav">
             {NAV.map((item) => (

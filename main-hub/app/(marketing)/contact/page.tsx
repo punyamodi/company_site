@@ -1,46 +1,46 @@
 import type { Metadata } from "next";
-import { Mail, Phone, Building2, Shield, Server, Layers, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, MessageSquare, Lightbulb, Users, Zap, ArrowRight } from "lucide-react";
 import ContactForm from "./ContactForm";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
-  title: "Contact Sales",
-  description: "Speak with the AI Platform enterprise sales team. Custom pricing, deployment options, and dedicated support for regulated enterprises.",
+  title: "Contact",
+  description: "Start your project with AI Platform Agency — web apps, mobile, AI agents, e-commerce, and more. We'll get back to you within one business day.",
 };
 
 const REASONS = [
-  { icon: Building2, title: "Custom Enterprise Packaging", desc: "Tailored bundle of one or all four products with negotiated terms." },
-  { icon: Server, title: "VPC & On-Premise Deployment", desc: "Deploy entirely within your infrastructure with dedicated support." },
-  { icon: Shield, title: "Security & Compliance Review", desc: "Walk through our SOC 2, HIPAA, and GDPR documentation with our team." },
-  { icon: Clock, title: "Priority Onboarding & SLA", desc: "Dedicated success manager and custom SLA commitments." },
+  { icon: Lightbulb, title: "Project Scoping & Consultation", desc: "Not sure what you need? We'll help you define the right scope, tech stack, and approach." },
+  { icon: Zap,       title: "Custom AI Agent or Chatbot",     desc: "Need an intelligent assistant or automated workflow built for your specific business." },
+  { icon: Users,     title: "Dedicated Engineering Team",     desc: "Scale up with a full dedicated team — developers, designer, and PM — embedded in your org." },
+  { icon: MessageSquare, title: "Partnership or Reselling",  desc: "White-label delivery or referral partnerships for agencies and consultancies." },
 ];
 
 export default function ContactPage() {
   return (
     <>
+      {/* Hero */}
       <section className="section" style={{ paddingBottom: 40 }}>
         <div className="grid-bg" />
         <div className="container--narrow" style={{ position: "relative" }}>
-          <div className="eyebrow" style={{ display: "inline-flex" }}>Contact Sales</div>
+          <div className="eyebrow" style={{ display: "inline-flex" }}>Contact</div>
           <h1 style={{ fontSize: "clamp(36px,5vw,64px)", letterSpacing: "-0.045em", marginBottom: 20, lineHeight: 1 }}>
-            Let{"'"}s build your{" "}
-            <span style={{ fontFamily: "var(--font-fraunces,serif)", fontStyle: "italic", color: "var(--nb-ink-muted)" }}>AI infrastructure.</span>
+            Let{"'"}s build something{" "}
+            <span style={{ fontFamily: "var(--font-fraunces,serif)", fontStyle: "italic", color: "var(--nb-ink-muted)" }}>great together.</span>
           </h1>
           <p style={{ fontSize: 18, color: "var(--nb-ink-muted)", lineHeight: 1.65, maxWidth: 560, marginBottom: 48 }}>
-            Our enterprise team will work with you to architect the right solution — from a single product to the full suite.
+            Whether you have a fully-formed brief or just an idea you{"'"}re exploring — reach out. We{"'"}ll respond within one business day.
           </p>
         </div>
       </section>
 
+      {/* Form + sidebar */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container--narrow hub-arch-grid" style={{ gap: 64, alignItems: "start" }}>
-          {/* Contact form */}
           <ContactForm />
 
-          {/* Info side */}
           <div>
-            <h3 style={{ fontSize: 20, fontWeight: 800, letterSpacing: "-0.03em", marginBottom: 24 }}>Why enterprise teams talk to us</h3>
+            <h3 style={{ fontSize: 20, fontWeight: 800, letterSpacing: "-0.03em", marginBottom: 24 }}>Why people reach out</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 40 }}>
               {REASONS.map((r) => {
                 const Icon = r.icon;
@@ -58,21 +58,27 @@ export default function ContactPage() {
               })}
             </div>
 
-            <div style={{ padding: 24, background: "var(--nb-surface)", border: "2px solid var(--nb-border)", borderRadius: "var(--radius)" }}>
-              <p style={{ fontSize: 13, fontWeight: 800, letterSpacing: ".08em", textTransform: "uppercase", color: "var(--nb-ink-muted)", marginBottom: 16 }}>Direct Contact</p>
+            {/* Contact details placeholder */}
+            <div style={{ padding: 24, background: "var(--nb-surface)", border: "2px solid var(--nb-border)", borderRadius: "var(--radius)", marginBottom: 16 }}>
+              <p style={{ fontSize: 12, fontWeight: 800, letterSpacing: ".08em", textTransform: "uppercase", color: "var(--nb-ink-muted)", marginBottom: 16 }}>Get In Touch</p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                <a href="mailto:enterprise@aiplatform.io" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", fontSize: 14, fontWeight: 600, color: "var(--nb-ink)" }}>
-                  <Mail size={16} color="var(--nb-ink-muted)" /> enterprise@aiplatform.io
+                <a href="mailto:hello@aiplatform.io" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", fontSize: 14, fontWeight: 600, color: "var(--nb-ink)" }}>
+                  <Mail size={15} color="var(--nb-ink-muted)" /> hello@aiplatform.io
                 </a>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, fontWeight: 600, color: "var(--nb-ink)" }}>
-                  <Phone size={16} color="var(--nb-ink-muted)" /> +1 (888) AI-SUITE
+                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, fontWeight: 600, color: "var(--nb-ink-muted)" }}>
+                  <Phone size={15} color="var(--nb-ink-muted)" /> +1 (000) 000-0000 {" "}
+                  <span style={{ fontSize: 11, fontWeight: 500, background: "var(--nb-surface)", border: "1px solid var(--nb-border)", padding: "2px 6px", borderRadius: 4 }}>placeholder</span>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, fontWeight: 600, color: "var(--nb-ink-muted)" }}>
+                  <MapPin size={15} color="var(--nb-ink-muted)" /> Remote-first agency
                 </div>
               </div>
             </div>
 
-            <div style={{ marginTop: 24, padding: "16px 20px", background: "var(--nb-yellow-subtle)", border: "2px solid var(--nb-border)", borderRadius: "var(--radius)" }}>
-              <p style={{ fontSize: 13.5, fontWeight: 600, color: "var(--nb-ink)", lineHeight: 1.6 }}>
-                <strong>No public pricing.</strong> Enterprise pricing is custom-designed based on your organization{"'"}s scale, deployment requirements, and suite composition.
+            <div style={{ padding: "14px 18px", background: "var(--nb-yellow)", border: "2px solid var(--nb-border)", borderRadius: "var(--radius)" }}>
+              <p style={{ fontSize: 13.5, fontWeight: 700, color: "var(--nb-ink)", lineHeight: 1.55 }}>
+                ⚡ For enterprise or dedicated team enquiries, see our{" "}
+                <a href={`${BASE}/enterprise/`} style={{ textDecoration: "underline", color: "var(--nb-ink)" }}>Enterprise page</a> for more details.
               </p>
             </div>
           </div>
@@ -81,3 +87,4 @@ export default function ContactPage() {
     </>
   );
 }
+

@@ -235,7 +235,7 @@ export function Footer() {
             flexWrap: "wrap", gap: 12,
           }}>
             <p style={{ color: "rgba(250,248,243,0.35)", fontSize: 12 }}>
-              © {year} Forge AI, Inc. All rights reserved.
+              © {year} Forge AI · Built by <a href="https://aiplatform.io" style={{ color: "var(--nb-yellow)", textDecoration: "none" }}>AI Platform Agency</a>. All rights reserved.
             </p>
             <div style={{ display: "flex", gap: 24 }}>
               {[

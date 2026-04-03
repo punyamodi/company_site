@@ -3,122 +3,75 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import {
-  X, Menu, ChevronDown, Zap, Shield, Globe, Activity,
-  BarChart3, Layers, Database, Server, Brain, Mic, MessageSquare,
-  Search, Network, Building2, ArrowRight, Cpu, HeartPulse, Landmark,
-  Bot, Lock, Wrench,
+  X, Menu, ChevronDown, Monitor, Server, Smartphone, Bot, MessageSquare,
+  ShoppingCart, Palette, Zap, ArrowRight, Layers, Brain, Globe,
+  Building2, Code2, Workflow, BarChart2,
 } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-const PRODUCTS = [
+const SERVICES_COLS = [
   {
-    name: "InferGate",
-    color: "#F5C518",
-    textColor: "#0A0A0A",
-    href: `${BASE}/infergate/`,
-    icon: Zap,
-    tagline: "Enterprise AI Gateway",
-    desc: "Route, cache, and govern every AI call across 25+ providers at 10,400 req/s.",
-    features: ["Intelligent Routing", "Semantic Caching", "Observability & Tracing", "Rate Limiting & Budgets"],
+    heading: "Development",
+    links: [
+      { label: "Frontend Development",   href: `${BASE}/services/`, icon: Monitor },
+      { label: "Backend Development",    href: `${BASE}/services/`, icon: Server },
+      { label: "Mobile App Development", href: `${BASE}/services/`, icon: Smartphone },
+      { label: "Full-Stack Development", href: `${BASE}/services/`, icon: Layers },
+      { label: "API Development",        href: `${BASE}/services/`, icon: Zap },
+    ],
   },
   {
-    name: "Converse",
-    color: "#7C3AED",
-    textColor: "#fff",
-    href: `${BASE}/converse/`,
-    icon: Mic,
-    tagline: "Voice AI Platform",
-    desc: "Production voice AI pipelines with real-time STT, TTS, and multimodal processing.",
-    features: ["Pipeline Engine", "Voice AI Core", "Transport Layer", "AI Service Integrations"],
+    heading: "AI & Automation",
+    links: [
+      { label: "AI Agents",            href: `${BASE}/services/`, icon: Bot },
+      { label: "Customer Chatbots",    href: `${BASE}/services/`, icon: MessageSquare },
+      { label: "AI Integration",       href: `${BASE}/services/`, icon: Brain },
+      { label: "Workflow Automation",  href: `${BASE}/services/`, icon: Workflow },
+    ],
   },
   {
-    name: "HaloDesk",
-    color: "#0D9488",
-    textColor: "#fff",
-    href: `${BASE}/halodesk/`,
-    icon: MessageSquare,
-    tagline: "Customer Support Intelligence",
-    desc: "Omnichannel support powered by AI — inbox, automation, analytics, and Captain AI Agent.",
-    features: ["Omnichannel Inbox", "Captain AI Agent", "Workflow Automation", "Advanced Analytics"],
-  },
-  {
-    name: "Forge",
-    color: "#E11D48",
-    textColor: "#fff",
-    href: `${BASE}/forge/`,
-    icon: Wrench,
-    tagline: "Custom Enterprise AI",
-    desc: "Bespoke AI solutions engineered to your exact specification — from integration to full-stack transformation.",
-    features: ["Custom AI Integration", "Workflow Automation", "Data & AI Platforms", "Custom AI Agents"],
+    heading: "Design & Commerce",
+    links: [
+      { label: "UI/UX Design",          href: `${BASE}/services/`, icon: Palette },
+      { label: "E-commerce Solutions",  href: `${BASE}/services/`, icon: ShoppingCart },
+      { label: "Website Development",   href: `${BASE}/services/`, icon: Globe },
+      { label: "Analytics & Reporting", href: `${BASE}/services/`, icon: BarChart2 },
+    ],
   },
 ];
 
 const NAV = [
   {
-    label: "Products",
-    cols: [
-      {
-        heading: "AI Infrastructure",
-        links: [
-          { label: "InferGate — AI Gateway",     href: `${BASE}/infergate/`,          icon: Zap },
-          { label: "Converse — Voice AI",         href: `${BASE}/converse/`,           icon: Mic },
-          { label: "HaloDesk — Support AI",       href: `${BASE}/halodesk/`,           icon: MessageSquare },
-          { label: "Genie — Knowledge AI",         href: `${BASE}/genie/`,               icon: Search },
-          { label: "Forge — Custom AI",           href: `${BASE}/forge/`,              icon: Wrench },
-        ],
-      },
-      {
-        heading: "Platform Capabilities",
-        links: [
-          { label: "AI Gateway & Routing",        href: `${BASE}/infergate/features`,  icon: Network },
-          { label: "Voice Pipelines",             href: `${BASE}/converse/platform`,   icon: Activity },
-          { label: "Intelligent Automation",      href: `${BASE}/halodesk/features`,   icon: Brain },
-          { label: "Enterprise Search & RAG",     href: `${BASE}/genie/platform`,       icon: Database },
-        ],
-      },
-      {
-        heading: "Enterprise",
-        links: [
-          { label: "Security & Compliance",       href: `${BASE}/enterprise/`,         icon: Shield },
-          { label: "Deployment Options",          href: `${BASE}/enterprise/`,         icon: Server },
-          { label: "SLA & Support",               href: `${BASE}/enterprise/`,         icon: Layers },
-          { label: "Contact Sales",               href: `${BASE}/contact/`,            icon: Building2 },
-        ],
-      },
-    ],
+    label: "Services",
+    cols: SERVICES_COLS,
   },
   {
-    label: "Solutions",
-    cols: [
-      {
-        heading: "By Team",
-        links: [
-          { label: "Engineering & DevOps",        href: `${BASE}/enterprise/`,         icon: Cpu },
-          { label: "CTO & IT Leadership",         href: `${BASE}/enterprise/`,         icon: Building2 },
-          { label: "Customer Operations",         href: `${BASE}/halodesk/solutions`,  icon: MessageSquare },
-          { label: "Security & Compliance",       href: `${BASE}/enterprise/`,         icon: Lock },
-        ],
-      },
-      {
-        heading: "By Industry",
-        links: [
-          { label: "Financial Services",          href: `${BASE}/enterprise/`,         icon: Landmark },
-          { label: "Healthcare",                  href: `${BASE}/enterprise/`,         icon: HeartPulse },
-          { label: "Technology",                  href: `${BASE}/enterprise/`,         icon: Zap },
-          { label: "Government & Defense",        href: `${BASE}/enterprise/`,         icon: Globe },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Enterprise",
+    label: "Work",
     simple: [
-      { label: "Enterprise Overview",             href: `${BASE}/enterprise/` },
-      { label: "Security & Trust",                href: `${BASE}/enterprise/` },
-      { label: "Contact Sales",                   href: `${BASE}/contact/` },
+      { label: "All Projects",        href: `${BASE}/work/` },
+      { label: "InferGate — AI Gateway",  href: `${BASE}/infergate/` },
+      { label: "Converse — Voice AI",     href: `${BASE}/converse/` },
+      { label: "HaloDesk — Support AI",   href: `${BASE}/halodesk/` },
+      { label: "Genie — Knowledge AI",    href: `${BASE}/genie/` },
     ],
   },
+  {
+    label: "Company",
+    simple: [
+      { label: "About Us",       href: `${BASE}/about/` },
+      { label: "Enterprise",     href: `${BASE}/enterprise/` },
+      { label: "Contact",        href: `${BASE}/contact/` },
+    ],
+  },
+];
+
+const MOBILE_LINKS = [
+  { label: "Services",  href: `${BASE}/services/`,  icon: Code2 },
+  { label: "Our Work",  href: `${BASE}/work/`,       icon: Layers },
+  { label: "About",     href: `${BASE}/about/`,      icon: Building2 },
+  { label: "Enterprise",href: `${BASE}/enterprise/`, icon: Server },
+  { label: "Contact",   href: `${BASE}/contact/`,    icon: MessageSquare },
 ];
 
 export function Nav() {
@@ -161,7 +114,6 @@ export function Nav() {
               border: "2px solid var(--nb-border)", boxShadow: "3px 3px 0px var(--nb-border)",
               display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
             }}>
-              {/* Platform icon — 4 dots in quadrant */}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <rect x="1" y="1" width="6" height="6" fill="#F5C518"/>
                 <rect x="9" y="1" width="6" height="6" fill="#7C3AED"/>
@@ -203,12 +155,13 @@ export function Nav() {
                       background: "var(--nb-bg)", border: "2px solid var(--nb-border)",
                       boxShadow: "var(--shadow-brutal-lg)", borderRadius: "var(--radius)",
                       padding: 24,
-                      minWidth: item.cols ? (item.cols.length >= 3 ? "min(720px,90vw)" : "min(480px,90vw)") : 220,
+                      minWidth: item.cols ? "min(680px,90vw)" : 220,
                       zIndex: 100,
                       display: "grid",
                       gridTemplateColumns: item.cols ? `repeat(${item.cols.length},1fr)` : "1fr",
                       gap: 24,
                     }}
+                    className="nb-nav-dropdown"
                   >
                     {item.cols?.map((col) => (
                       <div key={col.heading}>
@@ -261,14 +214,16 @@ export function Nav() {
 
           {/* Right CTAs */}
           <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
-            <a href={`${BASE}/enterprise/`} style={{ display: "flex", alignItems: "center", padding: "8px 14px", textDecoration: "none", fontFamily: "var(--font-bricolage,sans-serif)", fontSize: 14, fontWeight: 600, color: "var(--nb-ink-muted)", letterSpacing: "-0.01em" }}
+            <a
+              href={`${BASE}/work/`}
+              style={{ display: "flex", alignItems: "center", padding: "8px 14px", textDecoration: "none", fontFamily: "var(--font-bricolage,sans-serif)", fontSize: 14, fontWeight: 600, color: "var(--nb-ink-muted)", letterSpacing: "-0.01em" }}
               onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = "var(--nb-ink)"}
               onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = "var(--nb-ink-muted)"}
             >
-              Enterprise
+              Our Work
             </a>
             <a href={`${BASE}/contact/`} className="btn-primary" style={{ padding: "9px 18px", fontSize: 13 }}>
-              Contact Sales <ArrowRight size={12} />
+              Start a Project <ArrowRight size={12} />
             </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -286,30 +241,18 @@ export function Nav() {
       {mobileOpen && (
         <div style={{ position: "fixed", inset: 0, zIndex: 999, background: "var(--nb-bg)", paddingTop: 64, overflowY: "auto" }}>
           <div style={{ padding: "24px", display: "flex", flexDirection: "column", gap: 0 }}>
-            {PRODUCTS.map((p) => (
-              <a key={p.href} href={p.href} onClick={() => setMobileOpen(false)}
-                style={{ display: "flex", alignItems: "center", gap: 12, padding: "16px 0", borderBottom: "1px solid var(--nb-border-faint)", textDecoration: "none" }}>
-                <div style={{ width: 36, height: 36, background: p.color, border: "2px solid var(--nb-border)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, borderRadius: "var(--radius)" }}>
-                  <p.icon size={16} color={p.textColor} />
-                </div>
-                <div>
-                  <p style={{ fontSize: 15, fontWeight: 800, color: "var(--nb-ink)", letterSpacing: "-0.02em" }}>{p.name}</p>
-                  <p style={{ fontSize: 12, color: "var(--nb-ink-muted)", fontWeight: 500 }}>{p.tagline}</p>
-                </div>
-              </a>
-            ))}
-            {[
-              { label: "Enterprise", href: `${BASE}/enterprise/` },
-              { label: "Contact Sales", href: `${BASE}/contact/` },
-            ].map((link) => (
+            {MOBILE_LINKS.map((link) => (
               <a key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
-                style={{ display: "block", padding: "14px 0", borderBottom: "1px solid var(--nb-border-faint)", textDecoration: "none", fontSize: 16, fontWeight: 700, color: "var(--nb-ink)", letterSpacing: "-0.02em" }}>
-                {link.label}
+                style={{ display: "flex", alignItems: "center", gap: 12, padding: "16px 0", borderBottom: "1px solid var(--nb-border-faint)", textDecoration: "none" }}>
+                <div style={{ width: 36, height: 36, background: "var(--nb-yellow)", border: "2px solid var(--nb-border)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, borderRadius: "var(--radius)" }}>
+                  <link.icon size={16} color="var(--nb-ink)" />
+                </div>
+                <span style={{ fontSize: 16, fontWeight: 700, color: "var(--nb-ink)", letterSpacing: "-0.02em" }}>{link.label}</span>
               </a>
             ))}
             <a href={`${BASE}/contact/`} onClick={() => setMobileOpen(false)} className="btn-primary"
               style={{ width: "100%", justifyContent: "center", marginTop: 24, textDecoration: "none" }}>
-              Contact Sales <ArrowRight size={14} />
+              Start a Project <ArrowRight size={14} />
             </a>
           </div>
         </div>
@@ -325,6 +268,4 @@ export function Nav() {
       `}</style>
     </>
   );
-}
-
-export { PRODUCTS };
+}

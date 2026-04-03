@@ -31,7 +31,7 @@ const NAV_ITEMS = [
           { label: "MCP & Actions", href: "/platform/mcp-actions", icon: Zap },
           { label: "Code Interpreter", href: "/platform/code-interpreter", icon: Code2 },
           { label: "Web Search", href: "/platform/web-search", icon: Globe },
-          { label: "Image Generation", href: "/platform/image-generation", icon: ImageIcon },
+          { label: "Image Generation", href: "/platform/mcp-actions", icon: ImageIcon },
         ],
       },
       {
@@ -79,9 +79,9 @@ const NAV_ITEMS = [
   {
     label: "Docs",
     simple: [
-      { label: "Documentation", href: "/docs" },
+      { label: "Platform Overview", href: "/platform" },
       { label: "All Integrations", href: "/integrations" },
-      { label: "API Reference", href: "/docs/api" },
+      { label: "Enterprise Integrations", href: "/enterprise/integrations" },
       { label: "Deployment Guides", href: "/enterprise/deployment" },
     ],
   },
@@ -148,6 +148,11 @@ export function Nav() {
               color: "var(--nb-ink)", letterSpacing: "-0.05em",
             }}>Genie</span>
           </Link>
+
+          {/* Agency back-link */}
+          <a href="https://aiplatform.io" style={{ display: "flex", alignItems: "center", gap: 5, textDecoration: "none", marginRight: 16, padding: "3px 10px", border: "1.5px solid var(--nb-border)", borderRadius: "var(--radius)", background: "var(--nb-surface)", fontSize: 11, fontWeight: 700, color: "var(--nb-ink-muted)", letterSpacing: ".04em", textTransform: "uppercase", flexShrink: 0, whiteSpace: "nowrap" }}>
+            ← AI Platform
+          </a>
 
           {/* Desktop nav */}
           <nav style={{ display: "flex", alignItems: "center", gap: 2, flex: 1 }}>
@@ -275,12 +280,12 @@ export function Nav() {
 
           {/* Right CTAs */}
           <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
-            <Link href="/docs" style={{
+            <Link href="/integrations" style={{
               display: "flex", alignItems: "center", padding: "8px 16px",
               textDecoration: "none", fontFamily: "var(--font-bricolage, sans-serif)",
               fontSize: 13, fontWeight: 600, color: "var(--nb-ink-muted)", letterSpacing: "-0.01em",
             }}>
-              Docs
+              Integrations
             </Link>
             <Link
               href="/contact"
