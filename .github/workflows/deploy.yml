@@ -63,48 +63,48 @@ jobs:
       - name: Build Main Hub
         working-directory: main-hub
         env:
-          NEXT_PUBLIC_BASE_PATH: /Company-Site
-          NEXT_PUBLIC_PLATFORM_URL: https://AppForge-AI.github.io/Company-Site/
+          NEXT_PUBLIC_BASE_PATH: /company_site
+          NEXT_PUBLIC_PLATFORM_URL: https://punyamodi.github.io/company_site/
         run: npm run build
 
       # ── Build InferGate ───────────────────────────────────────
       - name: Build InferGate
         working-directory: InferGate-site
         env:
-          NEXT_PUBLIC_BASE_PATH: /Company-Site/infergate
-          NEXT_PUBLIC_PLATFORM_URL: https://AppForge-AI.github.io/Company-Site/
+          NEXT_PUBLIC_BASE_PATH: /company_site/infergate
+          NEXT_PUBLIC_PLATFORM_URL: https://punyamodi.github.io/company_site/
         run: npm run build
 
       # ── Build Converse ────────────────────────────────────────
       - name: Build Converse
         working-directory: Converse-site
         env:
-          NEXT_PUBLIC_BASE_PATH: /Company-Site/converse
-          NEXT_PUBLIC_PLATFORM_URL: https://AppForge-AI.github.io/Company-Site/
+          NEXT_PUBLIC_BASE_PATH: /company_site/converse
+          NEXT_PUBLIC_PLATFORM_URL: https://punyamodi.github.io/company_site/
         run: npm run build
 
       # ── Build HaloDesk ────────────────────────────────────────
       - name: Build HaloDesk
         working-directory: HaloDesk-site
         env:
-          NEXT_PUBLIC_BASE_PATH: /Company-Site/halodesk
-          NEXT_PUBLIC_PLATFORM_URL: https://AppForge-AI.github.io/Company-Site/
+          NEXT_PUBLIC_BASE_PATH: /company_site/halodesk
+          NEXT_PUBLIC_PLATFORM_URL: https://punyamodi.github.io/company_site/
         run: npm run build
 
       # ── Build Genie ───────────────────────────────────────────
       - name: Build Genie
         working-directory: genie-site
         env:
-          NEXT_PUBLIC_BASE_PATH: /Company-Site/genie
-          NEXT_PUBLIC_PLATFORM_URL: https://AppForge-AI.github.io/Company-Site/
+          NEXT_PUBLIC_BASE_PATH: /company_site/genie
+          NEXT_PUBLIC_PLATFORM_URL: https://punyamodi.github.io/company_site/
         run: npm run build
 
       # ── Build Forge ───────────────────────────────────────────
       - name: Build Forge
         working-directory: forge-site
         env:
-          NEXT_PUBLIC_BASE_PATH: /Company-Site/forge
-          NEXT_PUBLIC_PLATFORM_URL: https://AppForge-AI.github.io/Company-Site/
+          NEXT_PUBLIC_BASE_PATH: /company_site/forge
+          NEXT_PUBLIC_PLATFORM_URL: https://punyamodi.github.io/company_site/
         run: npm run build
 
       # ── Assemble dist ─────────────────────────────────────────
