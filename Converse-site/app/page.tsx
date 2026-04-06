@@ -100,7 +100,16 @@ function Counter({ target, prefix = "", suffix = "", decimals = 0 }: { target: n
     return () => obs.disconnect();
   }, [target]);
   const display = decimals > 0 ? val.toFixed(decimals) : Math.round(val).toLocaleString();
-  return <span ref={ref}>{prefix}{display}{suffix}</span>;
+  return (
+    <span
+      ref={ref}
+      data-counter={String(target)}
+      data-counter-suffix={suffix}
+      data-counter-decimals={decimals > 0 ? String(decimals) : undefined}
+    >
+      {prefix}{display}{suffix}
+    </span>
+  );
 }
 
 const STATS = [
@@ -237,7 +246,7 @@ export default function HomePage() {
             </div>
 
             {/* Waveform visual */}
-            <div className="anim-fade-up delay-400" style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <div className="anim-fade-up delay-400" data-float="on" style={{ display: "flex", alignItems: "center", gap: 16 }}>
               <div style={{ position: "relative", width: 48, height: 48 }}>
                 <div style={{ width: 48, height: 48, borderRadius: "50%", background: "var(--nb-violet-subtle)", border: "2px solid var(--nb-border)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <Mic size={20} color="var(--nb-violet)" />
@@ -313,7 +322,7 @@ export default function HomePage() {
               Every layer of voice AI, engineered for production
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+          <div data-stagger-grid style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {/* Wide card */}
             <div className="nb-card" style={{ gridColumn: "1 / 3", padding: 40, background: "var(--nb-violet)", color: "#fff", position: "relative", overflow: "hidden" }}>
               <div style={{ position: "absolute", top: -40, right: -40, width: 200, height: 200, border: "2px solid rgba(255,255,255,0.1)", borderRadius: "50%" }} />

@@ -502,25 +502,38 @@ a { color: inherit; }
 }
 @keyframes floatY {
   0%,100% { transform: translateY(0); }
-  50%     { transform: translateY(-12px); }
+  50%     { transform: translateY(-14px); }
 }
 @keyframes floatRotate {
   0%,100% { transform: translateY(0) rotate(0deg); }
   50%     { transform: translateY(-10px) rotate(2deg); }
 }
 
-/* ── Card Hover Enhancement ─────────────────────────────── */
+/* ── Gradient orb pulse ─────────────────────────────────── */
+@keyframes orbPulse {
+  0%,100% { opacity: 0.5; transform: scale(1); }
+  50%     { opacity: 0.8; transform: scale(1.08); }
+}
+.orb-pulse {
+  animation: orbPulse 5s ease-in-out infinite;
+}
+
+/* ── Card Tilt (JS-driven via style.transform) ──────────── */
 .nb-card, .glass-card {
   transition: transform 0.35s cubic-bezier(.22,1,.36,1),
               box-shadow 0.35s cubic-bezier(.22,1,.36,1);
+}
+.nb-card:hover, .glass-card:hover {
+  box-shadow: var(--shadow-brutal-xl, 8px 8px 0 #0A0A0A);
 }
 
 /* ── Shimmer on accent text ─────────────────────────────── */
 .text-shimmer {
   background: linear-gradient(90deg,
-    currentColor 0%,
-    var(--accent-color, #F5C518) 40%,
-    currentColor 60%);
+    var(--nb-ink) 0%,
+    var(--nb-yellow, #F5C518) 40%,
+    var(--nb-orange, #FF5A36) 60%,
+    var(--nb-ink) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -532,27 +545,13 @@ a { color: inherit; }
   100% { background-position: -200% center; }
 }
 
-/* ── Glow pulse ─────────────────────────────────────────── */
+/* ── Glow pulse on highlighted elements ─────────────────── */
 .glow-pulse {
   animation: glowPulse 3s ease-in-out infinite;
 }
 @keyframes glowPulse {
   0%,100% { box-shadow: 0 0 0 0 rgba(245,197,24,0); }
-  50%     { box-shadow: 0 0 24px 6px rgba(245,197,24,0.22); }
-}
-
-/* ── Stagger children (JS sets --stagger-delay) ─────────── */
-.stagger-child {
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity  0.5s cubic-bezier(.22,1,.36,1),
-    transform 0.5s cubic-bezier(.22,1,.36,1);
-  transition-delay: var(--stagger-delay, 0ms);
-}
-.stagger-child.in-view {
-  opacity: 1;
-  transform: translateY(0);
+  50%     { box-shadow: 0 0 24px 6px rgba(245,197,24,0.25); }
 }
 
 /* ── CTA Button shine sweep ──────────────────────────────── */
@@ -566,7 +565,7 @@ a { color: inherit; }
   inset: 0;
   background: linear-gradient(120deg,
     rgba(255,255,255,0) 30%,
-    rgba(255,255,255,0.18) 50%,
+    rgba(255,255,255,0.22) 50%,
     rgba(255,255,255,0) 70%);
   background-size: 200% 100%;
   opacity: 0;
@@ -574,23 +573,99 @@ a { color: inherit; }
 }
 .btn-primary:hover::after {
   opacity: 1;
-  animation: btnShine 0.55s ease forwards;
+  animation: btnShine 0.6s ease forwards;
 }
 @keyframes btnShine {
   from { background-position: 200% 0; }
   to   { background-position: -200% 0; }
 }
 
+/* ── Stagger children (JS sets --stagger-delay) ─────────── */
+.stagger-child {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity  0.55s cubic-bezier(.22,1,.36,1),
+    transform 0.55s cubic-bezier(.22,1,.36,1);
+  transition-delay: var(--stagger-delay, 0ms);
+}
+.stagger-child.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Highlight underline animation ──────────────────────── */
+.animated-underline {
+  position: relative;
+  display: inline-block;
+}
+.animated-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--nb-yellow, #F5C518);
+  transition: width 0.4s cubic-bezier(.22,1,.36,1);
+}
+.animated-underline:hover::after,
+.animated-underline.active::after {
+  width: 100%;
+}
+
+/* ── Typewriter text effect ─────────────────────────────── */
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid var(--nb-yellow, #F5C518);
+  white-space: nowrap;
+  animation: typewriter 3.5s steps(40,end), blink-caret 0.75s step-end infinite;
+}
+@keyframes typewriter  { from { width: 0 } to { width: 100% } }
+@keyframes blink-caret { 0%,100% { border-color: transparent } 50% { border-color: var(--nb-yellow,#F5C518) } }
+
+/* ── Noise/grain texture overlay for premium feel ────────── */
+.grain-overlay {
+  position: relative;
+}
+.grain-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.04;
+  border-radius: inherit;
+}
+
+/* ── Gradient border accent ─────────────────────────────── */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, var(--nb-yellow,#F5C518), var(--nb-violet,#7C3AED), var(--nb-teal,#0D9488));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gradient-border:hover::before { opacity: 1; }
+
 @media (prefers-reduced-motion: reduce) {
-  .scroll-reveal, .stagger-child {
+  .scroll-reveal,
+  .stagger-child {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;
     transition: none !important;
   }
   .float-soft, .float-soft-slow, .float-rotate,
-  .text-shimmer, .glow-pulse {
+  .text-shimmer, .glow-pulse, .btn-primary::after,
+  .orb-pulse, .typewriter {
     animation: none !important;
   }
-  .btn-primary::after { display: none; }
 }

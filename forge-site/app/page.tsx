@@ -134,7 +134,7 @@ export default function HomePage() {
             </div>
 
             {/* Hero visual */}
-            <div className="anim-fade-up delay-200" style={{ position: "relative" }}>
+            <div className="anim-fade-up delay-200" data-float="on" style={{ position: "relative" }}>
               <div style={{
                 border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal-xl)",
                 background: "#0A0A0A", borderRadius: "var(--radius)", overflow: "hidden",
@@ -198,9 +198,9 @@ export default function HomePage() {
               background: "#fff", borderRadius: "var(--radius)",
             }}>
               {[
-                { val: "500+", label: "Custom solutions delivered" },
-                { val: "60+", label: "Enterprise clients" },
-                { val: "12+", label: "Industries served" },
+                { val: "500+", label: "Custom solutions delivered", dc: "500", dcs: "+" },
+                { val: "60+", label: "Enterprise clients", dc: "60", dcs: "+" },
+                { val: "12+", label: "Industries served", dc: "12", dcs: "+" },
                 { val: "Full-stack", label: "End-to-end delivery" },
               ].map((s, i) => (
                 <div key={i} style={{
@@ -211,7 +211,10 @@ export default function HomePage() {
                   <div style={{
                     fontFamily: "var(--font-jetbrains, monospace)", fontSize: "clamp(20px,3vw,28px)",
                     fontWeight: 700, color: "var(--nb-rose)", marginBottom: 6,
-                  }}>{s.val}</div>
+                  }}
+                    data-counter={(s as { dc?: string }).dc}
+                    data-counter-suffix={(s as { dcs?: string }).dcs}
+                  >{s.val}</div>
                   <div style={{ fontSize: 12.5, color: "var(--nb-ink-muted)" }}>{s.label}</div>
                 </div>
               ))}
@@ -232,7 +235,7 @@ export default function HomePage() {
               Every engagement starts with a blank slate. We scope exactly what you need — then we build it.
             </p>
           </div>
-          <div className="fg-services-grid">
+          <div className="fg-services-grid" data-stagger-grid>
             {SERVICES.map((svc, i) => {
               const Icon = svc.icon;
               return (
@@ -339,7 +342,7 @@ export default function HomePage() {
               We built Forge because enterprises deserve AI built for them — not adapted from something else.
             </p>
           </div>
-          <div className="fg-why-grid">
+          <div className="fg-why-grid" data-stagger-grid>
             {WHY.map((w, i) => {
               const Icon = w.icon;
               return (

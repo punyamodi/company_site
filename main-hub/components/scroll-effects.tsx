@@ -8,7 +8,31 @@ const FLOAT_SELECTOR  = "[data-float], .hero-visual, .float, .floating";
 export function ScrollEffects() {
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) return;
+
+    // ── 0. Page progress bar ──────────────────────────────
+    const progressBar = document.createElement("div");
+    progressBar.id = "page-progress";
+    progressBar.style.cssText = [
+      "position:fixed", "top:0", "left:0", "height:3px", "width:0%",
+      "background:linear-gradient(90deg,#F5C518,#F59E0B,#FF5A36)",
+      "z-index:9999", "transition:width 0.1s linear",
+      "box-shadow:0 0 8px rgba(245,197,24,0.6)",
+      "pointer-events:none",
+    ].join(";");
+    document.body.appendChild(progressBar);
+
+    const onScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${pct}%`;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    if (reduced) return () => {
+      window.removeEventListener("scroll", onScroll);
+      progressBar.remove();
+    };
 
     // ── 1. Scroll-reveal ──────────────────────────────────────
     const revealEls = Array.from(
@@ -153,10 +177,60 @@ export function ScrollEffects() {
     );
     counterEls.forEach((el) => counterObs.observe(el));
 
+    // ── 7. Sparkle burst on section entry ────────────────────
+    const sparkleObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const section = entry.target as HTMLElement;
+          if (section.dataset.sparkled) return;
+          section.dataset.sparkled = "1";
+          const rect = section.getBoundingClientRect();
+          for (let k = 0; k < 6; k++) {
+            const dot = document.createElement("div");
+            const size = 4 + Math.random() * 4;
+            const colors = ["#F5C518","#F59E0B","#7C3AED","#0D9488","#FF5A36"];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const startX = rect.left + rect.width * (0.1 + Math.random() * 0.8);
+            const startY = window.scrollY + rect.top + rect.height * 0.3;
+            const dx = (Math.random() - 0.5) * 120;
+            const dy = -(40 + Math.random() * 80);
+            dot.style.cssText = [
+              `position:fixed`,
+              `left:${startX}px`,
+              `top:${startY - window.scrollY}px`,
+              `width:${size}px`,
+              `height:${size}px`,
+              `background:${color}`,
+              `border-radius:50%`,
+              `pointer-events:none`,
+              `z-index:9998`,
+              `transform:translate(0,0) scale(1)`,
+              `opacity:1`,
+              `transition:transform 0.9s cubic-bezier(.22,1,.36,1),opacity 0.9s ease`,
+            ].join(";");
+            document.body.appendChild(dot);
+            requestAnimationFrame(() => {
+              dot.style.transform = `translate(${dx}px,${dy}px) scale(0)`;
+              dot.style.opacity = "0";
+            });
+            setTimeout(() => dot.remove(), 950);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll<HTMLElement>(".section--invert, .section--elevated").forEach((el) => {
+      sparkleObs.observe(el);
+    });
+
     return () => {
+      window.removeEventListener("scroll", onScroll);
+      progressBar.remove();
       revealObs.disconnect();
       staggerObs.disconnect();
       counterObs.disconnect();
+      sparkleObs.disconnect();
       tiltCleanup.forEach(([el, m, l]) => {
         el.removeEventListener("mousemove", m);
         el.removeEventListener("mouseleave", l);

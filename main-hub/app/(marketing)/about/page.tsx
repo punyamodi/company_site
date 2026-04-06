@@ -105,8 +105,11 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="section" style={{ paddingBottom: 48 }}>
+      <section className="section" style={{ paddingBottom: 48, position: "relative", overflow: "hidden" }}>
         <div className="grid-bg" />
+        {/* Floating accent blobs */}
+        <div data-float="on" style={{ position: "absolute", top: "5%", right: "8%", width: 420, height: 420, background: "radial-gradient(circle, rgba(245,197,24,0.09) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
+        <div data-float="on" style={{ position: "absolute", bottom: "10%", left: "2%", width: 320, height: 320, background: "radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
         <div className="container" style={{ position: "relative" }}>
           <div className="eyebrow" style={{ display: "inline-flex" }}>About Us</div>
           <h1 style={{ fontSize: "clamp(40px,5.5vw,72px)", letterSpacing: "-0.045em", marginBottom: 20, lineHeight: 1, maxWidth: 800 }}>
@@ -118,13 +121,31 @@ export default function AboutPage() {
           <p style={{ fontSize: 18, color: "var(--nb-ink-muted)", lineHeight: 1.65, maxWidth: 640, marginBottom: 40 }}>
             AI Platform is a senior-led digital agency. We design and build websites, web apps, mobile apps, AI agents, and customer chatbots with one integrated team from strategy to launch.
           </p>
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 48 }}>
             <a href={`${BASE}/contact/`} className="btn-primary">
               Work With Us <ArrowRight size={15} />
             </a>
             <a href={`${BASE}/work/`} className="btn-secondary">
               See Our Work
             </a>
+          </div>
+
+          {/* Stats strip */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 0, border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal)", background: "var(--nb-bg)" }} className="about-stats-strip">
+            {[
+              { val: "50+", label: "Clients served globally", dc: "50", dcs: "+" },
+              { val: "8+", label: "Years engineering excellence", dc: "8", dcs: "+" },
+              { val: "100%", label: "In-house delivery", dc: "100", dcs: "%" },
+              { val: "6", label: "Disciplines, one team", dc: "6", dcs: "" },
+            ].map((stat, i) => (
+              <div key={i} style={{ padding: "24px 28px", borderRight: i < 3 ? "2px solid var(--nb-border)" : "none", textAlign: "center" }}>
+                <div style={{ fontFamily: "var(--font-jetbrains,monospace)", fontSize: "clamp(22px,3vw,30px)", fontWeight: 700, color: "var(--nb-yellow)", marginBottom: 4 }}
+                  data-counter={stat.dc} data-counter-suffix={stat.dcs}>
+                  {stat.val}
+                </div>
+                <div style={{ fontSize: 12, color: "var(--nb-ink-muted)", lineHeight: 1.4 }}>{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -146,7 +167,7 @@ export default function AboutPage() {
                 We{"'"}re AI-native in the truest sense - not an agency that added an &quot;AI&quot; page to their website, but a team that has been building AI-powered products since the early days of LLMs. That thinking influences everything we build.
               </p>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+            <div data-stagger-grid style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
               {CAPABILITIES.map((cap) => (
                 <div key={cap} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 14px", background: "var(--nb-bg)", border: "1.5px solid var(--nb-border-faint)", fontSize: 13.5, fontWeight: 500, color: "var(--nb-ink)" }}>
                   <CheckCircle size={12} color="var(--nb-green)" style={{ flexShrink: 0 }} />
@@ -274,6 +295,19 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <style>{`
+        @media(max-width:768px){
+          .about-stats-strip { grid-template-columns: repeat(2,1fr) !important; }
+          .about-stats-strip > div:nth-child(2) { border-right: none !important; }
+          .about-stats-strip > div:nth-child(3) { border-top: 2px solid var(--nb-border); }
+          .about-stats-strip > div:nth-child(4) { border-top: 2px solid var(--nb-border); border-right: none; }
+        }
+        @media(max-width:480px){
+          .about-stats-strip { grid-template-columns: 1fr !important; }
+          .about-stats-strip > div { border-right: none !important; border-top: 2px solid var(--nb-border); }
+          .about-stats-strip > div:first-child { border-top: none; }
+        }
+      `}</style>
     </>
   );
 }

@@ -596,10 +596,10 @@ export default function HomePage() {
               <div ref={statsRef}>
                 <div className="ig-stats-grid">
                   {[
-                    { value: statsActive ? reqCount.toLocaleString() : "—", suffix: " req/s", label: "Peak Throughput", hl: true },
-                    { value: "<0.3", suffix: "ms P50", label: "Gateway Overhead", hl: false },
-                    { value: "25+", suffix: " providers", label: "LLM Integrations", hl: false },
-                    { value: "65%", suffix: " savings", label: "Cost Reduction", hl: false },
+                    { value: statsActive ? reqCount.toLocaleString() : "—", suffix: " req/s", label: "Peak Throughput", hl: true, dc: "10400" },
+                    { value: "<0.3", suffix: "ms P50", label: "Gateway Overhead", hl: false, dc: "0.3", dcd: "1" },
+                    { value: "25+", suffix: " providers", label: "LLM Integrations", hl: false, dc: "25", dcs: "+" },
+                    { value: "65%", suffix: " savings", label: "Cost Reduction", hl: false, dc: "65", dcs: "%" },
                   ].map((stat, i) => (
                     <motion.div key={i}
                       initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
@@ -615,7 +615,13 @@ export default function HomePage() {
                         fontSize: 24, fontWeight: 900,
                         letterSpacing: "-0.04em", lineHeight: 1.1, marginBottom: 3,
                       }}>
-                        {stat.value}
+                        <span
+                          data-counter={stat.dc}
+                          data-counter-suffix={stat.dcs}
+                          data-counter-decimals={stat.dcd}
+                        >
+                          {stat.value}
+                        </span>
                         <span style={{ fontSize: 13, fontWeight: 700 }}>{stat.suffix}</span>
                       </div>
                       <div style={{
@@ -630,6 +636,7 @@ export default function HomePage() {
 
             {/* Right: gateway diagram */}
             <motion.div
+              data-float="on"
               initial={{ opacity: 0, x: 48 }} animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.18 }}
               style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -932,9 +939,9 @@ export default function HomePage() {
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={stagger}>
             {[
-              { val: "0.3ms", label: "P50 overhead", sub: "Adds virtually nothing to latency" },
-              { val: "1.2ms", label: "P99 overhead", sub: "Consistent tail performance at scale" },
-              { val: "<2s", label: "Cold start", sub: "~50MB base memory footprint" },
+              { val: "0.3ms", dc: "0.3", dcs: "ms", dcd: "1", label: "P50 overhead", sub: "Adds virtually nothing to latency" },
+              { val: "1.2ms", dc: "1.2", dcs: "ms", dcd: "1", label: "P99 overhead", sub: "Consistent tail performance at scale" },
+              { val: "<2s",   dc: "2",   dcs: "s",             label: "Cold start",   sub: "~50MB base memory footprint" },
             ].map((m, i) => (
               <motion.div key={i} variants={fadeUp} style={{
                 padding: "22px 24px",
@@ -942,7 +949,12 @@ export default function HomePage() {
                 borderRadius: "var(--radius)",
                 background: "rgba(255,255,255,0.04)",
               }}>
-                <div style={{ fontSize: 34, fontWeight: 900, letterSpacing: "-0.04em", color: "var(--nb-yellow)", marginBottom: 4 }}>{m.val}</div>
+                <div
+                  data-counter={m.dc}
+                  data-counter-suffix={m.dcs}
+                  data-counter-decimals={m.dcd}
+                  style={{ fontSize: 34, fontWeight: 900, letterSpacing: "-0.04em", color: "var(--nb-yellow)", marginBottom: 4 }}
+                >{m.val}</div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: "rgba(250,248,243,0.8)", marginBottom: 3 }}>{m.label}</div>
                 <div style={{ fontSize: 12, color: "rgba(250,248,243,0.38)", lineHeight: 1.55 }}>{m.sub}</div>
               </motion.div>
@@ -964,7 +976,7 @@ export default function HomePage() {
             </h2>
           </motion.div>
 
-          <motion.div className="cards-3"
+          <motion.div className="cards-3 ig-features-grid"
             initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}
             variants={stagger}>
             {FEATURES.map((feat, i) => {

@@ -121,6 +121,30 @@ const TECH = [
   "PostgreSQL", "Redis", "Docker", "Kubernetes", "GraphQL", "Tailwind CSS",
 ];
 
+const TESTIMONIALS = [
+  {
+    quote: "The AI gateway they built handles 50M+ requests a month without a single outage. The engineering quality is a cut above any agency we've worked with.",
+    name: "Jordan M.",
+    role: "VP Engineering",
+    company: "Series B FinTech",
+    color: "#F5C518",
+  },
+  {
+    quote: "We went from idea to production in 8 weeks. The codebase they handed over was genuinely impressive — our internal team said it looked like senior engineers had been on it for a year.",
+    name: "Priya S.",
+    role: "CTO",
+    company: "Enterprise SaaS",
+    color: "#7C3AED",
+  },
+  {
+    quote: "Most agencies quote one thing and deliver another. AI Platform does exactly what they say, when they say it. That level of trust is genuinely rare.",
+    name: "Alex T.",
+    role: "Founder",
+    company: "AI-first Startup",
+    color: "#0D9488",
+  },
+];
+
 const WHY = [
   {
     title: "Full-Stack by Default",
@@ -153,6 +177,9 @@ export default function HomePage() {
         {/* ── HERO ──────────────────────────────────────────────── */}
         <section className="section" style={{ paddingTop: 80, paddingBottom: 80, position: "relative", overflow: "hidden" }}>
           <div className="grid-bg" />
+          {/* Floating accent blobs */}
+          <div data-float="on" style={{ position: "absolute", top: "10%", right: "5%", width: 320, height: 320, background: "radial-gradient(circle, rgba(245,197,24,0.12) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none", zIndex: 0 }} />
+          <div data-float="on" style={{ position: "absolute", bottom: "15%", left: "2%", width: 240, height: 240, background: "radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none", zIndex: 0 }} />
           <div style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden" }}>
             <svg width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" style={{ opacity: 0.05 }}>
               {Array.from({ length: 12 }).map((_, i) => (
@@ -258,14 +285,18 @@ export default function HomePage() {
               style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", marginTop: 64, border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal)", background: "var(--nb-bg)" }}
             >
               {[
-                { value: "50+",  label: "projects delivered" },
-                { value: "8",    label: "service areas" },
-                { value: "100%", label: "in-house team" },
-                { value: "Senior", label: "led delivery" },
-                { value: "<1d",  label: "avg response time" },
+                { num: 50,  suffix: "+",  label: "projects delivered",  isCounter: true },
+                { num: 8,   suffix: "",   label: "service areas",       isCounter: true },
+                { num: 100, suffix: "%",  label: "in-house team",       isCounter: true },
+                { num: null, text: "Senior", label: "led delivery",     isCounter: false },
+                { num: null, text: "<1d",   label: "avg response time", isCounter: false },
               ].map((stat, i) => (
                 <div key={i} style={{ padding: "20px 36px", borderLeft: i > 0 ? "2px solid var(--nb-border-faint)" : "none", textAlign: "center" }}>
-                  <div style={{ fontFamily: "var(--font-jetbrains,monospace)", fontSize: "clamp(20px,2.5vw,28px)", fontWeight: 700, letterSpacing: "-0.03em" }}>{stat.value}</div>
+                  <div style={{ fontFamily: "var(--font-jetbrains,monospace)", fontSize: "clamp(20px,2.5vw,28px)", fontWeight: 700, letterSpacing: "-0.03em" }}>
+                    {stat.isCounter
+                      ? <span data-counter={stat.num} data-counter-suffix={stat.suffix}>{stat.num}{stat.suffix}</span>
+                      : stat.text}
+                  </div>
                   <div style={{ fontSize: 11, color: "var(--nb-ink-dim)", fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", marginTop: 4 }}>{stat.label}</div>
                 </div>
               ))}
@@ -409,6 +440,40 @@ export default function HomePage() {
                     ))}
                   </div>
                 </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── TESTIMONIALS ──────────────────────────────────── */}
+        <section className="section section--surface">
+          <div className="container">
+            <div style={{ textAlign: "center", marginBottom: 56 }}>
+              <div className="section-label">What Clients Say</div>
+              <h2 style={{ fontSize: "clamp(28px,3.5vw,48px)", letterSpacing: "-0.04em", marginBottom: 16 }}>
+                Don{"'"}t take our word for it.
+              </h2>
+              <p style={{ fontSize: 17, color: "var(--nb-ink-muted)", maxWidth: 480, margin: "0 auto" }}>
+                We let the outcomes speak. Here{"'"}s what clients say after working with us.
+              </p>
+            </div>
+            <div className="hub-platform-grid">
+              {TESTIMONIALS.map((t, i) => (
+                <div key={i} className="nb-card" style={{ padding: 32, display: "flex", flexDirection: "column", gap: 24, borderTop: `4px solid ${t.color}` }}>
+                  <div style={{ fontSize: 40, lineHeight: 1, color: t.color, fontFamily: "var(--font-fraunces,serif)", fontWeight: 900, opacity: 0.6 }}>&ldquo;</div>
+                  <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--nb-ink-muted)", marginTop: -20, fontStyle: "italic", flex: 1 }}>
+                    {t.quote}
+                  </p>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12, paddingTop: 16, borderTop: "1.5px solid var(--nb-border-faint)" }}>
+                    <div style={{ width: 40, height: 40, background: t.color, border: "2px solid var(--nb-border)", borderRadius: "var(--radius)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 16 }}>
+                      {t.name[0]}
+                    </div>
+                    <div>
+                      <p style={{ fontSize: 14, fontWeight: 800, letterSpacing: "-0.02em" }}>{t.name}</p>
+                      <p style={{ fontSize: 12, color: "var(--nb-ink-dim)", fontWeight: 500 }}>{t.role} · {t.company}</p>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>

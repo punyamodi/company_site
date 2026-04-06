@@ -51,8 +51,8 @@ const CAPABILITIES = [
 ];
 
 const STATS = [
-  { value: "40+", label: "Data Connectors", sub: "natively supported" },
-  { value: "10M+", label: "Documents Indexed", sub: "at peak scale" },
+  { value: "40+", label: "Data Connectors", sub: "natively supported", dc: "40", dcs: "+" },
+  { value: "10M+", label: "Documents Indexed", sub: "at peak scale", dc: "10", dcs: "M+" },
   { value: "Any LLM", label: "Model Flexibility", sub: "OpenAI, Anthropic, local" },
   { value: "Air-gap", label: "Deployment Ready", sub: "fully on-premises" },
 ];
@@ -217,6 +217,7 @@ export default function HomePage() {
 
           {/* Hero SVG */}
           <motion.div initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            data-float="on"
             style={{ width: "100%", maxWidth: 480, height: 300, border: "2px solid var(--nb-border)", boxShadow: "var(--shadow-brutal-xl)", borderRadius: "var(--radius)", background: "var(--nb-surface)", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
             <AgentFlowSVG />
           </motion.div>
@@ -253,7 +254,10 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="nb-card" style={{ padding: "32px 24px", textAlign: "center" }}>
-                <div style={{ fontFamily: "var(--font-fraunces, serif)", fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 700, color: "var(--nb-ink)", letterSpacing: "-0.03em", marginBottom: 4 }}>{s.value}</div>
+                <div style={{ fontFamily: "var(--font-fraunces, serif)", fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 700, color: "var(--nb-ink)", letterSpacing: "-0.03em", marginBottom: 4 }}
+                  data-counter={s.dc}
+                  data-counter-suffix={s.dcs}
+                >{s.value}</div>
                 <div style={{ fontSize: 15, fontWeight: 800, color: "var(--nb-ink)", marginBottom: 4 }}>{s.label}</div>
                 <div style={{ fontSize: 12, color: "var(--nb-ink-dim)", fontWeight: 500 }}>{s.sub}</div>
               </motion.div>

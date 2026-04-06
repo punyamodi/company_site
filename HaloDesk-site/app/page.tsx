@@ -1010,6 +1010,7 @@ export default function HomePage() {
             {/* Right: Inbox SVG mockup */}
             <div
               className="anim-fade-up delay-200"
+              data-float="on"
               style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
             >
               <InboxMockup />
@@ -1099,7 +1100,7 @@ export default function HomePage() {
               The full stack for support excellence.
             </h2>
           </div>
-          <div className="cards-3">
+          <div className="cards-3 hd-features-grid">
             {FEATURES.map((feature) => {
               const FeatureIcon = feature.Icon;
               return (
