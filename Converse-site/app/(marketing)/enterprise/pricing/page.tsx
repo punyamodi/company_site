@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   DollarSign,
@@ -109,6 +110,16 @@ const FAQS = [
     a: "Volume discounts are negotiated based on committed annual pipeline-minutes and seat count. Tiers are customized per engagement rather than published publicly — reach out to sales for a custom quote.",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Enterprise Pricing | Converse",
+  description: "Flexible, transparent enterprise pricing for Converse. Scale your AI voice platform with predictable costs.",
+  openGraph: {
+    title: "Enterprise Pricing | Converse",
+    description: "Flexible, transparent enterprise pricing for Converse. Scale your AI voice platform with predictable costs.",
+    type: "website",
+  },
+};
 
 export default function EnterprisePricingPage() {
   return (

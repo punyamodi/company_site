@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight, BarChart3, Activity, AlertCircle, Clock,
@@ -165,6 +166,16 @@ function DashboardSVG() {
     </svg>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Observability | Converse",
+  description: "Monitor, debug, and optimize your Converse AI pipelines with built-in tracing, metrics, and analytics tools.",
+  openGraph: {
+    title: "Observability | Converse",
+    description: "Monitor, debug, and optimize your Converse AI pipelines with built-in tracing, metrics, and analytics tools.",
+    type: "website",
+  },
+};
 
 export default function ObservabilityPage() {
   return (

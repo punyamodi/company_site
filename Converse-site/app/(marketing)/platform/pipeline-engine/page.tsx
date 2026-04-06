@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight, GitBranch, Zap, Check, ChevronRight,
@@ -203,6 +204,16 @@ function DataFlowSVG() {
     </svg>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Pipeline Engine | Converse",
+  description: "Converse's pipeline engine enables flexible, real-time AI voice workflows with ultra-low latency processing.",
+  openGraph: {
+    title: "Pipeline Engine | Converse",
+    description: "Converse's pipeline engine enables flexible, real-time AI voice workflows with ultra-low latency processing.",
+    type: "website",
+  },
+};
 
 export default function PipelineEnginePage() {
   return (

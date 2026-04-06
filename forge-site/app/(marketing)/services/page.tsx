@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Services | Forge",
+  description:
+    "From AI integration to custom agents and workflow automation — Forge builds the AI systems your enterprise needs to move faster and operate smarter.",
+  openGraph: {
+    title: "Services | Forge",
+    description:
+      "AI integration, workflow automation, data platforms, custom agents, and strategic consulting for enterprise.",
+  },
+};
 import { ArrowRight, Code2, Workflow, Database, Bot, Brain, CheckCircle2 } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

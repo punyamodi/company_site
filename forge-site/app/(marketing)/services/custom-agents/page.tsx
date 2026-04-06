@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Custom AI Agents | Forge",
+  description:
+    "Purpose-built AI agents that automate complex tasks, coordinate multi-step workflows, and operate autonomously within your enterprise environment.",
+  openGraph: {
+    title: "Custom AI Agents | Forge",
+    description:
+      "Task agents, multi-agent systems, and customer-facing bots — built and deployed for enterprise.",
+  },
+};
 import { ArrowRight, Bot, CheckCircle2, Zap, Network, Shield, Code2 } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

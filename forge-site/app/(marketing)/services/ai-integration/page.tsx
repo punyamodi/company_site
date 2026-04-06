@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "AI Integration Services | Forge",
+  description:
+    "Custom API middleware, data connectors, and integration layers that bridge AI capabilities with your existing enterprise infrastructure.",
+  openGraph: {
+    title: "AI Integration Services | Forge",
+    description:
+      "Purpose-built integrations that connect AI to your enterprise systems — securely and at scale.",
+  },
+};
 import { ArrowRight, Code2, CheckCircle2, Zap, Shield, Server } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

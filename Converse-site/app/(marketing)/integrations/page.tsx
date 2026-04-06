@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Mic,
@@ -99,6 +100,16 @@ const PLUGIN_FEATURES = [
       "Adapter layer adds sub-millisecond overhead. Raw provider performance is preserved end-to-end.",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Integrations | Converse",
+  description: "Connect Converse with leading LLMs, speech providers, telephony platforms, and transport layers.",
+  openGraph: {
+    title: "Integrations | Converse",
+    description: "Connect Converse with leading LLMs, speech providers, telephony platforms, and transport layers.",
+    type: "website",
+  },
+};
 
 export default function IntegrationsPage() {
   return (

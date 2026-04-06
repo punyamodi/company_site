@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight, LayoutGrid, Code2, ChevronRight,
@@ -160,6 +161,16 @@ function EcosystemRadialSVG() {
     </svg>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Platform Integrations | Converse",
+  description: "Seamlessly connect third-party tools and services into your Converse voice AI workflows.",
+  openGraph: {
+    title: "Platform Integrations | Converse",
+    description: "Seamlessly connect third-party tools and services into your Converse voice AI workflows.",
+    type: "website",
+  },
+};
 
 export default function IntegrationsPage() {
   return (

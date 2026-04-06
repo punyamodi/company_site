@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Workflow Automation | Forge",
+  description:
+    "Replace manual, error-prone processes with intelligent AI-driven automation. Decision engines, RPA hybrid workflows, and smart orchestration for enterprise.",
+  openGraph: {
+    title: "Workflow Automation | Forge",
+    description:
+      "AI-driven automation that eliminates repetitive work and scales across your enterprise.",
+  },
+};
 import { ArrowRight, Workflow, CheckCircle2, Zap, Clock, BarChart3, Settings } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

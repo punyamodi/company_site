@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight, Shield, Lock, Key, Eye, FileText,
@@ -153,6 +154,16 @@ function ShieldSVG() {
     </svg>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Security | Converse",
+  description: "End-to-end security for your Converse AI platform — encryption, access control, and compliance built in.",
+  openGraph: {
+    title: "Security | Converse",
+    description: "End-to-end security for your Converse AI platform — encryption, access control, and compliance built in.",
+    type: "website",
+  },
+};
 
 export default function SecurityPage() {
   return (

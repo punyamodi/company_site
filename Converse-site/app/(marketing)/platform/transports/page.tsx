@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight, Radio, Wifi, Phone, Globe, Server,
@@ -161,6 +162,16 @@ function NetworkTopologySVG() {
     </svg>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Transports | Converse",
+  description: "Deploy Converse over multiple transport layers including WebSocket, WebRTC, and SIP for any deployment scenario.",
+  openGraph: {
+    title: "Transports | Converse",
+    description: "Deploy Converse over multiple transport layers including WebSocket, WebRTC, and SIP for any deployment scenario.",
+    type: "website",
+  },
+};
 
 export default function TransportsPage() {
   return (

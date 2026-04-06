@@ -1,3 +1,15 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service | Genie",
+  description: "The terms and conditions governing use of the Genie platform. Please read before accessing or using our services.",
+  openGraph: {
+    title: "Terms of Service | Genie",
+    description: "The terms and conditions governing use of the Genie platform. Please read before accessing or using our services.",
+    type: "website",
+  },
+};
+
 export default function TermsPage() {
   return (
     <div style={{ background: "var(--nb-bg)", minHeight: "100vh", color: "var(--nb-ink)", padding: "80px 0" }}>

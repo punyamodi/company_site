@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Shield,
@@ -81,6 +82,16 @@ const FEATURE_GRID = [
   "BYO encryption keys",
   "HIPAA BAA available",
 ];
+
+export const metadata: Metadata = {
+  title: "Enterprise | Converse",
+  description: "Enterprise-grade voice AI platform with advanced security, compliance, and scalability for large organizations.",
+  openGraph: {
+    title: "Enterprise | Converse",
+    description: "Enterprise-grade voice AI platform with advanced security, compliance, and scalability for large organizations.",
+    type: "website",
+  },
+};
 
 export default function EnterprisePage() {
   return (

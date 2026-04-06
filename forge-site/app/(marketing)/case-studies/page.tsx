@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Case Studies | Forge",
+  description:
+    "Real results from real enterprise AI deployments. See how Forge has helped clients cut costs, accelerate processes, and unlock new capabilities with AI.",
+  openGraph: {
+    title: "Case Studies | Forge",
+    description:
+      "Proven enterprise AI outcomes — measurable results across banking, healthcare, manufacturing, and more.",
+  },
+};
 import { ArrowRight, Building2, HeartPulse, Factory, Server } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

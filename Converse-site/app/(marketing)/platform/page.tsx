@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight, GitBranch, Mic, Layers, Radio, LayoutGrid,
@@ -129,6 +130,16 @@ function ArchitectureSVG() {
     </svg>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Platform | Converse",
+  description: "Explore the Converse platform — a complete, production-grade stack for building voice AI applications.",
+  openGraph: {
+    title: "Platform | Converse",
+    description: "Explore the Converse platform — a complete, production-grade stack for building voice AI applications.",
+    type: "website",
+  },
+};
 
 export default function PlatformPage() {
   return (

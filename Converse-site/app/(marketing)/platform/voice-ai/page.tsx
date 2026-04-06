@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight, Mic, ChevronRight, Check, Activity,
@@ -149,6 +150,16 @@ function ConversationTimelineSVG() {
     </svg>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Voice AI | Converse",
+  description: "Build production-ready voice AI agents with Converse's voice AI engine — ultra-low latency, high fidelity.",
+  openGraph: {
+    title: "Voice AI | Converse",
+    description: "Build production-ready voice AI agents with Converse's voice AI engine — ultra-low latency, high fidelity.",
+    type: "website",
+  },
+};
 
 export default function VoiceAIPage() {
   return (

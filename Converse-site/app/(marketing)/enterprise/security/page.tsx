@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Shield,
@@ -115,6 +116,16 @@ const THREAT_MITIGATIONS = [
   { threat: "Data Exfiltration", mitigation: "VPC confinement, egress filtering, audit logs with anomaly alerts" },
   { threat: "Supply Chain Attack", mitigation: "SBOM generation, signed container images, dependency scanning in CI" },
 ];
+
+export const metadata: Metadata = {
+  title: "Enterprise Security | Converse",
+  description: "Bank-level security and compliance for enterprise Converse deployments — encryption, SOC 2, and access controls.",
+  openGraph: {
+    title: "Enterprise Security | Converse",
+    description: "Bank-level security and compliance for enterprise Converse deployments — encryption, SOC 2, and access controls.",
+    type: "website",
+  },
+};
 
 export default function EnterpriseSecurityPage() {
   return (

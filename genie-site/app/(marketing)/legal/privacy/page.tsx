@@ -1,3 +1,15 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Genie",
+  description: "How Genie collects, uses, and protects your data. Read our privacy policy for full details on data handling and your rights.",
+  openGraph: {
+    title: "Privacy Policy | Genie",
+    description: "How Genie collects, uses, and protects your data. Read our privacy policy for full details on data handling and your rights.",
+    type: "website",
+  },
+};
+
 export default function PrivacyPage() {
   return (
     <div style={{ background: "var(--nb-bg)", minHeight: "100vh", color: "var(--nb-ink)", padding: "80px 0" }}>

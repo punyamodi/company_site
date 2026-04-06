@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Phone, ArrowRight, ChevronRight, CheckCircle, Repeat, PhoneCall, AlertTriangle } from "lucide-react";
 
@@ -89,6 +90,16 @@ const ARCHITECTURE_STEPS = [
   { step: "04", label: "Pipeline", detail: "STT → LLM → TTS pipeline processes the call in real time" },
   { step: "05", label: "Audio Out", detail: "Synthesized speech is serialized back to carrier format and streamed to the caller" },
 ];
+
+export const metadata: Metadata = {
+  title: "Telephony Integrations | Converse",
+  description: "Integrate Converse with leading telephony providers to power AI voice calls and IVR systems at scale.",
+  openGraph: {
+    title: "Telephony Integrations | Converse",
+    description: "Integrate Converse with leading telephony providers to power AI voice calls and IVR systems at scale.",
+    type: "website",
+  },
+};
 
 export default function TelephonyIntegrationsPage() {
   return (

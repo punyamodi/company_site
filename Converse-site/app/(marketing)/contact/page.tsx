@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Mail,
@@ -61,6 +62,16 @@ const CONTACT_TYPES = [
     action: "press@converse.ai",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Contact | Converse",
+  description: "Get in touch with the Converse team for sales, support, or partnership inquiries.",
+  openGraph: {
+    title: "Contact | Converse",
+    description: "Get in touch with the Converse team for sales, support, or partnership inquiries.",
+    type: "website",
+  },
+};
 
 export default function ContactPage() {
   return (

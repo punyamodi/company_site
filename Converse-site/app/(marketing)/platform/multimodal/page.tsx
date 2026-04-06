@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight, Mic, Camera, Monitor, Layers, ChevronRight,
@@ -139,6 +140,16 @@ function MultimodalSVG() {
     </svg>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Multimodal AI | Converse",
+  description: "Build multimodal AI experiences with Converse — combining voice, vision, and text in unified real-time pipelines.",
+  openGraph: {
+    title: "Multimodal AI | Converse",
+    description: "Build multimodal AI experiences with Converse — combining voice, vision, and text in unified real-time pipelines.",
+    type: "website",
+  },
+};
 
 export default function MultimodalPage() {
   return (

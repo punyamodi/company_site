@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Industries We Serve | Forge",
+  description:
+    "Forge builds AI solutions for financial services, healthcare, manufacturing, technology, and more — tailored to the unique challenges of your industry.",
+  openGraph: {
+    title: "Industries We Serve | Forge",
+    description:
+      "Industry-specific AI for financial services, healthcare, manufacturing, and enterprise technology.",
+  },
+};
 import { ArrowRight, Building2, HeartPulse, Landmark, Factory, Server, Globe } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

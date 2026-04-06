@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Brain, Zap, ArrowRight, ChevronRight, CheckCircle, RefreshCw, GitBranch, Wrench } from "lucide-react";
 
@@ -47,6 +48,16 @@ const ADVANCED_FEATURES = [
       "Define tools once with Converse's schema format. They are automatically translated to each provider's native function-calling protocol.",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "LLM Integrations | Converse",
+  description: "Integrate OpenAI, Anthropic, Google, and other leading LLM providers into your Converse voice AI pipelines.",
+  openGraph: {
+    title: "LLM Integrations | Converse",
+    description: "Integrate OpenAI, Anthropic, Google, and other leading LLM providers into your Converse voice AI pipelines.",
+    type: "website",
+  },
+};
 
 export default function LLMIntegrationsPage() {
   return (

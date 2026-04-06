@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Wifi, Server, MessageSquare, ArrowRight, ChevronRight, CheckCircle, Gauge, Shield } from "lucide-react";
 
@@ -121,6 +122,16 @@ const SELECTION_CRITERIA = [
     reason: "PSTN audio arrives via serializer, WebSocket bridges to Converse pipeline",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Transport Integrations | Converse",
+  description: "Deploy Converse over WebSocket, WebRTC, SIP, and other transport protocols for flexible voice AI delivery.",
+  openGraph: {
+    title: "Transport Integrations | Converse",
+    description: "Deploy Converse over WebSocket, WebRTC, SIP, and other transport protocols for flexible voice AI delivery.",
+    type: "website",
+  },
+};
 
 export default function TransportIntegrationsPage() {
   return (

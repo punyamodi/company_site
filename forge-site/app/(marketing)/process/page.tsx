@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "How We Work | Forge",
+  description:
+    "A transparent, six-phase delivery process — from discovery and architecture to launch and ongoing support. No surprises, just results.",
+  openGraph: {
+    title: "How We Work | Forge",
+    description:
+      "Forge's proven six-phase delivery process: discovery, architecture, build, testing, launch, and support.",
+  },
+};
 import { ArrowRight, Search, Map, Wrench, TestTube, Rocket, HeartPulse } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

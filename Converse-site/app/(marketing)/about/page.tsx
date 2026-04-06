@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Target, Heart, Lightbulb, ArrowRight, CheckCircle, Users, Zap, Shield } from "lucide-react";
 
@@ -86,6 +87,16 @@ const VALUES = [
       "Our roadmap is shaped by enterprise customers building at scale. We work closely with design partners to ensure Converse solves real infrastructure problems, not hypothetical ones.",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "About | Converse",
+  description: "Learn about Converse's mission, team, and vision for the future of AI-powered voice and conversational experiences.",
+  openGraph: {
+    title: "About | Converse",
+    description: "Learn about Converse's mission, team, and vision for the future of AI-powered voice and conversational experiences.",
+    type: "website",
+  },
+};
 
 export default function AboutPage() {
   return (

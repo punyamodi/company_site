@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Data & AI Platform | Forge",
+  description:
+    "Custom data pipelines, vector databases, and RAG systems that give your AI models accurate, real-time access to enterprise knowledge.",
+  openGraph: {
+    title: "Data & AI Platform | Forge",
+    description:
+      "Enterprise-grade data infrastructure — pipelines, vector stores, and RAG systems built for production AI.",
+  },
+};
 import { ArrowRight, Database, CheckCircle2, Zap, Shield, Server, Network } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

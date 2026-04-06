@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "AI Consulting & Strategy | Forge",
+  description:
+    "Strategic AI roadmaps, readiness assessments, and architecture reviews to help your organization adopt AI with confidence and measurable ROI.",
+  openGraph: {
+    title: "AI Consulting & Strategy | Forge",
+    description:
+      "Expert AI strategy — readiness assessments, roadmaps, and architecture reviews for enterprise leaders.",
+  },
+};
 import { ArrowRight, Brain, CheckCircle2, Map, BarChart3, Users, Shield } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Mic, Volume2, Zap, ArrowRight, CheckCircle, RefreshCw, ChevronRight } from "lucide-react";
 
@@ -61,6 +62,16 @@ const S2S_PROVIDERS = [
     badge: "#059669",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Speech Integrations | Converse",
+  description: "Connect Converse with top STT and TTS providers for low-latency, high-quality voice AI experiences.",
+  openGraph: {
+    title: "Speech Integrations | Converse",
+    description: "Connect Converse with top STT and TTS providers for low-latency, high-quality voice AI experiences.",
+    type: "website",
+  },
+};
 
 export default function SpeechIntegrationsPage() {
   return (

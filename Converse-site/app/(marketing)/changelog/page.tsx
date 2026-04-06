@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Mic, Brain, Wifi, BarChart3, Package, Zap, Shield, Layers } from "lucide-react";
 
@@ -122,6 +123,16 @@ const CHANGELOG_ENTRIES = [
     ],
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Changelog | Converse",
+  description: "Track the latest updates, new features, and improvements shipped to the Converse platform.",
+  openGraph: {
+    title: "Changelog | Converse",
+    description: "Track the latest updates, new features, and improvements shipped to the Converse platform.",
+    type: "website",
+  },
+};
 
 export default function ChangelogPage() {
   return (
