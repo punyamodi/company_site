@@ -1,10 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import {
   X, Menu, ChevronDown, Monitor, Server, Smartphone, Bot, MessageSquare,
-  ShoppingCart, Palette, Zap, ArrowRight, Layers, Brain, Globe,
+  ShoppingCart, Palette, Zap, ArrowRight, Layers, Brain, Globe, CircleHelp,
   Building2, Code2, Workflow, BarChart2,
 } from "lucide-react";
 
@@ -49,11 +48,12 @@ const NAV = [
   {
     label: "Work",
     simple: [
-      { label: "All Projects",        href: `${BASE}/work/` },
+      { label: "Case Studies",            href: `${BASE}/work/` },
       { label: "InferGate — AI Gateway",  href: `${BASE}/infergate/` },
       { label: "Converse — Voice AI",     href: `${BASE}/converse/` },
       { label: "HaloDesk — Support AI",   href: `${BASE}/halodesk/` },
       { label: "Genie — Knowledge AI",    href: `${BASE}/genie/` },
+      { label: "Forge — Enterprise AI",   href: `${BASE}/forge/` },
     ],
   },
   {
@@ -61,6 +61,7 @@ const NAV = [
     simple: [
       { label: "About Us",       href: `${BASE}/about/` },
       { label: "Enterprise",     href: `${BASE}/enterprise/` },
+      { label: "FAQ",            href: `${BASE}/faq/` },
       { label: "Contact",        href: `${BASE}/contact/` },
     ],
   },
@@ -71,6 +72,7 @@ const MOBILE_LINKS = [
   { label: "Our Work",  href: `${BASE}/work/`,       icon: Layers },
   { label: "About",     href: `${BASE}/about/`,      icon: Building2 },
   { label: "Enterprise",href: `${BASE}/enterprise/`, icon: Server },
+  { label: "FAQ",       href: `${BASE}/faq/`,        icon: CircleHelp },
   { label: "Contact",   href: `${BASE}/contact/`,    icon: MessageSquare },
 ];
 
@@ -108,7 +110,7 @@ export function Nav() {
       >
         <div style={{ maxWidth: 1264, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", width: "100%" }}>
           {/* Logo */}
-          <Link href={`${BASE}/`} style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginRight: 40, flexShrink: 0 }}>
+          <a href={`${BASE}/`} style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginRight: 40, flexShrink: 0 }}>
             <div style={{
               width: 32, height: 32, background: "var(--nb-invert)",
               border: "2px solid var(--nb-border)", boxShadow: "3px 3px 0px var(--nb-border)",
@@ -124,7 +126,7 @@ export function Nav() {
             <span style={{ fontFamily: "var(--font-bricolage,sans-serif)", fontSize: 18, fontWeight: 800, color: "var(--nb-ink)", letterSpacing: "-0.04em" }}>
               AI Platform
             </span>
-          </Link>
+          </a>
 
           {/* Desktop nav */}
           <nav style={{ display: "flex", alignItems: "center", gap: 2, flex: 1 }} className="desktop-nav">
@@ -223,7 +225,7 @@ export function Nav() {
               Our Work
             </a>
             <a href={`${BASE}/contact/`} className="btn-primary" style={{ padding: "9px 18px", fontSize: 13 }}>
-              Start a Project <ArrowRight size={12} />
+              Book Discovery Call <ArrowRight size={12} />
             </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -252,7 +254,7 @@ export function Nav() {
             ))}
             <a href={`${BASE}/contact/`} onClick={() => setMobileOpen(false)} className="btn-primary"
               style={{ width: "100%", justifyContent: "center", marginTop: 24, textDecoration: "none" }}>
-              Start a Project <ArrowRight size={14} />
+               Book Discovery Call <ArrowRight size={14} />
             </a>
           </div>
         </div>
@@ -268,4 +270,4 @@ export function Nav() {
       `}</style>
     </>
   );
-}
+}

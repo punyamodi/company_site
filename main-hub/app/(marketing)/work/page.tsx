@@ -5,7 +5,7 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
   title: "Our Work",
-  description: "Case studies and portfolio from AI Platform Agency — websites, web apps, mobile apps, AI agents, chatbots, and more.",
+  description: "Case studies and delivery outcomes from AI Platform Agency across web, mobile, AI, and product engineering.",
 };
 
 const PROJECTS = [
@@ -139,8 +139,6 @@ const PROJECTS = [
   },
 ];
 
-const FILTERS = ["All", "AI Infrastructure", "AI Agents", "Mobile Development", "E-commerce", "Web Application"];
-
 export default function WorkPage() {
   const featured = PROJECTS.filter(p => p.featured);
   const rest = PROJECTS.filter(p => !p.featured);
@@ -157,7 +155,7 @@ export default function WorkPage() {
             <span style={{ fontFamily: "var(--font-fraunces,serif)", fontStyle: "italic", color: "var(--nb-ink-muted)" }}>and built.</span>
           </h1>
           <p style={{ fontSize: 18, color: "var(--nb-ink-muted)", lineHeight: 1.65, maxWidth: 600, marginBottom: 40 }}>
-            From AI infrastructure to consumer apps — here{"'"}s a selection of the work we{"'"}re proud of. Every project is a collaboration, and every line of code is written in-house.
+            From AI infrastructure to customer-facing products, this is a selection of work delivered by our in-house team. Each case reflects measurable business outcomes and production-grade engineering.
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <a href={`${BASE}/contact/`} className="btn-primary">
@@ -258,7 +256,7 @@ export default function WorkPage() {
             Ready to be our next project?
           </h2>
           <p style={{ fontSize: 17, color: "rgba(250,248,243,0.7)", marginBottom: 36, lineHeight: 1.65 }}>
-            We{"'"}d love to hear about what you{"'"}re building.
+            We{"'"}d love to hear what you{"'"}re building and map the right execution plan.
           </p>
           <a href={`${BASE}/contact/`} className="btn-primary" style={{ fontSize: 16, padding: "16px 32px" }}>
             Start a Project <ArrowRight size={16} />

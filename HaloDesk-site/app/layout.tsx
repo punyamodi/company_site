@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Fraunces, JetBrains_Mono } from "next/font/google";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { ScrollEffects } from "@/components/scroll-effects";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -77,6 +78,7 @@ export default function RootLayout({
             "var(--font-bricolage, 'Bricolage Grotesque', sans-serif)",
         }}
       >
+        <ScrollEffects />
         <Nav />
         {children}
         <Footer />

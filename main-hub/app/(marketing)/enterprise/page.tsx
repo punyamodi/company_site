@@ -5,7 +5,7 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
   title: "Enterprise",
-  description: "AI Platform Agency enterprise services — dedicated teams, NDAs, compliance, white-label, and custom SLAs for large organisations.",
+  description: "Enterprise delivery with dedicated teams, legal/compliance readiness, and custom engagement models for complex organisations.",
 };
 
 const ENTERPRISE_SERVICES = [
@@ -233,4 +233,4 @@ export default function EnterprisePage() {
   );
 }
 
-
+

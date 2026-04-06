@@ -71,19 +71,19 @@ const FEATURES = [
     Icon: Layers,
     title: "Omnichannel Inbox",
     desc: "Centralize conversations from 11+ channels in one unified workspace. No more app-switching or missed messages.",
-    href: "/features/omnichannel-inbox",
+    href: "/features/omnichannel",
   },
   {
     Icon: Bot,
     title: "Captain AI Agent",
     desc: "Autonomous AI that reads context, searches your knowledge base, and resolves tickets without human intervention.",
-    href: "/features/captain-ai",
+    href: "/features/ai-captain",
   },
   {
     Icon: GitBranch,
     title: "Workflow Automation",
     desc: "Build powerful routing rules, auto-assignments, and escalation paths with a no-code visual builder.",
-    href: "/features/workflow-automation",
+    href: "/features/automation",
   },
   {
     Icon: BarChart3,
@@ -95,7 +95,7 @@ const FEATURES = [
     Icon: Activity,
     title: "Sentiment Analysis",
     desc: "Detect customer emotion in real time. Prioritize urgent conversations before they become costly escalations.",
-    href: "/features/sentiment-analysis",
+    href: "/features/sentiment",
   },
   {
     Icon: TrendingUp,
@@ -1230,7 +1230,7 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/captain-ai" className="btn-invert">
+              <Link href="/features/ai-captain" className="btn-invert">
                 Explore Captain AI <ArrowRight size={15} />
               </Link>
             </div>

@@ -9,7 +9,7 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "AI Platform offers frontend development, backend development, mobile apps, AI agents, customer chatbots, e-commerce, UI/UX design, and more.",
+  description: "AI Platform services: product strategy, web and mobile engineering, AI systems, automation, and design delivered by one in-house team.",
 };
 
 const SERVICES = [
@@ -196,7 +196,7 @@ export default function ServicesPage() {
             </span>
           </h1>
           <p style={{ fontSize: 18, color: "var(--nb-ink-muted)", lineHeight: 1.65, maxWidth: 640, marginBottom: 40 }}>
-            Eight service areas. One in-house team. We handle everything from first design to production deployment — no handoffs, no finger-pointing.
+            Eight service areas, one integrated team. We take products from strategy and design through engineering, launch, and post-release support.
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <a href={`${BASE}/contact/`} className="btn-primary">

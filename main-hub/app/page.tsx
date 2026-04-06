@@ -184,7 +184,7 @@ export default function HomePage() {
                   className="anim-fade-up delay-200"
                   style={{ fontSize: "clamp(16px,2vw,20px)", color: "var(--nb-ink-muted)", lineHeight: 1.65, marginBottom: 36, maxWidth: 480 }}
                 >
-                  AI Platform is a full-service digital agency. We build websites, web apps, mobile apps, AI agents, customer chatbots, and everything in between — from first pixel to production.
+                  AI Platform is a senior-led digital agency. We build websites, web apps, mobile apps, AI agents, and customer chatbots from first concept to production launch.
                 </p>
                 <div className="anim-fade-up delay-300" style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
                   <a href={`${BASE}/contact/`} className="btn-primary" style={{ fontSize: 16, padding: "16px 32px" }}>
@@ -246,7 +246,7 @@ export default function HomePage() {
                     ))}
                   </svg>
                   <p style={{ fontFamily: "var(--font-jetbrains,monospace)", fontSize: 11, color: "#F5C518", marginTop: 16, opacity: 0.8 }}>
-                    // your_product.built_by_ai_platform
+                    {"// your_product.built_by_ai_platform"}
                   </p>
                 </div>
               </div>
@@ -261,8 +261,8 @@ export default function HomePage() {
                 { value: "50+",  label: "projects delivered" },
                 { value: "8",    label: "service areas" },
                 { value: "100%", label: "in-house team" },
-                { value: "4.9★", label: "client satisfaction" },
-                { value: "3+",   label: "years operating" },
+                { value: "Senior", label: "led delivery" },
+                { value: "<1d",  label: "avg response time" },
               ].map((stat, i) => (
                 <div key={i} style={{ padding: "20px 36px", borderLeft: i > 0 ? "2px solid var(--nb-border-faint)" : "none", textAlign: "center" }}>
                   <div style={{ fontFamily: "var(--font-jetbrains,monospace)", fontSize: "clamp(20px,2.5vw,28px)", fontWeight: 700, letterSpacing: "-0.03em" }}>{stat.value}</div>
@@ -349,7 +349,7 @@ export default function HomePage() {
 
               {/* Why us */}
               <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                <div className="section-label" style={{ marginBottom: 0 }}>Why AI Platform</div>
+                <div className="section-label" style={{ marginBottom: 0 }}>Why teams choose us</div>
                 {WHY.map((item) => {
                   const Icon = item.icon;
                   return (
@@ -482,4 +482,4 @@ export default function HomePage() {
       `}</style>
     </>
   );
-}
+}

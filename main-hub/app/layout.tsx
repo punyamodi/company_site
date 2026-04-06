@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Fraunces, JetBrains_Mono } from "next/font/google";
+import { ScrollEffects } from "@/components/scroll-effects";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | AI Platform",
   },
   description:
-    "AI Platform is a full-service digital agency. We design and build websites, web apps, mobile apps, AI agents, customer chatbots, and everything in between — from first pixel to production.",
+    "AI Platform is a senior-led digital agency. We design and build websites, web apps, mobile apps, AI agents, and customer chatbots from strategy to production.",
   keywords: [
     "digital agency","web development","app development","AI agents","customer chatbot",
     "frontend development","backend development","mobile app development",
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body style={{ fontFamily: "var(--font-bricolage,'Bricolage Grotesque',sans-serif)" }}>
+        <ScrollEffects />
         {children}
       </body>
     </html>

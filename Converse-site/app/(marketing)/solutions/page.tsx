@@ -123,8 +123,8 @@ export default function SolutionsPage() {
             <Link href="/contact" className="btn-invert">
               Contact Sales <ArrowRight size={16} style={{ marginLeft: 6 }} />
             </Link>
-            <Link href="/docs" className="btn-secondary" style={{ borderColor: "rgba(255,255,255,0.3)", color: "#fff" }}>
-              View Documentation
+            <Link href="/platform" className="btn-secondary" style={{ borderColor: "rgba(255,255,255,0.3)", color: "#fff" }}>
+              Explore Platform
             </Link>
           </div>
         </div>

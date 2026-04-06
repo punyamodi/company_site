@@ -6,7 +6,7 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Start your project with AI Platform Agency — web apps, mobile, AI agents, e-commerce, and more. We'll get back to you within one business day.",
+  description: "Start your project with AI Platform Agency - web apps, mobile, AI agents, e-commerce, and more. We respond within one business day.",
 };
 
 const REASONS = [
@@ -29,7 +29,7 @@ export default function ContactPage() {
             <span style={{ fontFamily: "var(--font-fraunces,serif)", fontStyle: "italic", color: "var(--nb-ink-muted)" }}>great together.</span>
           </h1>
           <p style={{ fontSize: 18, color: "var(--nb-ink-muted)", lineHeight: 1.65, maxWidth: 560, marginBottom: 48 }}>
-            Whether you have a fully-formed brief or just an idea you{"'"}re exploring — reach out. We{"'"}ll respond within one business day.
+            Whether you have a complete brief or an early concept, reach out. We respond within one business day with recommended next steps.
           </p>
         </div>
       </section>
@@ -58,16 +58,14 @@ export default function ContactPage() {
               })}
             </div>
 
-            {/* Contact details placeholder */}
             <div style={{ padding: 24, background: "var(--nb-surface)", border: "2px solid var(--nb-border)", borderRadius: "var(--radius)", marginBottom: 16 }}>
               <p style={{ fontSize: 12, fontWeight: 800, letterSpacing: ".08em", textTransform: "uppercase", color: "var(--nb-ink-muted)", marginBottom: 16 }}>Get In Touch</p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 <a href="mailto:hello@aiplatform.io" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", fontSize: 14, fontWeight: 600, color: "var(--nb-ink)" }}>
                   <Mail size={15} color="var(--nb-ink-muted)" /> hello@aiplatform.io
                 </a>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, fontWeight: 600, color: "var(--nb-ink-muted)" }}>
-                  <Phone size={15} color="var(--nb-ink-muted)" /> +1 (000) 000-0000 {" "}
-                  <span style={{ fontSize: 11, fontWeight: 500, background: "var(--nb-surface)", border: "1px solid var(--nb-border)", padding: "2px 6px", borderRadius: 4 }}>placeholder</span>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, fontWeight: 600, color: "var(--nb-ink-muted)", lineHeight: 1.5 }}>
+                  <Phone size={15} color="var(--nb-ink-muted)" /> Discovery calls available by appointment
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, fontWeight: 600, color: "var(--nb-ink-muted)" }}>
                   <MapPin size={15} color="var(--nb-ink-muted)" /> Remote-first agency
@@ -75,16 +73,20 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div style={{ padding: "14px 18px", background: "var(--nb-yellow)", border: "2px solid var(--nb-border)", borderRadius: "var(--radius)" }}>
+            <div style={{ padding: "14px 18px", background: "var(--nb-yellow)", border: "2px solid var(--nb-border)", borderRadius: "var(--radius)", marginBottom: 12 }}>
               <p style={{ fontSize: 13.5, fontWeight: 700, color: "var(--nb-ink)", lineHeight: 1.55 }}>
                 ⚡ For enterprise or dedicated team enquiries, see our{" "}
                 <a href={`${BASE}/enterprise/`} style={{ textDecoration: "underline", color: "var(--nb-ink)" }}>Enterprise page</a> for more details.
               </p>
             </div>
+            <p style={{ fontSize: 13, color: "var(--nb-ink-dim)", lineHeight: 1.6 }}>
+              Need fast answers first? See our{" "}
+              <a href={`${BASE}/faq/`} style={{ color: "var(--nb-ink)", textDecoration: "underline", fontWeight: 700 }}>FAQ</a>.
+            </p>
           </div>
         </div>
       </section>
     </>
   );
 }
-
+

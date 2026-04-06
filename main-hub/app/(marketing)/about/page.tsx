@@ -8,7 +8,7 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "AI Platform is a full-service digital agency. Learn about who we are, how we work, and what drives us.",
+  description: "AI Platform is a senior-led digital and AI agency. Learn how we work, what we value, and how we deliver.",
 };
 
 const VALUES = [
@@ -116,7 +116,7 @@ export default function AboutPage() {
             </span>
           </h1>
           <p style={{ fontSize: 18, color: "var(--nb-ink-muted)", lineHeight: 1.65, maxWidth: 640, marginBottom: 40 }}>
-            AI Platform is a full-service digital agency. We design and build websites, web apps, mobile apps, AI agents, customer chatbots, and everything in between. Our team is small by design — senior engineers and designers who care deeply about the work.
+            AI Platform is a senior-led digital agency. We design and build websites, web apps, mobile apps, AI agents, and customer chatbots with one integrated team from strategy to launch.
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <a href={`${BASE}/contact/`} className="btn-primary">
@@ -143,7 +143,7 @@ export default function AboutPage() {
                 Most agencies claim they do everything. We actually do. Our team has genuine depth across the entire digital stack — frontend, backend, mobile, AI, and design. No subcontracting, no freelancers filling gaps.
               </p>
               <p style={{ fontSize: 16, color: "var(--nb-ink-muted)", lineHeight: 1.7 }}>
-                We{"'"}re AI-native in the truest sense — not an agency that added an "AI" page to their website, but a team that has been building AI-powered products since the early days of LLMs. That thinking influences everything we build.
+                We{"'"}re AI-native in the truest sense - not an agency that added an &quot;AI&quot; page to their website, but a team that has been building AI-powered products since the early days of LLMs. That thinking influences everything we build.
               </p>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
@@ -197,7 +197,7 @@ export default function AboutPage() {
               Small team. Big output.
             </h2>
             <p style={{ fontSize: 17, color: "var(--nb-ink-muted)", maxWidth: 520, margin: "0 auto" }}>
-              We{"'"}re a lean, senior team. Every person here has shipped real products — not just pushed code. No juniors running client work.
+              We{"'"}re a lean, senior team. Every person here has shipped real products, owned delivery, and worked directly with stakeholders.
             </p>
           </div>
           <div className="hub-platform-grid">
@@ -215,8 +215,8 @@ export default function AboutPage() {
           </div>
           <div style={{ textAlign: "center", marginTop: 32, padding: "20px 32px", background: "var(--nb-surface)", border: "2px solid var(--nb-border-faint)" }}>
             <p style={{ fontSize: 14, color: "var(--nb-ink-muted)", fontWeight: 500 }}>
-              We{"'"}re always looking for exceptional engineers and designers.{" "}
-              <a href={`${BASE}/contact/`} style={{ color: "var(--nb-ink)", fontWeight: 700, textDecoration: "underline" }}>Get in touch</a> if you{"'"}d like to work with us.
+              Need a specialist role not listed here?{" "}
+              <a href={`${BASE}/contact/`} style={{ color: "var(--nb-ink)", fontWeight: 700, textDecoration: "underline" }}>Get in touch</a> and we will shape the right delivery team for your project.
             </p>
           </div>
         </div>

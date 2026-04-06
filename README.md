@@ -87,7 +87,10 @@ To trigger a manual deploy, go to **Actions â†’ Build & Deploy to GitHub Pages â
 | `/services` | Services |
 | `/about` | About |
 | `/enterprise` | Enterprise Solutions |
+| `/faq` | Frequently Asked Questions |
 | `/contact` | Contact |
+| `/legal/privacy` | Privacy Policy |
+| `/legal/terms` | Terms of Service |
 
 ---
 

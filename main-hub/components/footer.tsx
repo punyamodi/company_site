@@ -19,11 +19,12 @@ const COLS = [
   {
     title: "Work",
     links: [
-      { label: "All Projects",             href: `${BASE}/work/` },
+      { label: "Case Studies",             href: `${BASE}/work/` },
       { label: "InferGate — AI Gateway",   href: `${BASE}/infergate/` },
       { label: "Converse — Voice AI",      href: `${BASE}/converse/` },
       { label: "HaloDesk — Support AI",    href: `${BASE}/halodesk/` },
       { label: "Genie — Knowledge AI",     href: `${BASE}/genie/` },
+      { label: "Forge — Enterprise AI",    href: `${BASE}/forge/` },
     ],
   },
   {
@@ -31,9 +32,10 @@ const COLS = [
     links: [
       { label: "About Us",         href: `${BASE}/about/` },
       { label: "Enterprise",       href: `${BASE}/enterprise/` },
+      { label: "FAQ",              href: `${BASE}/faq/` },
       { label: "Contact Us",       href: `${BASE}/contact/` },
-      { label: "Privacy Policy",   href: `${BASE}/contact/` },
-      { label: "Terms of Service", href: `${BASE}/contact/` },
+      { label: "Privacy Policy",   href: `${BASE}/legal/privacy/` },
+      { label: "Terms of Service", href: `${BASE}/legal/terms/` },
     ],
   },
   {
@@ -57,7 +59,7 @@ export function Footer() {
               Ready to build something great?
             </p>
             <p style={{ fontSize: 15, color: "var(--nb-ink-muted)", marginTop: 8, fontWeight: 500 }}>
-              Frontend · Backend · Mobile · AI Agents · Chatbots · E-commerce — all in-house.
+              Frontend · Backend · Mobile · AI Agents · Chatbots · E-commerce - all in-house.
             </p>
           </div>
           <a
@@ -134,8 +136,8 @@ export function Footer() {
           </p>
           <div style={{ display: "flex", gap: 20 }}>
             {[
-              { label: "Privacy",  href: `${BASE}/contact/` },
-              { label: "Terms",    href: `${BASE}/contact/` },
+              { label: "Privacy",  href: `${BASE}/legal/privacy/` },
+              { label: "Terms",    href: `${BASE}/legal/terms/` },
               { label: "Contact",  href: `${BASE}/contact/` },
             ].map((link) => (
               <a key={link.href + link.label} href={link.href}
@@ -152,4 +154,4 @@ export function Footer() {
     </footer>
   );
 }
-
+
